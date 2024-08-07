@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<title>ニコニコ動画クラシックスタイル</title>
+<meta name="description" content="「帰ってきたニコニコ」の動画視聴ページをリニューアル前風に。若干機能を追加したりもしています。" />
+<meta name="author" content="Bymnet1845" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="format-detection" content="telephone=no, address=no, email=no" />
+<link rel="stylesheet" href="style/popup.css" />
+</head>
+
+<body>
+<h1><img src="image/logo.svg" alt="ニコニコ動画クラシックスタイル"><br/> バージョン1.0（仮）</h1>
+
+<main>
+<p>ページを再読み込みすると、変更した設定が反映されます。</p>
+
+<section>
+	<label for="video-player-size">プレーヤーの大きさ</label>
+
+	<select name="video-player-size">
+	<option value="">可変（ニコニコの仕様通り）</option>
+	<option value="flexible">固定可変</option>
+	<option value="728px">728x410</option>
+	<option value="854px">854x480</option>
+	<option value="1280px">1280x720</option>
+	<option value="1600px">1600x900</option>
+	<option value="1920px">1920x1080</option>
+	</select>
+</section>
+
+<section>
+	<label for="icon-type">アイコンの形状</label>
+
+	<select name="icon-type">
+	<option value="">丸（ニコニコの仕様通り）</option>
+	<option value="square">四角（少し角丸）</option>
+	</select>
+</section>
+</main>
+
+<footer>
+<small>&copy; 2024 Bymnet1845</small>
+</footer>
+
+<script src="script/popup.js"></script>
+</body>
+</html>

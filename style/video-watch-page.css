@@ -1,0 +1,139 @@
+@charset "UTF-8";
+
+[aria-label=nicovideo-content] {
+	padding-top: 24px;
+	
+	/* グリッドレイアウト */
+	> .d_grid {
+		grid-template-areas: "meta meta" "player sidebar" "bottom sidebar" ". sidebar";
+		--niconico-classic-player-height: calc(var(--watch-player-height) + var(--watch-actionbar-height) + var(--watch-player-actionbar-gap-height));
+		--watch-player-max-width: 1920px !important;
+	}
+
+	/* ヘッダー */
+	.grid-area_\[meta\] {
+		/* タイトル */
+		> .justify_space-between { flex-wrap: wrap; row-gap: 16px; }
+		div:has(> h1.fs_xl) { width: calc(100% - 464px); }
+		h1.fs_xl { font-size: 200%; }
+		/* div:has(> time) { display: none; } */
+		
+		/* 投稿者情報 */ 
+		.w_\[268px\] {
+			width: 440px;
+			[data-scope="avatar"] { width: 56px; height: 56px; }
+		}
+		
+		/* 詳細情報 */
+		> section > .d_flex {
+			.d_flex:has(> .grid-template-areas_\[_\"icon_title\"_\"\._data\"_\]) {
+				gap: 8px;
+				.grid-template-areas_\[_\"icon_title\"_\"\._data\"_\] { grid-template-areas: "icon title data"; }
+				
+				.niconico-classic_additional-link { 
+					height: 24px; display: flex; gap: 8px; align-items: center; font-weight: bold;
+					svg { width: 24px; }
+					&.pedia svg { background: var(--colors-icon-video-description); fill: #FFFFFF; border-radius: 50%; }
+					&.commons svg { fill: var(--colors-icon-video-description); }
+					span { font-size: var(--font-sizes-s); 	color: var(--colors-text-on-layer-lower-em); }
+					a { color: var(--colors-text-on-layer-accent-azure); }
+				}
+			}
+			
+			> div:has(a[href*="/user/"]) {
+				align-items: center;
+				
+				> .d_flex {
+					padding: 0; line-height: 40px; flex-direction: row; flex-grow: 0; overflow: hidden; white-space: nowrap;
+					> a {text-overflow: ellipsis; }
+				}
+			}
+		}
+		
+		/* タグ一覧 */
+		> div.flex-wrap_wrap { order: 2; }
+	}
+
+	/* プレーヤー */
+	.grid-area_\[player\] {
+		.rounded_m:has(video) { border-radius: 0; }
+		
+		/* コントローラー */
+		.max-h_watchController\.height {
+			border-radius: 0 0 var(--radii-m) var(--radii-m); overflow: hidden;
+		}
+		
+		/* アクションバー */
+		.h_watchActionbar\.height {
+			gap: 24px;
+		}
+	}
+	
+	/* ボトム */
+	.grid-area_\[bottom\] {
+	}
+	
+	/* サイドバー */
+	.grid-area_\[sidebar\] {
+	}
+}
+
+/* 全画面化対策 */
+body:not(:has(.grid-area_\[player\] > .w_\[100dvw\].h_\[100dvh\])) {
+	.grid-area_\[player\] {
+		.rounded_m:has(video) { background: none; }
+	}
+	
+	.grid-area_\[sidebar\] {
+		position: relative;
+		
+		div[data-watch-floating-panel] {
+			top: 0 !important; left: 0 !important; position: absolute !important;
+			section { max-height: var(--niconico-classic-player-height) !important; }
+		}
+	}
+}
+
+/* プレーヤーサイズ変更 */
+body.niconico-classic_player-size-is-fixed {
+	&.niconico-classic_player-width-is-1920px { --niconico-classic-player-width: 1920px; }
+	&.niconico-classic_player-width-is-1600px { --niconico-classic-player-width: 1600px; }
+	&.niconico-classic_player-width-is-1280px { --niconico-classic-player-width: 1280px; }
+	&.niconico-classic_player-width-is-960px { --niconico-classic-player-width: 960px; }
+	&.niconico-classic_player-width-is-854px { --niconico-classic-player-width: 854px; }
+	&.niconico-classic_player-width-is-728px { --niconico-classic-player-width: 728px; }
+
+	&.niconico-classic_player-width-is-flexible {
+		--niconico-classic-player-width: 728px;
+		@media (width >= 1394px) and (height >= 720px) { --niconico-classic-player-width: 854px; }
+		@media (width >= 1499px) and (height >= 780px) { --niconico-classic-player-width: 960px; }
+		@media (width >= 1820px) and (height >= 960px) { --niconico-classic-player-width: 1280px; }
+		@media (width >= 2140px) and (height >= 1140px) { --niconico-classic-player-width: 1600px; }
+		@media (width >= 2460px) and (height >= 1320px) { --niconico-classic-player-width: 1920px; }
+		/* +540px / +240px */
+	}
+
+	[aria-label=nicovideo-content] > .d_grid { --watch-player-max-width: var(--niconico-classic-player-width) !important; --watch-player-min-width: var(--niconico-classic-player-width) !important; }
+}
+
+/* アイコン形状変更 */
+body.niconico-classic_icon-is-square {
+	.rounded_full[data-scope="avatar"] {
+		border-radius: var(--radii-m);
+		&.ml_-x1_5 { margin-left: 0; }
+	}
+}
+
+/* コメント増量対応 */
+#allcommentsetting {
+	height: var(--niconico-classic-player-height) !important; margin-bottom: var(--spacing-x2); border-radius: var(--radii-m); z-index: 1 !important; overflow: hidden;
+}
+
+/* nico downloader対応 */
+#Dlink {
+	button {
+		width: auto !important; height: auto !important; padding: 12px 16px; border-radius: var(--radii-m); overflow: hidden; text-align: justify;
+		br { display: none; }
+		a { margin-left: 8px; }
+	}
+}
