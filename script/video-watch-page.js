@@ -14,7 +14,7 @@ chrome.storage.local.get("iconType", (content) => {
 	}
 });
 
-setInterval(function () {
+setInterval(() => {
 	if (document.querySelector("meta\[property=\"og:url\"\]") != undefined) {
 		if (niconicoClassicVideoId !== document.querySelector("meta\[property=\"og:url\"\]").content.match(/[a-z]{2}\d+/)[0]) {
 			niconicoClassicVideoId = document.querySelector("meta\[property=\"og:url\"\]").content.match(/[a-z]{2}\d+/)[0];
