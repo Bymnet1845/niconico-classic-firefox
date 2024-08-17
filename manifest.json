@@ -2,7 +2,7 @@
 	"manifest_version": 3,
 	"name": "ニコニコ動画クラシックスタイル",
 	"description": "「帰ってきたニコニコ」の動画視聴ページをリニューアル前風に。機能を若干追加したりもしています。",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"permissions": ["storage"],
 
 	"icons": {
