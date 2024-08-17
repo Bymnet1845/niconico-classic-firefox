@@ -1,16 +1,8 @@
-console.log("ニコニコ動画クラシックスタイル バージョン1.0（仮）\n© 2024 Bymnet1845 <https://www.haraheri5ro.com/>");
-
 let niconicoClassicVideoId = document.querySelector("meta\[property=\"og:url\"\]").content.match(/[a-z]{2}\d+/)[0];
 
 chrome.storage.local.get("videoPlayerSize", (content) => {
 	if (content.videoPlayerSize !== undefined && content.videoPlayerSize !== "") {
 		document.body.classList.add("niconico-classic_player-size-is-fixed", "niconico-classic_player-width-is-" + content.videoPlayerSize);
-	}
-});
-
-chrome.storage.local.get("iconType", (content) => {
-	if (content.iconType !== undefined && content.iconType !== "") {
-		document.body.classList.add("niconico-classic_icon-is-" + content.iconType);
 	}
 });
 
