@@ -60,7 +60,7 @@
 		
 		/* コントローラー */
 		.max-h_watchController\.height {
-			border-radius: 0 0 var(--radii-m) var(--radii-m); overflow: hidden;
+			border-radius: 0 0 var(--radii-m) var(--radii-m);
 		}
 		
 		/* アクションバー */
