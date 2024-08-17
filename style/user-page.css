@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+body{
+	&.niconico-classic_timeline-thumbnail-height-is-108px {
+		.TimelineVideoThumbnail, .TimelineItem-contentThumbnailImage.Thumbnail { width: 192px; height: 108px; }
+		.TimelineItemSkeleton-contentCard, .TimelineMaskedItem-contentThumbnail { height: 108px; }
+	}
+
+	&.niconico-classic_icon-is-square {
+		.UserIcon,
+		.UserIcon-image,
+		.TimelineActorFilterButton-actorIcon.Thumbnail,
+		.TimelineItem-senderIcon.Thumbnail,
+		.BxJ3LC2iPe01cd9SOKog .hkl5B_XjfV3XpGBkwFt6,
+		.content-area > .program-provider-card > .information > .thumbnail-image,
+		.NC-OwnerIcon {
+			border-radius: 8px !important;
+		}
+	}
+}
