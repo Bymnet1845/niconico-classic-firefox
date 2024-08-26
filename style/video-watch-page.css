@@ -29,15 +29,6 @@
 			.d_flex:has(> .grid-template-areas_\[_\"icon_title\"_\"\._data\"_\]) {
 				gap: 16px;
 				a[href*="agreement"] { margin: 0; }
-				
-				.niconico-classic_additional-link { 
-					display: grid; grid-template-areas: "icon title" ". data"; grid-template-columns: max-content auto; align-items: center; gap: 8px; align-items: center; font-weight: bold;
-					svg { width: 24px; grid-area: icon; }
-					&.pedia svg { background: var(--colors-icon-video-description); fill: #FFFFFF; border-radius: 50%; }
-					&.commons svg { fill: var(--colors-icon-video-description); }
-					span { font-size: var(--font-sizes-s); grid-area: title; color: var(--colors-text-on-layer-lower-em); }
-					a { grid-area: data; color: var(--colors-text-on-layer-accent-azure); }
-				}
 			}
 			
 			> div:has(a[href*="/user/"]) {

@@ -11,16 +11,16 @@ setInterval(() => {
 		if (niconicoClassicVideoId !== document.querySelector("meta\[property=\"og:url\"\]").content.match(/[a-z]{2}\d+/)[0]) {
 			niconicoClassicVideoId = document.querySelector("meta\[property=\"og:url\"\]").content.match(/[a-z]{2}\d+/)[0];
 
-			if (document.querySelector(".grid-area_\\[meta\\] .d_flex:has(> .grid-template-areas_\\[_\\\"icon_title\\\"_\\\"\\._data\\\"_\\])") != undefined) {
+			/* if (document.querySelector(".grid-area_\\[meta\\] .d_flex:has(> .grid-template-areas_\\[_\\\"icon_title\\\"_\\\"\\._data\\\"_\\])") != undefined) {
 				document.querySelectorAll(".niconico-classic_additional-link").forEach((link) => { link.remove(); });
 				niconicoClassicAdjustmentVideoMetaInformaiton();
-			}
+			} */
 		}
 	}
 
-	if (document.querySelector(".grid-area_\\[meta\\] .d_flex:has(> .grid-template-areas_\\[_\\\"icon_title\\\"_\\\"\\._data\\\"_\\])") != undefined && document.querySelector(".niconico-classic_additional-link") == undefined) {
+	/* if (document.querySelector(".grid-area_\\[meta\\] .d_flex:has(> .grid-template-areas_\\[_\\\"icon_title\\\"_\\\"\\._data\\\"_\\])") != undefined && document.querySelector(".niconico-classic_additional-link") == undefined) {
 		niconicoClassicAdjustmentVideoMetaInformaiton();
-	}
+	} */
 }, 100);
 
 function niconicoClassicAdjustmentVideoMetaInformaiton() {
