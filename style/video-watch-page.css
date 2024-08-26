@@ -28,12 +28,21 @@
 		> section > .d_flex {
 			.d_flex:has(> .grid-template-areas_\[_\"icon_title\"_\"\._data\"_\]) {
 				gap: 16px;
+
 				> .d_grid {
 					align-items: baseline; gap: 4px 8px;
 					.grid-area_icon { align-self: flex-start; }
 					.grid-area_title { line-height: 24px; }
 					&:not(:has(a[href*="agreement"])) { grid-template-areas: "icon title data"; grid-template-columns: max-content max-content auto; }
 					a[href*="agreement"] { margin: 0; }
+				}
+				
+				.niconico-classic_additional-link {
+					display: flex; gap: 8px; font-weight: bold; line-height: 24px;
+					svg { width: 24px; fill: var(--colors-icon-video-description); }
+					&.pedia svg { background: var(--colors-icon-video-description); fill: #FFFFFF; border-radius: 50%; }
+					span { font-size: var(--font-sizes-s); color: var(--colors-text-on-layer-lower-em); }
+					a { color: var(--colors-text-on-layer-accent-azure); }
 				}
 			}
 			
