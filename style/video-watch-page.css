@@ -57,6 +57,7 @@
 	/* プレーヤー */
 	.grid-area_\[player\] {
 		.rounded_m:has(video) { border-radius: 0; }
+		.aspect_16\:9 .pos_absolute.pointer-events_none.select_none:has(svg):not(:has(button)) { display: none; }
 		
 		/* コントローラー */
 		.max-h_watchController\.height {
