@@ -31,9 +31,9 @@
 
 				> .d_grid {
 					align-items: baseline; gap: 4px 8px;
+					&:has(a.grid-area_data) { grid-template-areas: "icon title data"; grid-template-columns: max-content max-content auto; }
 					.grid-area_icon { align-self: flex-start; }
 					.grid-area_title { line-height: 24px; }
-					&:not(:has(a[href*="agreement"])) { grid-template-areas: "icon title data"; grid-template-columns: max-content max-content auto; }
 					a[href*="agreement"] { margin: 0; }
 				}
 				
@@ -51,7 +51,9 @@
 				
 				> .d_flex {
 					padding: 0; line-height: 40px; flex-direction: row; flex-grow: 0; overflow: hidden; white-space: nowrap;
-					> a {text-overflow: ellipsis; }
+					.gap_x4 { gap: 16px; }
+					.d_flex:has(> a[href*="ch.nicovideo.jp"]) { gap: 4px; }
+					> a { text-overflow: ellipsis; }
 				}
 			}
 		}
