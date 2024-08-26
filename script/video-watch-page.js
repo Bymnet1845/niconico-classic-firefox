@@ -20,7 +20,7 @@ const NICONICO_CLASSIC_VIDEO_ID_GETTING_MUTATION_OBSERVER = new MutationObserver
 	}
 });
 
-const NICONICO_CLASSIC_BODY_ELEMENT_MUTATION_OBSERVER = new MutationObserver(() => {
+const NICONICO_CLASSIC_VIDEO_META_ADDITIONAL_LINKS_INSERTION_MUTATION_OBSERVER = new MutationObserver(() => {
 	if (document.querySelector(".grid-area_\\[meta\\] .d_flex:has(> .grid-template-areas_\\[_\\\"icon_title\\\"_\\\"\\._data\\\"_\\])") !== null && document.querySelector(".niconico-classic_additional-link") === null) {
 		niconicoClassicAdjustmentVideoMetaInformaiton();
 	}
