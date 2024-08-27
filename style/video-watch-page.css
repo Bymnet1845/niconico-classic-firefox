@@ -94,7 +94,7 @@ body:not(:has(.grid-area_\[player\] > .w_\[100dvw\].h_\[100dvh\])) {
 	}
 	
 	.grid-area_\[sidebar\] {
-		div[data-watch-floating-panel] {
+		div[data-nvpc-scope="watch-floating-panel"] {
 			top: 0 !important; left: 0 !important; position: relative !important;
 			section { width: 100%; max-height: var(--niconico-classic-player-height) !important; position: absolute; z-index: 9999; }
 		}
