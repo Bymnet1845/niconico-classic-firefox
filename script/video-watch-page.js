@@ -1,8 +1,14 @@
 let niconicoClassicVideoId = document.querySelector("meta\[property=\"og:url\"\]").content.match(/[a-z]{2}\d+/)[0];
 
 chrome.storage.local.get("videoPlayerSize", (content) => {
-	if (content.videoPlayerSize !== undefined && content.videoPlayerSize !== "") {
+	if (content.videoPlayerSize !== undefined && content.videoPlayerSize !== "" && content.videoPlayerSize !== "variable") {
 		document.body.classList.add("niconico-classic_video-player-size-is-fixed", "niconico-classic_video-player-width-is-" + content.videoPlayerSize);
+	}
+});
+
+chrome.storage.local.get("videoPlayerOverlayIcon", (content) => {
+	if (content.videoPlayerOverlayIcon !== undefined && content.videoPlayerOverlayIcon === "") {
+		document.body.classList.add("niconico-classic_video-player-overlar-icon-is-" + content.videoPlayerOverlayIcon);
 	}
 });
 

@@ -65,7 +65,6 @@
 	/* プレーヤー */
 	.grid-area_\[player\] {
 		.rounded_m:has(video) { border-radius: 0; }
-		.aspect_16\:9 .pos_absolute.pointer-events_none.select_none:has(svg):not(:has(button)) { display: none; }
 		
 		/* コントローラー */
 		.max-h_watchController\.height {
@@ -129,6 +128,11 @@ body.niconico-classic_icon-is-square {
 		border-radius: var(--radii-m);
 		&.ml_-x1_5 { margin-left: 0; }
 	}
+}
+
+/* オーバーレイアイコン非表示化 */
+body.niconico-classic_video-player-overlay-icon-is-hidden {
+	.aspect_16\:9 .pos_absolute.pointer-events_none.select_none:has(svg):not(:has(button)) { display: none; }
 }
 
 /* コメント増量対応 */
