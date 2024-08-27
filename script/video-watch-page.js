@@ -2,7 +2,7 @@ let niconicoClassicVideoId = document.querySelector("meta\[property=\"og:url\"\]
 
 chrome.storage.local.get("videoPlayerSize", (content) => {
 	if (content.videoPlayerSize !== undefined && content.videoPlayerSize !== "") {
-		document.body.classList.add("niconico-classic_player-size-is-fixed", "niconico-classic_player-width-is-" + content.videoPlayerSize);
+		document.body.classList.add("niconico-classic_video-player-size-is-fixed", "niconico-classic_video-player-width-is-" + content.videoPlayerSize);
 	}
 });
 

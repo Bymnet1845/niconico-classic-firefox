@@ -6,7 +6,7 @@
 	/* グリッドレイアウト */
 	> .d_grid {
 		grid-template-areas: "meta meta" "player sidebar" "bottom sidebar" ". sidebar";
-		--niconico-classic-player-height: calc(var(--watch-player-height) + var(--watch-actionbar-height) + var(--watch-player-actionbar-gap-height));
+		--niconico-classic-video-player-height: calc(var(--watch-player-height) + var(--watch-actionbar-height) + var(--watch-player-actionbar-gap-height));
 		--watch-player-max-width: 1920px !important;
 	}
 
@@ -96,31 +96,31 @@ body:not(:has(.grid-area_\[player\] > .w_\[100dvw\].h_\[100dvh\])) {
 	.grid-area_\[sidebar\] {
 		div[data-nvpc-scope="watch-floating-panel"] {
 			top: 0 !important; left: 0 !important; position: relative !important;
-			section { width: 100%; max-height: var(--niconico-classic-player-height) !important; position: absolute; z-index: 9999; }
+			section { width: 100%; max-height: var(--niconico-classic-video-player-height) !important; position: absolute; z-index: 9999; }
 		}
 	}
 }
 
 /* プレーヤーサイズ変更 */
-body.niconico-classic_player-size-is-fixed {
-	&.niconico-classic_player-width-is-1920px { --niconico-classic-player-width: 1920px; }
-	&.niconico-classic_player-width-is-1600px { --niconico-classic-player-width: 1600px; }
-	&.niconico-classic_player-width-is-1280px { --niconico-classic-player-width: 1280px; }
-	&.niconico-classic_player-width-is-960px { --niconico-classic-player-width: 960px; }
-	&.niconico-classic_player-width-is-854px { --niconico-classic-player-width: 854px; }
-	&.niconico-classic_player-width-is-728px { --niconico-classic-player-width: 728px; }
+body.niconico-classic_video-player-size-is-fixed {
+	&.niconico-classic_video-player-width-is-1920px { --niconico-classic-video-player-width: 1920px; }
+	&.niconico-classic_video-player-width-is-1600px { --niconico-classic-video-player-width: 1600px; }
+	&.niconico-classic_video-player-width-is-1280px { --niconico-classic-video-player-width: 1280px; }
+	&.niconico-classic_video-player-width-is-960px { --niconico-classic-video-player-width: 960px; }
+	&.niconico-classic_video-player-width-is-854px { --niconico-classic-video-player-width: 854px; }
+	&.niconico-classic_video-player-width-is-728px { --niconico-classic-video-player-width: 728px; }
 
-	&.niconico-classic_player-width-is-flexible {
-		--niconico-classic-player-width: 728px;
-		@media (width >= 1394px) and (height >= 720px) { --niconico-classic-player-width: 854px; }
-		@media (width >= 1499px) and (height >= 780px) { --niconico-classic-player-width: 960px; }
-		@media (width >= 1820px) and (height >= 960px) { --niconico-classic-player-width: 1280px; }
-		@media (width >= 2140px) and (height >= 1140px) { --niconico-classic-player-width: 1600px; }
-		@media (width >= 2460px) and (height >= 1320px) { --niconico-classic-player-width: 1920px; }
+	&.niconico-classic_video-player-width-is-flexible {
+		--niconico-classic-video-player-width: 728px;
+		@media (width >= 1394px) and (height >= 720px) { --niconico-classic-video-player-width: 854px; }
+		@media (width >= 1499px) and (height >= 780px) { --niconico-classic-video-player-width: 960px; }
+		@media (width >= 1820px) and (height >= 960px) { --niconico-classic-video-player-width: 1280px; }
+		@media (width >= 2140px) and (height >= 1140px) { --niconico-classic-video-player-width: 1600px; }
+		@media (width >= 2460px) and (height >= 1320px) { --niconico-classic-video-player-width: 1920px; }
 		/* +540px / +240px */
 	}
 
-	[aria-label=nicovideo-content] > .d_grid { --watch-player-max-width: var(--niconico-classic-player-width) !important; --watch-player-min-width: var(--niconico-classic-player-width) !important; }
+	[aria-label=nicovideo-content] > .d_grid { --watch-player-max-width: var(--niconico-classic-video-player-width) !important; --watch-player-min-width: var(--niconico-classic-video-player-width) !important; }
 }
 
 /* アイコン形状変更 */
@@ -133,7 +133,7 @@ body.niconico-classic_icon-is-square {
 
 /* コメント増量対応 */
 #allcommentsetting {
-	height: var(--niconico-classic-player-height) !important; margin-bottom: var(--spacing-x2); border-radius: var(--radii-m); z-index: 1 !important; overflow: hidden;
+	height: var(--niconico-classic-video-player-height) !important; margin-bottom: var(--spacing-x2); border-radius: var(--radii-m); z-index: 1 !important; overflow: hidden;
 }
 
 /* nico downloader対応 */
