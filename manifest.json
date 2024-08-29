@@ -36,7 +36,7 @@
 			"css": ["style/live-common.css"],
 			"run_at": "document_end"
 		}, {
-			"matches": ["https://live.nicovideo.jp/", "https://live.nicovideo.jp/?*", "https://live.nicovideo.jp/recent", "https://live.nicovideo.jp/recent?*"],
+			"matches": ["https://live.nicovideo.jp/", "https://live.nicovideo.jp/?*", "https://live.nicovideo.jp/focus", "https://live.nicovideo.jp/focus?*", "https://live.nicovideo.jp/recent", "https://live.nicovideo.jp/recent?*"],
 			"css": ["style/live-top-page.css"],
 			"run_at": "document_end"
 		}, {
