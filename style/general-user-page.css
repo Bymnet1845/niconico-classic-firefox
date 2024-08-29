@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 body{
-	&.niconico-classic_timeline-thumbnail-height-is-108px {
+	&.niconico-classic_timeline-thumbnail-size-is-medium {
 		.TimelineVideoThumbnail, .TimelineItem-contentThumbnailImage.Thumbnail { width: 192px; height: 108px; }
 		.TimelineItemSkeleton-contentCard, .TimelineMaskedItem-contentThumbnail { height: 108px; }
 	}
