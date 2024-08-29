@@ -1,0 +1,6 @@
+@charset "UTF-8";
+
+.AuroraVisionCard-uploaderIcon.Thumbnail,
+.ContentsPickupCard-footerUploaderIcon.Thumbnail {
+	border-radius: 8px !important;
+}

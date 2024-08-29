@@ -19,6 +19,10 @@
 			"css": ["style/common.css"],
 			"run_at": "document_end"
 		}, {
+			"matches": ["https://www.nicovideo.jp/", "https://www.nicovideo.jp/?*"],
+			"css": ["style/general-top-page.css"],
+			"run_at": "document_end"
+		}, {
 			"matches": ["https://www.nicovideo.jp/my", "https://www.nicovideo.jp/my?*", "https://www.nicovideo.jp/my/*", "https://www.nicovideo.jp/user/*"],
 			"css": ["style/user-page.css"],
 			"run_at": "document_end"
