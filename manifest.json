@@ -43,6 +43,10 @@
 			"matches": ["https://live.nicovideo.jp/embed/watch-histories"],
 			"css": ["style/live-history-page.css"],
 			"run_at": "document_end"
+		}, {
+			"matches": ["https://live.nicovideo.jp/watch/*"],
+			"css": ["style/live-watch-page.css"],
+			"run_at": "document_end"
 		}
 	],
 
