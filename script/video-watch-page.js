@@ -47,7 +47,7 @@ function niconicoClassicGetVideoID() {
 	if (document.querySelector("meta\[property=\"og:url\"\]") !== null) {
 		if (niconicoClassicVideoId !== document.querySelector("meta\[property=\"og:url\"\]").content.match(/[a-z]{2}\d+/)[0]) {
 			niconicoClassicVideoId = document.querySelector("meta\[property=\"og:url\"\]").content.match(/[a-z]{2}\d+/)[0];
-			document.querySelectorAll("#niconico-classic_additional-link-list").forEach((link) => { link.remove(); });
+			document.querySelectorAll(".niconico-classic_additional-link").forEach((link) => { link.remove(); });
 			niconicoClassicVideoAutoPlaybackIsCanceled = false;
 			niconicoClassicAdjustmentVideoMetaInformaiton();
 		}
