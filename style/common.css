@@ -1,6 +1,8 @@
 @charset "UTF-8";
 
-.nico-CommonHeaderRoot .common-header-ws8uen,
-.nico-CommonHeaderRoot .common-header-1h5huqo {
-	border-radius: 8px !important;
+body.niconico-classic_icon-is-square {
+	.nico-CommonHeaderRoot .common-header-ws8uen,
+	.nico-CommonHeaderRoot .common-header-1h5huqo {
+		border-radius: 8px !important;
+	}
 }

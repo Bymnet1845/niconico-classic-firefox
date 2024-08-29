@@ -1,6 +1,8 @@
 @charset "UTF-8";
 
-.AuroraVisionCard-uploaderIcon.Thumbnail,
-.ContentsPickupCard-footerUploaderIcon.Thumbnail {
-	border-radius: 8px !important;
+body.niconico-classic_icon-is-square {
+	.AuroraVisionCard-uploaderIcon.Thumbnail,
+	.ContentsPickupCard-footerUploaderIcon.Thumbnail {
+		border-radius: 8px !important;
+	}
 }
