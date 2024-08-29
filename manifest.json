@@ -16,6 +16,7 @@
 		{
 			"matches": ["https://www.nicovideo.jp/*", "https://live.nicovideo.jp/*"],
 			"js": ["script/common.js"],
+			"css": ["style/common.css"],
 			"run_at": "document_end"
 		}, {
 			"matches": ["https://www.nicovideo.jp/my", "https://www.nicovideo.jp/my?*", "https://www.nicovideo.jp/my/*", "https://www.nicovideo.jp/user/*"],
