@@ -5,6 +5,7 @@
 }
 
 body.niconico-classic_icon-is-square {
+	.nico-CommonHeaderRoot .common-header-1hpqfmt,
 	.nico-CommonHeaderRoot .common-header-ws8uen,
 	.nico-CommonHeaderRoot .common-header-1h5huqo {
 		border-radius: var(--niconico-classic-square-icon-border-rasius) !important;
