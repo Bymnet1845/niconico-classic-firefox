@@ -14,7 +14,7 @@
 
 	"content_scripts": [
 		{
-			"matches": ["https://www.nicovideo.jp/*"],
+			"matches": ["https://www.nicovideo.jp/*", "https://live.nicovideo.jp/*"],
 			"js": ["script/common.js"],
 			"run_at": "document_end"
 		}, {
@@ -25,6 +25,10 @@
 			"matches": ["https://www.nicovideo.jp/watch/*"],
 			"css": ["style/video-watch-page.css"],
 			"js": ["script/video-watch-page.js"],
+			"run_at": "document_end"
+		}, {
+			"matches": ["https://live.nicovideo.jp/embed/watch-histories"],
+			"css": ["style/live-history-page.css"],
 			"run_at": "document_end"
 		}
 	],
