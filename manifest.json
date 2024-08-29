@@ -18,6 +18,10 @@
 			"js": ["script/common.js"],
 			"run_at": "document_end"
 		}, {
+			"matches": ["https://www.nicovideo.jp/my", "https://www.nicovideo.jp/my?*", "https://www.nicovideo.jp/my/", "https://www.nicovideo.jp/user/*"],
+			"css": ["style/user-page.css"],
+			"run_at": "document_end"
+		}, {
 			"matches": ["https://www.nicovideo.jp/watch/*"],
 			"css": ["style/video-watch-page.css"],
 			"js": ["script/video-watch-page.js"],
