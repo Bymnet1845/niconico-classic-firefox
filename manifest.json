@@ -32,6 +32,10 @@
 			"js": ["script/video-watch-page.js"],
 			"run_at": "document_end"
 		}, {
+			"matches": ["https://live.nicovideo.jp/", "https://live.nicovideo.jp/?*", "https://live.nicovideo.jp/recent", "https://live.nicovideo.jp/recent?*"],
+			"css": ["style/live-top-page.css"],
+			"run_at": "document_end"
+		}, {
 			"matches": ["https://live.nicovideo.jp/embed/watch-histories"],
 			"css": ["style/live-history-page.css"],
 			"run_at": "document_end"
