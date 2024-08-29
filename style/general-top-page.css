@@ -3,6 +3,6 @@
 body.niconico-classic_icon-is-square {
 	.AuroraVisionCard-uploaderIcon.Thumbnail,
 	.ContentsPickupCard-footerUploaderIcon.Thumbnail {
-		border-radius: 8px !important;
+		border-radius: var(--niconico-classic-square-icon-border-rasius) !important;
 	}
 }

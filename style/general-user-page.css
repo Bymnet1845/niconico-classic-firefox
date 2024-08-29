@@ -9,10 +9,13 @@ body{
 	&.niconico-classic_icon-is-square {
 		.UserIcon,
 		.UserIcon-image,
-		.TimelineActorFilterButton-actorIcon.Thumbnail,
-		.TimelineItem-senderIcon.Thumbnail,
 		.BxJ3LC2iPe01cd9SOKog .hkl5B_XjfV3XpGBkwFt6,
 		.NC-OwnerIcon {
+			border-radius: var(--niconico-classic-square-icon-border-rasius) !important;
+		}
+		
+		.TimelineActorFilterButton-actorIcon.Thumbnail,
+		.TimelineItem-senderIcon.Thumbnail {
 			border-radius: 8px !important;
 		}
 	}

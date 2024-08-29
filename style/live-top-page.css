@@ -6,6 +6,6 @@ body.niconico-classic_icon-is-square {
 	.nicoad-frame > .content-area > .content-area > .program-information-area > .program-provider-card > .information > .thumbnail-image > .resource, 
 	.nicoad-frame > .content-area > .content-area > .nicoad-statistics-section > header > .heading > .nicoad-provider-summary > .thumbnail-area > .user-thumbnail,
 	.___user-konomi-tag-list-section___QALx0 > header > .user-thumbnail-image {
-		border-radius: 8px !important;
+		border-radius: var(--niconico-classic-square-icon-border-rasius) !important;
 	}
 }

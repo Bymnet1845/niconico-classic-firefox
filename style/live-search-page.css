@@ -2,6 +2,6 @@
 
 body.niconico-classic_icon-is-square {
 	.___program-card-provider-icon___dL3JJ {
-		border-radius: 8px !important;
+		border-radius: var(--niconico-classic-square-icon-border-rasius) !important;
 	}
 }

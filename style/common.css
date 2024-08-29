@@ -1,8 +1,12 @@
 @charset "UTF-8";
 
+:root {
+	--niconico-classic-square-icon-border-rasius: 4px;
+}
+
 body.niconico-classic_icon-is-square {
 	.nico-CommonHeaderRoot .common-header-ws8uen,
 	.nico-CommonHeaderRoot .common-header-1h5huqo {
-		border-radius: 8px !important;
+		border-radius: var(--niconico-classic-square-icon-border-rasius) !important;
 	}
 }
