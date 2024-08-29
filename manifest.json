@@ -44,6 +44,10 @@
 			"css": ["style/live-history-page.css"],
 			"run_at": "document_end"
 		}, {
+			"matches": ["https://live.nicovideo.jp/search", "https://live.nicovideo.jp/search?*"],
+			"css": ["style/live-search-page.css"],
+			"run_at": "document_end"
+		}, {
 			"matches": ["https://live.nicovideo.jp/watch/*"],
 			"css": ["style/live-watch-page.css"],
 			"run_at": "document_end"
