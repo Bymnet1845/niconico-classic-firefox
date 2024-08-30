@@ -9,6 +9,7 @@ const OPTIONS = [
 OPTIONS.forEach((property) => {
 	chrome.storage.local.get(property[0], (content) => {
 		if (content[property[0]] !== undefined) {
+			document.querySelector("select[name=\"" + property[1] + "\"] option[selected]").removeAttribute("selected");
 			document.querySelector("select[name=\"" + property[1] + "\"] option[value=\"" + content[property[0]] + "\"]").setAttribute("selected", "");
 		}
 	});
