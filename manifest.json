@@ -71,6 +71,9 @@
 		}, {
 			"matches": ["https://point.nicovideo.jp/*"],
 			"css": ["style/point-common.css"]
+		}, {
+			"matches": ["https://www.upload.nicovideo.jp/*"],
+			"css": ["style/garage-common.css"]
 		}
 	],
 
