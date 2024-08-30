@@ -3,6 +3,7 @@
 body.niconico-classic_icon-is-square {
 	.___program-provider-icon____8OxE,
 	.___message___CTaZB .provider-thumbnail,
+	.___resource___JOnmi,
 	.___user-summary___QFY1e > .thumbnail-area > .user-thumbnail {
 		border-radius: var(--niconico-classic-square-icon-border-rasius) !important;
 	}
