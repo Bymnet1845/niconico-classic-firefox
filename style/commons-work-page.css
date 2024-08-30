@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+body.niconico-classic_icon-is-square {
+	.p-works .subInfoArea .userName .userIcon, 
+	.p-works .materialComment .commentList .commentContents .surfaceArea .commentInfo .useIcon,
+	.p-worksAgreement__contents .targetMaterial__card .summary .userInfo .userIcon,
+	.c-childrenContents .childrenContentsUserArea .childrenContentsUserIcon > img,
+	.p-treeWorksFull .worksFullCard .contentArea .contentFootArea .ownerInfoArea .ownerIcon {
+		border-radius: var(--niconico-classic-square-icon-border-rasius) !important;
+	}
+}

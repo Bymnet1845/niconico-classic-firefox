@@ -1,8 +1,8 @@
 {
 	"manifest_version": 3,
-	"name": "ニコニコ動画クラシックスタイル",
-	"description": "「帰ってきたニコニコ」の動画視聴ページをリニューアル前風に。機能を若干追加したりもしています。",
-	"version": "1.0.3",
+	"name": "ニコニコクラシックスタイル",
+	"description": "ニコニコの使い勝手を「帰ってきたニコニコ」になる前みたいな感じにしたりするブラウザー拡張機能。",
+	"version": "1.1.0",
 	"permissions": ["storage"],
 
 	"browser_specific_settings": {
@@ -20,19 +20,76 @@
 
 	"content_scripts": [
 		{
-			"matches": ["https://www.nicovideo.jp/*"],
+			"matches": ["https://*.nicovideo.jp/*"],
+			"css": ["style/common.css"],
 			"js": ["script/common.js"],
 			"run_at": "document_end"
+		}, {
+			"matches": ["https://www.nicovideo.jp/", "https://www.nicovideo.jp/?*"],
+			"css": ["style/general-top-page.css"]
+		}, {
+			"matches": ["https://www.nicovideo.jp/my", "https://www.nicovideo.jp/my?*", "https://www.nicovideo.jp/my/*", "https://www.nicovideo.jp/user/*"],
+			"js": ["script/general-user-page.js"],
+			"css": ["style/general-user-page.css"],
+			"run_at": "document_end"
+		}, {
+			"matches": ["https://inform.nicovideo.jp/oshirase/list", "https://inform.nicovideo.jp/oshirase/list?*", "https://inform.nicovideo.jp/oshirase/list/*"],
+			"css": ["style/general-oshirase-page.css"]
+		}, {
+			"matches": ["https://subs.nicovideo.jp/my/subscriptions", "https://subs.nicovideo.jp/my/subscriptions?*"],
+			"css": ["style/general-subscription-page.css"]
 		}, {
 			"matches": ["https://www.nicovideo.jp/watch/*"],
 			"css": ["style/video-watch-page.css"],
 			"js": ["script/video-watch-page.js"],
 			"run_at": "document_end"
+		}, {
+			"matches": ["https://www.nicovideo.jp/series/*"],
+			"css": ["style/video-series-page.css"]
+		}, {
+			"matches": ["https://live.nicovideo.jp/*"],
+			"css": ["style/live-common.css"]
+		}, {
+			"matches": ["https://live.nicovideo.jp/", "https://live.nicovideo.jp/?*", "https://live.nicovideo.jp/focus", "https://live.nicovideo.jp/focus?*", "https://live.nicovideo.jp/recent", "https://live.nicovideo.jp/recent?*"],
+			"css": ["style/live-top-page.css"]
+		}, {
+			"matches": ["https://live.nicovideo.jp/embed/watch-histories"],
+			"css": ["style/live-history-page.css"]
+		}, {
+			"matches": ["https://live.nicovideo.jp/search", "https://live.nicovideo.jp/search?*"],
+			"css": ["style/live-search-page.css"]
+		}, {
+			"matches": ["https://live.nicovideo.jp/watch/*"],
+			"css": ["style/live-watch-page.css"]
+		}, {
+			"matches": ["https://koken.nicovideo.jp/*"],
+			"css": ["style/koken-common.css"]
+		}, {
+			"matches": ["https://nicoad.nicovideo.jp/*"],
+			"css": ["style/uad-common.css"]
+		}, {
+			"matches": ["https://commons.nicovideo.jp/works/*"],
+			"css": ["style/commons-work-page.css"]
+		}, {
+			"matches": ["https://3d.nicovideo.jp/works/*"],
+			"css": ["style/solid-work-page.css"]
+		}, {
+			"matches": ["https://creator-support.nicovideo.jp/tool/*"],
+			"css": ["style/creator-support-tool-page.css"]
+		}, {
+			"matches": ["https://creator-support.nicovideo.jp/registration/*"],
+			"css": ["style/creator-support-registration-page.css"]
+		}, {
+			"matches": ["https://point.nicovideo.jp/*"],
+			"css": ["style/point-common.css"]
+		}, {
+			"matches": ["https://www.upload.nicovideo.jp/*"],
+			"css": ["style/garage-common.css"]
 		}
 	],
 
 	"action" :{
-		"default_title": "ニコニコ動画クラシックスタイル",
+		"default_title": "ニコニコクラシックスタイル",
 		"default_popup": "popup.html"
 	}
 }

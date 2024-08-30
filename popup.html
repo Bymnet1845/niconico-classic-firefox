@@ -2,8 +2,8 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8" />
-<title>ニコニコ動画クラシックスタイル</title>
-<meta name="description" content="「帰ってきたニコニコ」の動画視聴ページをリニューアル前風に。若干機能を追加したりもしています。" />
+<title>ニコニコクラシックスタイル</title>
+<meta name="description" content="ニコニコの使い勝手を「帰ってきたニコニコ」になる前みたいな感じにしたりするブラウザー拡張機能。" />
 <meta name="author" content="Bymnet1845" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="format-detection" content="telephone=no, address=no, email=no" />
@@ -11,45 +11,89 @@
 </head>
 
 <body>
-<h1><img src="image/logo.svg" alt="ニコニコ動画クラシックスタイル"><br/> Mozilla Firefox向け バージョン1.0.3（仮）</h1>
+<header>
+<h1><img class="icon" src="image/icon_128.png" alt="" /><img class="logo" src="image/logo.svg" alt="ニコニコクラシックスタイル（β）" /></h1>
+<span>バージョン1.1.0</span>
+</header>
 
-<main>
-<p>ページを再読み込みすると、変更した設定が反映されます。</p>
+<!-- ul id="category-list">
+<li><button type="button" class="is-current-selection" data-category="common">共通</button></li>
+<li><button type="button" data-category="timeline">タイムライン</button></li>
+<li><button type="button" data-category="video-watch">動画視聴</button></li>
+</ul -->
 
-<section>
-	<label for="video-player-size">動画プレーヤーの大きさ</label>
+<main id="panels">
+<section class="panel is-current-selection" data-category="common">
+	<h2>共通</h2>
 
-	<select name="video-player-size">
-	<option value="variable">可変（ニコニコの仕様通り）</option>
-	<option value="flexible">固定可変</option>
-	<option value="728px">728x410</option>
-	<option value="854px">854x480</option>
-	<option value="1280px">1280x720</option>
-	<option value="1600px">1600x900</option>
-	<option value="1920px">1920x1080</option>
-	</select>
+	<section class="property">
+		<label for="icon-type">プロフィールアイコンの形状</label>
+
+		<select name="icon-type">
+		<option value="circle">丸（ニコニコ標準）</option>
+		<option value="square" selected>四角（少し角丸）</option>
+		</select>
+	</section>
 </section>
 
-<section>
-	<label for="video-player-overlay-icon">動画プレーヤー操作時のオーバーレイアイコン</label>
+<section class="panel" data-category="timeline">
+	<h2>マイページ／ユーザーページ</h2>
 
-	<select name="video-player-overlay-icon">
-	<option value="shown">非表示</option>
-	<option value="hidden">表示（ニコニコの仕様通り）</option>
-	</select>
+	<section class="property">
+		<label for="timeline-thumbnail-size">新着タイムラインのサムネイルの大きさ</label>
+
+		<select name="timeline-thumbnail-size">
+		<option value="large">大（ニコニコ標準）</option>
+		<option value="medium" selected>中</option>
+		</select>
+	</section>
 </section>
 
-<section>
-	<label for="icon-type">アイコンの形状</label>
+<section class="panel" data-category="video-watch">
+	<h2>動画視聴ページ</h2>
 
-	<select name="icon-type">
-	<option value="circle">丸（ニコニコの仕様通り）</option>
-	<option value="square">四角（少し角丸）</option>
-	</select>
+	<section class="property">
+		<label for="video-auto-playback">自動再生</label>
+
+		<select name="video-auto-playback">
+		<option value="true">有効（ニコニコ標準）</option>
+		<option value="false" selected>無効</option>
+		</select>
+	</section>
+	
+	<section class="property">
+		<label for="video-player-size">映像の大きさ</label>
+
+		<select name="video-player-size">
+		<option value="variable" selected>可変（ニコニコ標準）</option>
+		<option value="flexible">固定可変</option>
+		<option value="728px">728x410</option>
+		<option value="854px">854x480</option>
+		<option value="1280px">1280x720</option>
+		<option value="1600px">1600x900</option>
+		<option value="1920px">1920x1080</option>
+		</select>
+	</section>
+
+	<section class="property">
+		<label for="video-player-overlay-icon">プレーヤー操作時のオーバーレイアイコン</label>
+
+		<select name="video-player-overlay-icon">
+		<option value="shown">表示（ニコニコ標準）</option>
+		<option value="hidden" selected>非表示</option>
+		</select>
+	</section>
 </section>
 </main>
 
+<p id="attention">ページを再読み込みすると、変更した設定が反映されます。</p>
+
 <footer>
+<ul>
+<li><a href="https://github.com/Bymnet1845/niconico-classic" target="_blank">GitHub</a></li>
+<li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdEOwTC1dRmUNpD1GHRuIfscbpgUxbhYoOCbuj3432NONKg0w/viewform" target="_blank">問い合わせ（要望／不具合報告）</a></li>
+</ul>
+
 <small>&copy; 2024 Bymnet1845</small>
 </footer>
 

@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+body.niconico-classic_icon-is-square {
+	.wrapper[data-v-57557a72],
+	.thumbnail-image[data-v-4cdbfc28],
+	.thumbnail[data-v-540b8940],
+	.user-thumbnail[data-v-c827515c],
+	.thumbnail[data-v-9a44e044],
+	.user-thumbnail[data-v-9a44e044],
+	.thumbnail[data-v-9a44e044]:before {
+		border-radius: 0;
+	}
+}
