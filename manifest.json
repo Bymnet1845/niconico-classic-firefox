@@ -23,7 +23,9 @@
 			"css": ["style/general-top-page.css"]
 		}, {
 			"matches": ["https://www.nicovideo.jp/my", "https://www.nicovideo.jp/my?*", "https://www.nicovideo.jp/my/*", "https://www.nicovideo.jp/user/*"],
-			"css": ["style/general-user-page.css"]
+			"js": ["script/general-user-page.js"],
+			"css": ["style/general-user-page.css"],
+			"run_at": "document_end"
 		}, {
 			"matches": ["https://inform.nicovideo.jp/oshirase/list", "https://inform.nicovideo.jp/oshirase/list?*", "https://inform.nicovideo.jp/oshirase/list/*"],
 			"css": ["style/general-oshirase-page.css"]
