@@ -36,6 +36,9 @@
 			"js": ["script/video-watch-page.js"],
 			"run_at": "document_end"
 		}, {
+			"matches": ["https://www.nicovideo.jp/series/*"],
+			"css": ["style/video-series-page.css"]
+		}, {
 			"matches": ["https://live.nicovideo.jp/*"],
 			"css": ["style/live-common.css"]
 		}, {
