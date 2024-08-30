@@ -24,6 +24,8 @@ Chromium系のGoogle Chromeの拡張機能を利用出来るブラウザーで�
 
 ## インストール方法
 
+Google Chromeでのインストール方法です。Microsoft Edgeでも、殆ど同様の方法でインストールが可能だと思います。
+
 1. [リリースページ](https://github.com/Bymnet1845/niconico-classic/releases)から、該当するバージョンの「Source code (zip)」を選択して、ZIPファイルをダウンロードする。
 2. ダウンロードしたZIPファイルを展開する。
 3. ブラウザーで、拡張機能の管理ページ（`chrome://extensions`）を開く。
