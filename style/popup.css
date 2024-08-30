@@ -34,13 +34,17 @@ header {
 
 #panels {
 	height: 256px; background: #EEEEEE; overflow-y: auto;
-	.panel { padding: 16px; display: none; }
-	.panel.is-current-selection { display: block; }
+	/* .panel { padding: 16px; display: none; }
+	.panel.is-current-selection { display: block; } */
+	
+	.panel {
+		margin: 16px;
+		h2 { margin-bottom: 8px; padding-bottom: 2px; border-bottom: 2px solid #252525; font-weight: bold; }
+	}
 
 	.property {
 		display: flex; justify-content: space-between; align-items: center;
-		+ .property { margin-top: 12px; }
-		label { font-weight: bold; }
+		+ .property { margin-top: 8px; }
 		select { padding: 4px 8px; border: 1px solid #CCCCCC; background: #FFFFFF; border-radius: 8px; }
 	}
 }

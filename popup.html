@@ -16,14 +16,16 @@
 <span>バージョン1.1.0（β）</span>
 </header>
 
-<ul id="category-list">
+<!-- ul id="category-list">
 <li><button type="button" class="is-current-selection" data-category="common">共通</button></li>
 <li><button type="button" data-category="timeline">タイムライン</button></li>
 <li><button type="button" data-category="video-watch">動画視聴</button></li>
-</ul>
+</ul -->
 
 <main id="panels">
 <section class="panel is-current-selection" data-category="common">
+	<h2>共通</h2>
+
 	<section class="property">
 		<label for="icon-type">プロフィールアイコンの形状</label>
 
@@ -35,6 +37,8 @@
 </section>
 
 <section class="panel" data-category="timeline">
+	<h2>マイページ／ユーザーページ</h2>
+
 	<section class="property">
 		<label for="timeline-thumbnail-size">サムネイル画像の大きさ</label>
 
@@ -46,6 +50,17 @@
 </section>
 
 <section class="panel" data-category="video-watch">
+	<h2>動画視聴ページ</h2>
+
+	<section class="property">
+		<label for="video-auto-playback">自動再生</label>
+
+		<select name="video-auto-playback">
+		<option value="false">無効</option>
+		<option value="true">有効（ニコニコ標準）</option>
+		</select>
+	</section>
+	
 	<section class="property">
 		<label for="video-player-size">プレーヤーの大きさ</label>
 
@@ -66,15 +81,6 @@
 		<select name="video-player-overlay-icon">
 		<option value="shown">非表示</option>
 		<option value="hidden">表示（ニコニコ標準）</option>
-		</select>
-	</section>
-
-	<section class="property">
-		<label for="video-auto-playback">自動再生</label>
-
-		<select name="video-auto-playback">
-		<option value="false">無効</option>
-		<option value="true">有効（ニコニコ標準）</option>
 		</select>
 	</section>
 </section>

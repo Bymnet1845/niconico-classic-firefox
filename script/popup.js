@@ -36,11 +36,11 @@ document.querySelector("select[name=\"icon-type\"]").addEventListener("change", 
 	chrome.storage.local.set({ iconType: document.querySelector("select[name=\"icon-type\"]").value });
 });
 
-document.querySelectorAll("#category-list button").forEach((element) => {
+/* document.querySelectorAll("#category-list button").forEach((element) => {
 	element.addEventListener("click", () => {
 		document.querySelector("#category-list button.is-current-selection").classList.remove("is-current-selection");
 		element.classList.add("is-current-selection");
 		document.querySelector(".panel.is-current-selection").classList.remove("is-current-selection");
 		document.querySelector(".panel\[data-category=\"" + element.getAttribute("data-category") + "\"\]").classList.add("is-current-selection");
 	});
-});
+}); */
