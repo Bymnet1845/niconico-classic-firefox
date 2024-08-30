@@ -68,6 +68,9 @@
 		}, {
 			"matches": ["https://creator-support.nicovideo.jp/registration/*"],
 			"css": ["style/creator-support-registration-page.css"]
+		}, {
+			"matches": ["https://point.nicovideo.jp/*"],
+			"css": ["style/point-common.css"]
 		}
 	],
 
