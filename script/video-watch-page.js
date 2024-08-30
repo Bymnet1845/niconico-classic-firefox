@@ -14,7 +14,7 @@ chrome.storage.local.get("videoPlayerSize", (content) => {
 });
 
 chrome.storage.local.get("videoPlayerOverlayIcon", (content) => {
-	if (content.videoPlayerOverlayIcon !== "shown") document.body.classList.add("niconico-classic_video-player-overlar-icon-is-hidden");
+	if (content.videoPlayerOverlayIcon !== "shown") document.body.classList.add("niconico-classic_video-player-overlay-icon-is-hidden");
 });
 
 chrome.storage.local.get("videoAutoPlayback", (content) => {
