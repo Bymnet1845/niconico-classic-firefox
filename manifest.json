@@ -15,21 +15,18 @@
 	"content_scripts": [
 		{
 			"matches": ["https://*.nicovideo.jp/*"],
-			"js": ["script/common.js"],
 			"css": ["style/common.css"],
+			"js": ["script/common.js"],
 			"run_at": "document_end"
 		}, {
 			"matches": ["https://www.nicovideo.jp/", "https://www.nicovideo.jp/?*"],
-			"css": ["style/general-top-page.css"],
-			"run_at": "document_end"
+			"css": ["style/general-top-page.css"]
 		}, {
 			"matches": ["https://www.nicovideo.jp/my", "https://www.nicovideo.jp/my?*", "https://www.nicovideo.jp/my/*", "https://www.nicovideo.jp/user/*"],
-			"css": ["style/general-user-page.css"],
-			"run_at": "document_end"
+			"css": ["style/general-user-page.css"]
 		}, {
 			"matches": ["https://inform.nicovideo.jp/oshirase/list", "https://inform.nicovideo.jp/oshirase/list?*", "https://inform.nicovideo.jp/oshirase/list/*"],
-			"css": ["style/general-oshirase-page.css"],
-			"run_at": "document_end"
+			"css": ["style/general-oshirase-page.css"]
 		}, {
 			"matches": ["https://www.nicovideo.jp/watch/*"],
 			"css": ["style/video-watch-page.css"],
@@ -37,24 +34,19 @@
 			"run_at": "document_end"
 		}, {
 			"matches": ["https://live.nicovideo.jp/*"],
-			"css": ["style/live-common.css"],
-			"run_at": "document_end"
+			"css": ["style/live-common.css"]
 		}, {
 			"matches": ["https://live.nicovideo.jp/", "https://live.nicovideo.jp/?*", "https://live.nicovideo.jp/focus", "https://live.nicovideo.jp/focus?*", "https://live.nicovideo.jp/recent", "https://live.nicovideo.jp/recent?*"],
-			"css": ["style/live-top-page.css"],
-			"run_at": "document_end"
+			"css": ["style/live-top-page.css"]
 		}, {
 			"matches": ["https://live.nicovideo.jp/embed/watch-histories"],
-			"css": ["style/live-history-page.css"],
-			"run_at": "document_end"
+			"css": ["style/live-history-page.css"]
 		}, {
 			"matches": ["https://live.nicovideo.jp/search", "https://live.nicovideo.jp/search?*"],
-			"css": ["style/live-search-page.css"],
-			"run_at": "document_end"
+			"css": ["style/live-search-page.css"]
 		}, {
 			"matches": ["https://live.nicovideo.jp/watch/*"],
-			"css": ["style/live-watch-page.css"],
-			"run_at": "document_end"
+			"css": ["style/live-watch-page.css"]
 		}, {
 			"matches": ["https://3d.nicovideo.jp/works/*"],
 			"css": ["style/solid-work-page.css"]
