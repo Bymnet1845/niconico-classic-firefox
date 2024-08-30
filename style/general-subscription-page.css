@@ -1,0 +1,7 @@
+@charset "UTF-8";
+
+body.niconico-classic_icon-is-square {
+	.css-1m7sdmd {
+		border-radius: var(--niconico-classic-square-icon-border-rasius) !important;
+	}
+}

@@ -28,6 +28,9 @@
 			"matches": ["https://inform.nicovideo.jp/oshirase/list", "https://inform.nicovideo.jp/oshirase/list?*", "https://inform.nicovideo.jp/oshirase/list/*"],
 			"css": ["style/general-oshirase-page.css"]
 		}, {
+			"matches": ["https://subs.nicovideo.jp/my/subscriptions", "https://subs.nicovideo.jp/my/subscriptions?*"],
+			"css": ["style/general-subscription-page.css"]
+		}, {
 			"matches": ["https://www.nicovideo.jp/watch/*"],
 			"css": ["style/video-watch-page.css"],
 			"js": ["script/video-watch-page.js"],
