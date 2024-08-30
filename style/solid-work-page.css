@@ -1,0 +1,8 @@
+@charset "UTF-8";
+
+body.niconico-classic_icon-is-square {
+	 .work-author .work-author-thumbnail,
+	 .css-192so1e {
+		border-radius: 0 !important;
+	 }
+}

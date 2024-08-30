@@ -55,6 +55,9 @@
 			"matches": ["https://live.nicovideo.jp/watch/*"],
 			"css": ["style/live-watch-page.css"],
 			"run_at": "document_end"
+		}, {
+			"matches": ["https://3d.nicovideo.jp/works/*"],
+			"css": ["style/solid-work-page.css"]
 		}
 	],
 
