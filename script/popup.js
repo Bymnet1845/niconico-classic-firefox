@@ -1,29 +1,17 @@
-chrome.storage.local.get("videoPlayerSize", (content) => {
-	if (content.videoPlayerSize !== undefined && content.videoPlayerSize !== "") {
-		document.querySelector("select[name=\"video-player-size\"] option[value=\"" + content.videoPlayerSize + "\"]").setAttribute("selected", "");
-	}
-});
+const OPTIONS = [
+	[ "iconType", "icon-type" ],
+	[ "timelineThumbnailSize", "timeline-thumbnail-size" ],
+	[ "videoAutoPlayback", "video-auto-playback"],
+	[ "videoPlayerSize", "video-player-size"],
+	[ "videoPlayerOverlayIcon", "video-player-overlay-icon"]
+];
 
-chrome.storage.local.get("videoPlayerOverlayIcon", (content) => {
-	if (content.videoPlayerOverlayIcon !== undefined && content.videoPlayerOverlayIcon !== "") {
-		document.querySelector("select[name=\"video-player-overlay-icon\"] option[value=\"" + content.videoPlayerOverlayIcon + "\"]").setAttribute("selected", "");
-	}
-});
-
-chrome.storage.local.get("videoAutoPlayback", (content) => {
-	if (content.videoAutoPlayback !== undefined) document.querySelector("select[name=\"video-auto-playback\"] option[value=\"" + content.videoAutoPlayback + "\"]").setAttribute("selected", "");
-});
-
-chrome.storage.local.get("iconType", (content) => {
-	if (content.iconType !== undefined && content.iconType !== "") {
-		document.querySelector("select[name=\"icon-type\"] option[value=\"" + content.iconType + "\"]").setAttribute("selected", "");
-	}
-});
-
-chrome.storage.local.get("timelineThumbnailSize", (content) => {
-	if (content.timelineThumbnailSize !== undefined && content.timelineThumbnailSize !== "") {
-		document.querySelector("select[name=\"timeline-thumbnail-size\"] option[value=\"" + content.timelineThumbnailSize + "\"]").setAttribute("selected", "");
-	}
+OPTIONS.forEach((property) => {
+	chrome.storage.local.get(property[0], (content) => {
+		if (content[property[0]] !== undefined) {
+			document.querySelector("select[name=\"" + property[1] + "\"] option[value=\"" + content[property[0]] + "\"]").setAttribute("selected", "");
+		}
+	});
 });
 
 document.querySelector("select[name=\"video-player-size\"]").addEventListener("change", () => {
