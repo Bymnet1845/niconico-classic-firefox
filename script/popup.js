@@ -20,6 +20,12 @@ chrome.storage.local.get("iconType", (content) => {
 	}
 });
 
+chrome.storage.local.get("timelineThumbnailSize", (content) => {
+	if (content.timelineThumbnailSize !== undefined && content.timelineThumbnailSize !== "") {
+		document.querySelector("select[name=\"timeline-thumbnail-size\"] option[value=\"" + content.timelineThumbnailSize + "\"]").setAttribute("selected", "");
+	}
+});
+
 document.querySelector("select[name=\"video-player-size\"]").addEventListener("change", () => {
 	chrome.storage.local.set({ videoPlayerSize: document.querySelector("select[name=\"video-player-size\"]").value });
 });
@@ -34,6 +40,10 @@ document.querySelector("select[name=\"video-auto-playback\"]").addEventListener(
 
 document.querySelector("select[name=\"icon-type\"]").addEventListener("change", () => {
 	chrome.storage.local.set({ iconType: document.querySelector("select[name=\"icon-type\"]").value });
+});
+
+document.querySelector("select[name=\"timeline-thumbnail-size\"]").addEventListener("change", () => {
+	chrome.storage.local.set({ timelineThumbnailSize: document.querySelector("select[name=\"timeline-thumbnail-size\"]").value });
 });
 
 /* document.querySelectorAll("#category-list button").forEach((element) => {
