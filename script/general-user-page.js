@@ -1,5 +1,3 @@
 chrome.storage.local.get("timelineThumbnailSize", (content) => {
-	if (content.timelineThumbnailSize !== undefined) {
-		document.body.classList.add("niconico-classic_timeline-thumbnail-size-is-" + content.timelineThumbnailSize);
-	}
+	if (content.timelineThumbnailSize !== "large") document.body.classList.add("niconico-classic_timeline-thumbnail-size-is-medium");
 });

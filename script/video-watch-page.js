@@ -10,19 +10,15 @@ let niconicoClassicVideoAutoPlayback = true;
 let niconicoClassicVideoAutoPlaybackIsCanceled = false;
 
 chrome.storage.local.get("videoPlayerSize", (content) => {
-	if (content.videoPlayerSize !== undefined && content.videoPlayerSize !== "" && content.videoPlayerSize !== "variable") {
-		document.body.classList.add("niconico-classic_video-player-size-is-fixed", "niconico-classic_video-player-width-is-" + content.videoPlayerSize);
-	}
+	if (content.videoPlayerSize !== undefined && content.videoPlayerSize !== "" && content.videoPlayerSize !== "variable") document.body.classList.add("niconico-classic_video-player-size-is-fixed", "niconico-classic_video-player-width-is-" + content.videoPlayerSize);
 });
 
 chrome.storage.local.get("videoPlayerOverlayIcon", (content) => {
-	if (content.videoPlayerOverlayIcon !== undefined && content.videoPlayerOverlayIcon === "") {
-		document.body.classList.add("niconico-classic_video-player-overlar-icon-is-" + content.videoPlayerOverlayIcon);
-	}
+	if (content.videoPlayerOverlayIcon !== "shown") document.body.classList.add("niconico-classic_video-player-overlar-icon-is-hidden");
 });
 
 chrome.storage.local.get("videoAutoPlayback", (content) => {
-	if (content.videoAutoPlayback === undefined || content.videoAutoPlayback === "false") niconicoClassicVideoAutoPlayback = false;
+	if (content.videoAutoPlayback !== "true") niconicoClassicVideoAutoPlayback = false;
 });
 
 setInterval(() => {
