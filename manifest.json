@@ -1,6 +1,6 @@
 {
 	"manifest_version": 3,
-	"name": "ニコニコ動画クラシックスタイル",
+	"name": "ニコニコクラシックスタイル",
 	"description": "「帰ってきたニコニコ」の動画視聴ページをリニューアル前風に。機能を若干追加したりもしています。",
 	"version": "1.0.3",
 	"permissions": ["storage"],
@@ -83,7 +83,7 @@
 	],
 
 	"action" :{
-		"default_title": "ニコニコ動画クラシックスタイル",
+		"default_title": "ニコニコクラシックスタイル",
 		"default_popup": "popup.html"
 	}
 }
