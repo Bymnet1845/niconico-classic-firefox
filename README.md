@@ -1,10 +1,10 @@
-![ニコニコクラシックスタイル（β）](/image/logo.png)
+![ニコニコクラシックスタイル（β）](/image/readme/logo.png)
 
 ニコニコの使い勝手を「帰ってきたニコニコ」になる前みたいな感じにしたりする、Google Chrome／Microsoft Edge向けのブラウザー拡張機能です。
 
 Chromium系のGoogle Chromeの拡張機能を利用出来るブラウザーであれば、多分動くと思います。又、[Mozilla Firefox版](https://github.com/Bymnet1845/niconico-classic-firefox)も在ります。
 
-![](/image/preview_1.png)
+![](/image/readme/preview_1.png)
 
 
 ## 主な機能
