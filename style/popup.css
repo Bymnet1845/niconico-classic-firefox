@@ -9,7 +9,7 @@
 	outline: none;
 }
 
-body { width: 480px; font-family: "游ゴシック", "Yu Gothic", "游ゴシック体", YuGothic, "ＭＳ ゴシック", "MS Gothic", Helvetica, Arial, Roboto, sans-serif; font-size: 12px; font-feature-settings: "palt"; line-height: 1.5; color: #252525; }
+body { width: 432px; font-family: "游ゴシック", "Yu Gothic", "游ゴシック体", YuGothic, "ＭＳ ゴシック", "MS Gothic", Helvetica, Arial, Roboto, sans-serif; font-size: 12px; font-feature-settings: "palt"; line-height: 1.5; color: #252525; }
 ul, ol { padding: 0; list-style: none; }
 a { color: #000099; text-decoration: underline; }
 a:hover { text-decoration: none; }
@@ -19,7 +19,7 @@ header {
 	padding: 16px; background: #252525; display: flex; align-items: center; gap: 8px; color: #FFFFFF;
 	
 	h1 {
-		margin-bottom: 4px; display: flex; align-items: center; gap: 4px;
+		display: flex; align-items: center; gap: 4px;
 		img { vertical-align: top; }
 		.icon { height: 32px; }
 		.logo { height: 24px; }
