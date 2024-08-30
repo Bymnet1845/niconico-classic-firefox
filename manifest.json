@@ -59,6 +59,12 @@
 		}, {
 			"matches": ["https://3d.nicovideo.jp/works/*"],
 			"css": ["style/solid-work-page.css"]
+		}, {
+			"matches": ["https://creator-support.nicovideo.jp/tool/*"],
+			"css": ["style/creator-support-tool-page.css"]
+		}, {
+			"matches": ["https://creator-support.nicovideo.jp/registration/*"],
+			"css": ["style/creator-support-registration-page.css"]
 		}
 	],
 
