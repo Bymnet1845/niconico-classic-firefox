@@ -51,6 +51,9 @@
 			"matches": ["https://koken.nicovideo.jp/*"],
 			"css": ["style/koken-common.css"]
 		}, {
+			"matches": ["https://nicoad.nicovideo.jp/*"],
+			"css": ["style/uad-common.css"]
+		}, {
 			"matches": ["https://commons.nicovideo.jp/works/*"],
 			"css": ["style/commons-work-page.css"]
 		}, {
