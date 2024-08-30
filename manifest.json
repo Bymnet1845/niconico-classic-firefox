@@ -48,6 +48,9 @@
 			"matches": ["https://live.nicovideo.jp/watch/*"],
 			"css": ["style/live-watch-page.css"]
 		}, {
+			"matches": ["https://commons.nicovideo.jp/works/*"],
+			"css": ["style/commons-work-page.css"]
+		}, {
 			"matches": ["https://3d.nicovideo.jp/works/*"],
 			"css": ["style/solid-work-page.css"]
 		}
