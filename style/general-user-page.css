@@ -2,8 +2,7 @@
 
 body{
 	&.niconico-classic_timeline-thumbnail-size-is-medium {
-		.TimelineVideoThumbnail, .TimelineItem-contentThumbnailImage.Thumbnail { width: 192px; height: 108px; }
-		.TimelineItemSkeleton-contentCard, .TimelineMaskedItem-contentThumbnail { height: 108px; }
+		.TimelineVideoThumbnail, .TimelineItem-contentThumbnailImage.Thumbnail, .TimelineItemSkeleton-contentCard, .TimelineMaskedItem-contentThumbnail { width: 192px; height: 108px; }
 	}
 
 	&.niconico-classic_icon-is-square {
