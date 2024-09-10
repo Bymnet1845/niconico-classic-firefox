@@ -14,7 +14,8 @@ body{
 		}
 		
 		.TimelineActorFilterButton-actorIcon.Thumbnail,
-		.TimelineItem-senderIcon.Thumbnail {
+		.TimelineItem-senderIcon.Thumbnail,
+		.TimelineMaskedItem-senderIcon {
 			border-radius: 8px !important;
 		}
 	}
