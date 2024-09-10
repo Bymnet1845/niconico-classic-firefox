@@ -13,7 +13,7 @@
 	/* ヘッダー */
 	.grid-area_\[meta\] {
 		/* タイトル */
-		> .justify_space-between { flex-wrap: wrap; row-gap: 16px; }
+		> .jc_space-between { flex-wrap: wrap; row-gap: 16px; }
 		div:has(> h1.fs_xl) { width: calc(100% - 464px); }
 		h1.fs_xl { font-size: 200%; }
 		/* div:has(> time) { display: none; } */
@@ -64,11 +64,11 @@
 
 	/* プレーヤー */
 	.grid-area_\[player\] {
-		.rounded_m:has(video) { border-radius: 0; }
+		.bdr_m:has(video) { border-radius: 0; background: none !important; }
 		
 		/* コントローラー */
 		.max-h_watchController\.height {
-			border-radius: 0 0 var(--radii-m) var(--radii-m);
+			border-radius: 0 0 8px 8px;
 		}
 		
 		/* アクションバー */
@@ -124,7 +124,7 @@ body.niconico-classic_video-player-size-is-fixed {
 
 /* アイコン形状変更 */
 body.niconico-classic_icon-is-square {
-	.rounded_full[data-scope="avatar"] {
+	.bdr_full[data-scope="avatar"] {
 		border-radius: var(--radii-m);
 		&.ml_-x1_5 { margin-left: 0; }
 	}
