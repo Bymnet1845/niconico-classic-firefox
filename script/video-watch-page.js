@@ -32,6 +32,11 @@ setInterval(() => {
 }, 10);
 
 const NICONICO_CLASSIC_VIDEO_PAGE_MUTATION_OBSERVER = new MutationObserver(() => {
+	if (document.querySelector(`a[data-anchor-area='web_header'][href='/video_top']`) !== null && document.querySelector("#niconico-classic_hidariue") === null) {
+		const NICONICO_CLASSIC_HIDARIUE_NUMBER = Math.floor(Math.random() * 100).toString().padStart(3, "0");
+		document.querySelector(`a[data-anchor-area='web_header'][href='/video_top']`).insertAdjacentHTML("beforebegin", `<a id="niconico-classic_hidariue" href="/hidariue" target="_blank"><img src="https://resource.video.nimg.jp/web/img/base/head/icon/nico/${NICONICO_CLASSIC_HIDARIUE_NUMBER}.gif" alt="" /></a>`);
+	}
+
 	if (document.querySelector(".grid-area_\\[meta\\] .d_flex:has(> .grid-template-areas_\\[_\\\"icon_title\\\"_\\\"\\._data\\\"_\\])") !== null && document.querySelector(".niconico-classic_additional-link") === null) {
 		niconicoClassicAdjustmentVideoMetaInformaiton();
 	}
@@ -61,6 +66,7 @@ function niconicoClassicGetVideoID() {
 			niconicoClassicAdjustmentVideoMetaInformaiton();
 			if (niconicoClassicVideoTagNicopediaOpenInNewTab) niconicoClassicInsertVideoTagNicopediaButtons();
 			niconicoClassicAddScrollEventToVideoOwnerMenuButton();
+			niconicoClassicChangeHidariueImage();
 		}
 	}
 
@@ -92,14 +98,21 @@ function niconicoClassicInsertVideoTagNicopediaButtons() {
 function niconicoClassicAddScrollEventToVideoOwnerMenuButton() {
 	const NICONICO_CLASSIC_VIDEO_OWNER_MENU_BUTTON_ELEMENT = document.querySelector(".grid-area_\\[meta\\] .w_\\[var\\(--watch-owner-information-width\\)\\] button\[data-watch-floating-panel\]");
 
-	NICONICO_CLASSIC_VIDEO_OWNER_MENU_BUTTON_ELEMENT.addEventListener("click", () => {
-		window.scrollTo({
-			top: document.querySelector(".grid-area_\\[player\\]").getBoundingClientRect().top + window.pageYOffset - 160,
-			behavior: "smooth"
+	if(NICONICO_CLASSIC_VIDEO_OWNER_MENU_BUTTON_ELEMENT) {
+		NICONICO_CLASSIC_VIDEO_OWNER_MENU_BUTTON_ELEMENT.addEventListener("click", () => {
+			window.scrollTo({
+				top: document.querySelector(".grid-area_\\[player\\]").getBoundingClientRect().top + window.pageYOffset - 160,
+				behavior: "smooth"
+			});
 		});
-	});
 
-	NICONICO_CLASSIC_VIDEO_OWNER_MENU_BUTTON_ELEMENT.setAttribute("data-event-added", "");
+		NICONICO_CLASSIC_VIDEO_OWNER_MENU_BUTTON_ELEMENT.setAttribute("data-event-added", "");
+	}
+}
+
+function niconicoClassicChangeHidariueImage() {
+	const NICONICO_CLASSIC_HIDARIUE_NUMBER = Math.floor(Math.random() * 100).toString().padStart(3, "0");
+	document.querySelector("#niconico-classic_hidariue img").setAttribute("src", "https://resource.video.nimg.jp/web/img/base/head/icon/nico/" + NICONICO_CLASSIC_HIDARIUE_NUMBER + ".gif");
 }
 
 NICONICO_CLASSIC_VIDEO_PAGE_MUTATION_OBSERVER.observe(document.body, { childList: true });
