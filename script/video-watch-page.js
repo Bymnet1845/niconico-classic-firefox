@@ -31,16 +31,14 @@ setInterval(() => {
 	if (!niconicoClassicVideoAutoPlayback) niconicoClassicCancelVideoAutoPlayback();
 }, 10);
 
-const NICONICO_CLASSIC_VIDEO_META_ADDITIONAL_LINKS_INSERTION_MUTATION_OBSERVER = new MutationObserver(() => {
+const NICONICO_CLASSIC_VIDEO_PAGE_MUTATION_OBSERVER = new MutationObserver(() => {
 	if (document.querySelector(".grid-area_\\[meta\\] .d_flex:has(> .grid-template-areas_\\[_\\\"icon_title\\\"_\\\"\\._data\\\"_\\])") !== null && document.querySelector(".niconico-classic_additional-link") === null) {
 		niconicoClassicAdjustmentVideoMetaInformaiton();
 	}
-});
-
-const NICONICO_CLASSIC_VIDEO_TAG_NICOPEDIA_BUTTONS_INSERTION_MUTATION_OBSERVER = new MutationObserver(() => {
+	
 	if (niconicoClassicVideoTagNicopediaOpenInNewTab && document.querySelector(".grid-area_\\[meta\\] > div.flex-wrap_wrap") !== null && document.querySelector(".niconico-classic_tag-nicopedia-button") === null) {
 		niconicoClassicInsertVideoTagNicopediaButtons();
-	} 
+	}
 });
 
 function niconicoClassicAdjustmentVideoMetaInformaiton() {
@@ -84,9 +82,6 @@ function niconicoClassicInsertVideoTagNicopediaButtons() {
 
 		link.remove();
 	});
-
-	niconicoClassicVideoTagNicopediaOpenInNewTab = false;
 }
 
-NICONICO_CLASSIC_VIDEO_META_ADDITIONAL_LINKS_INSERTION_MUTATION_OBSERVER.observe(document.body, { childList: true });
-NICONICO_CLASSIC_VIDEO_TAG_NICOPEDIA_BUTTONS_INSERTION_MUTATION_OBSERVER.observe(document.body, { childList: true });
+NICONICO_CLASSIC_VIDEO_PAGE_MUTATION_OBSERVER.observe(document.body, { childList: true });
