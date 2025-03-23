@@ -102,7 +102,7 @@ body:not(:has(.grid-area_\[player\] > .w_\[100dvw\].h_\[100dvh\])) {
 	.grid-area_\[sidebar\] {
 		div[data-nvpc-scope="watch-floating-panel"] {
 			top: 0 !important; left: 0 !important; position: relative !important;
-			section { width: 100%; max-height: var(--niconico-classic-video-player-height) !important; position: absolute; z-index: 9999; }
+			section { width: 100%; max-height: var(--watch-player-height) !important; position: absolute; z-index: 9999; }
 		}
 	}
 }
@@ -144,7 +144,7 @@ body.niconico-classic_video-player-overlay-icon-is-hidden {
 
 /* コメント増量対応 */
 #allcommentsetting {
-	height: var(--niconico-classic-video-player-height) !important; margin-bottom: var(--spacing-x2); border-radius: var(--radii-m); z-index: 1 !important; overflow: hidden;
+	height: var(--watch-player-height) !important; margin-bottom: var(--spacing-x2); border-radius: var(--radii-m); z-index: 1 !important; overflow: hidden;
 }
 
 /* nico downloader対応 */
