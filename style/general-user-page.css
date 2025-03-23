@@ -3,6 +3,9 @@
 body{
 	&.niconico-classic_timeline-thumbnail-size-is-medium {
 		.TimelineVideoThumbnail, .TimelineItem-contentThumbnailImage.Thumbnail, .TimelineItemSkeleton-contentCard, .TimelineMaskedItem-contentThumbnail { width: 192px; height: 108px; }
+		.TimelineItem-contentDetailLabel { width: 100%; left: 0; top: 0; }
+		.TimelineLabel { height: auto; padding: 6px 8px; border-radius: 4px 0 0 0; transition: 0.25s opacity; line-height: 1.5; line-break: normal; white-space: normal; }
+		.TimelineItem-content:hover .TimelineLabel { opacity: 0; }
 	}
 
 	&.niconico-classic_icon-is-square {
