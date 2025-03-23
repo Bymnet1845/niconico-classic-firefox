@@ -36,7 +36,7 @@
 
 				> .d_grid {
 					align-items: baseline; gap: 4px 8px;
-					&:has(a.grid-area_data) { grid-template-areas: "icon title data"; grid-template-columns: max-content max-content auto; }
+					&.grid-template-areas_\[_\"icon_title\"_\"\._data\"_\] { grid-template-areas: "icon title data"; grid-template-columns: max-content max-content auto; }
 					.grid-area_icon { align-self: flex-start; }
 					.grid-area_title { line-height: 24px; }
 					a[href*="agreement"] { margin: 0; }
