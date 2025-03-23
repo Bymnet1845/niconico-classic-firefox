@@ -19,7 +19,7 @@
 		/* div:has(> time) { display: none; } */
 		
 		/* 投稿者情報 */ 
-		.w_\[268px\] {
+		.w_\[var\(--watch-owner-information-width\)\] {
 			width: 440px;
 			[data-scope="avatar"] { width: 56px; height: 56px; }
 		}
