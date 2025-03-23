@@ -39,6 +39,10 @@ const NICONICO_CLASSIC_VIDEO_PAGE_MUTATION_OBSERVER = new MutationObserver(() =>
 	if (niconicoClassicVideoTagNicopediaOpenInNewTab && document.querySelector(".grid-area_\\[meta\\] > div.flex-wrap_wrap") !== null && document.querySelector(".niconico-classic_tag-nicopedia-button") === null) {
 		niconicoClassicInsertVideoTagNicopediaButtons();
 	}
+
+	if (document.querySelector(".grid-area_\\[meta\\] .w_\\[var\\(--watch-owner-information-width\\)\\] button\[data-watch-floating-panel\]") !== null && document.querySelector(".grid-area_\\[meta\\] .w_\\[var\\(--watch-owner-information-width\\)\\] button\[data-watch-floating-panel\]").getAttribute("data-event-added") === null) {
+		niconicoClassicAddScrollEventToVideoOwnerMenuButton();
+	}
 });
 
 function niconicoClassicAdjustmentVideoMetaInformaiton() {
@@ -56,6 +60,7 @@ function niconicoClassicGetVideoID() {
 			niconicoClassicVideoAutoPlaybackIsCanceled = false;
 			niconicoClassicAdjustmentVideoMetaInformaiton();
 			if (niconicoClassicVideoTagNicopediaOpenInNewTab) niconicoClassicInsertVideoTagNicopediaButtons();
+			niconicoClassicAddScrollEventToVideoOwnerMenuButton();
 		}
 	}
 
@@ -82,6 +87,19 @@ function niconicoClassicInsertVideoTagNicopediaButtons() {
 
 		link.remove();
 	});
+}
+
+function niconicoClassicAddScrollEventToVideoOwnerMenuButton() {
+	const NICONICO_CLASSIC_VIDEO_OWNER_MENU_BUTTON_ELEMENT = document.querySelector(".grid-area_\\[meta\\] .w_\\[var\\(--watch-owner-information-width\\)\\] button\[data-watch-floating-panel\]");
+
+	NICONICO_CLASSIC_VIDEO_OWNER_MENU_BUTTON_ELEMENT.addEventListener("click", () => {
+		window.scrollTo({
+			top: document.querySelector(".grid-area_\\[player\\]").getBoundingClientRect().top + window.pageYOffset - 160,
+			behavior: "smooth"
+		});
+	});
+
+	NICONICO_CLASSIC_VIDEO_OWNER_MENU_BUTTON_ELEMENT.setAttribute("data-event-added", "");
 }
 
 NICONICO_CLASSIC_VIDEO_PAGE_MUTATION_OBSERVER.observe(document.body, { childList: true });
