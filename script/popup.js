@@ -3,7 +3,8 @@ const OPTIONS = [
 	[ "timelineThumbnailSize", "timeline-thumbnail-size" ],
 	[ "videoAutoPlayback", "video-auto-playback"],
 	[ "videoPlayerSize", "video-player-size"],
-	[ "videoPlayerOverlayIcon", "video-player-overlay-icon"]
+	[ "videoPlayerOverlayIcon", "video-player-overlay-icon"],
+	[ "videoTagNicopediaOpenInNewTab", "video-tag-nicopedia-open-in-new-tab"]
 ];
 
 OPTIONS.forEach((property) => {
@@ -33,6 +34,10 @@ document.querySelector("select[name=\"icon-type\"]").addEventListener("change", 
 
 document.querySelector("select[name=\"timeline-thumbnail-size\"]").addEventListener("change", () => {
 	chrome.storage.local.set({ timelineThumbnailSize: document.querySelector("select[name=\"timeline-thumbnail-size\"]").value });
+});
+
+document.querySelector("select[name=\"video-tag-nicopedia-open-in-new-tab\"]").addEventListener("change", () => {
+	chrome.storage.local.set({ videoTagNicopediaOpenInNewTab: document.querySelector("select[name=\"video-tag-nicopedia-open-in-new-tab\"]").value });
 });
 
 /* document.querySelectorAll("#category-list button").forEach((element) => {

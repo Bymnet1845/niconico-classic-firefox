@@ -8,6 +8,7 @@
 let niconicoClassicVideoId = document.querySelector("meta\[property=\"og:url\"\]").content.match(/[a-z]{2}\d+/)[0];
 let niconicoClassicVideoAutoPlayback = true;
 let niconicoClassicVideoAutoPlaybackIsCanceled = false;
+let niconicoClassicVideoTagNicopediaOpenInNewTab = true;
 
 chrome.storage.local.get("videoPlayerSize", (content) => {
 	if (content.videoPlayerSize !== undefined && content.videoPlayerSize !== "" && content.videoPlayerSize !== "variable") document.body.classList.add("niconico-classic_video-player-size-is-fixed", "niconico-classic_video-player-width-is-" + content.videoPlayerSize);
@@ -21,6 +22,10 @@ chrome.storage.local.get("videoAutoPlayback", (content) => {
 	if (content.videoAutoPlayback !== "true") niconicoClassicVideoAutoPlayback = false;
 });
 
+chrome.storage.local.get("videoTagNicopediaOpenInNewTab", (content) => {
+	if (content.videoTagNicopediaOpenInNewTab !== "true") niconicoClassicVideoTagNicopediaOpenInNewTab = false;
+});
+
 setInterval(() => {
 	niconicoClassicGetVideoID();
 	if (!niconicoClassicVideoAutoPlayback) niconicoClassicCancelVideoAutoPlayback();
@@ -30,6 +35,12 @@ const NICONICO_CLASSIC_VIDEO_META_ADDITIONAL_LINKS_INSERTION_MUTATION_OBSERVER =
 	if (document.querySelector(".grid-area_\\[meta\\] .d_flex:has(> .grid-template-areas_\\[_\\\"icon_title\\\"_\\\"\\._data\\\"_\\])") !== null && document.querySelector(".niconico-classic_additional-link") === null) {
 		niconicoClassicAdjustmentVideoMetaInformaiton();
 	}
+});
+
+const NICONICO_CLASSIC_VIDEO_TAG_NICOPEDIA_BUTTONS_INSERTION_MUTATION_OBSERVER = new MutationObserver(() => {
+	if (niconicoClassicVideoTagNicopediaOpenInNewTab && document.querySelector(".grid-area_\\[meta\\] > div.flex-wrap_wrap") !== null && document.querySelector(".niconico-classic_tag-nicopedia-button") === null) {
+		niconicoClassicInsertVideoTagNicopediaButtons();
+	} 
 });
 
 function niconicoClassicAdjustmentVideoMetaInformaiton() {
@@ -46,6 +57,7 @@ function niconicoClassicGetVideoID() {
 			document.querySelectorAll(".niconico-classic_additional-link").forEach((link) => { link.remove(); });
 			niconicoClassicVideoAutoPlaybackIsCanceled = false;
 			niconicoClassicAdjustmentVideoMetaInformaiton();
+			if (niconicoClassicVideoTagNicopediaOpenInNewTab) niconicoClassicInsertVideoTagNicopediaButtons();
 		}
 	}
 
@@ -63,4 +75,18 @@ function niconicoClassicCancelVideoAutoPlayback() {
 	niconicoClassicVideoAutoPlaybackIsCanceled = true;
 }
 
+function niconicoClassicInsertVideoTagNicopediaButtons() {
+	document.querySelectorAll("a[href*='dic.nicovideo.jp/a/']:has(svg)").forEach((link) => {
+		link.insertAdjacentHTML(
+			"afterend",
+			`<button class="niconico-classic_tag-nicopedia-button" type="button" onclick="window.open('${link.getAttribute("href").replace("'", "\\\'")}');">${link.innerHTML}</button>`
+		);
+
+		link.remove();
+	});
+
+	niconicoClassicVideoTagNicopediaOpenInNewTab = false;
+}
+
 NICONICO_CLASSIC_VIDEO_META_ADDITIONAL_LINKS_INSERTION_MUTATION_OBSERVER.observe(document.body, { childList: true });
+NICONICO_CLASSIC_VIDEO_TAG_NICOPEDIA_BUTTONS_INSERTION_MUTATION_OBSERVER.observe(document.body, { childList: true });

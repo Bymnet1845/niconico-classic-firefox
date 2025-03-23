@@ -60,6 +60,8 @@
 		
 		/* タグ一覧 */
 		> div.flex-wrap_wrap { order: 2; }
+		.niconico-classic_tag-nicopedia-button { width: 24px; height: 24px; border-radius: 50%; overflow: hidden; cursor: pointer; }
+		.niconico-classic_tag-nicopedia-button svg { width: 100%; height: 100%; fill: #FFFFFF; }
 	}
 
 	/* プレーヤー */
