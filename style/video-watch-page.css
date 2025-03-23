@@ -134,7 +134,7 @@ body.niconico-classic_icon-is-square {
 
 /* オーバーレイアイコン非表示化 */
 body.niconico-classic_video-player-overlay-icon-is-hidden {
-	.aspect_16\:9 .pos_absolute.pointer-events_none.select_none:has(svg):not(:has(button)) { display: none; }
+	.asp_16\:9 .pos_absolute.pointer-events_none.us_none:has(svg):not(:has(button)) { display: none; }
 }
 
 /* コメント増量対応 */
