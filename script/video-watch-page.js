@@ -23,7 +23,7 @@ chrome.storage.local.get("videoAutoPlayback", (content) => {
 });
 
 chrome.storage.local.get("videoTagNicopediaOpenInNewTab", (content) => {
-	if (content.videoTagNicopediaOpenInNewTab !== "true") niconicoClassicVideoTagNicopediaOpenInNewTab = false;
+	if (content.videoTagNicopediaOpenInNewTab === "false") niconicoClassicVideoTagNicopediaOpenInNewTab = false;
 });
 
 setInterval(() => {
