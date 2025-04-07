@@ -32,11 +32,6 @@ setInterval(() => {
 }, 10);
 
 const NICONICO_CLASSIC_VIDEO_PAGE_MUTATION_OBSERVER = new MutationObserver(() => {
-	if (document.querySelector(`a[data-anchor-area='web_header'][href='/video_top']`) !== null && document.querySelector("#niconico-classic_hidariue") === null) {
-		const NICONICO_CLASSIC_HIDARIUE_NUMBER = Math.floor(Math.random() * 100).toString().padStart(3, "0");
-		document.querySelector(`a[data-anchor-area='web_header'][href='/video_top']`).insertAdjacentHTML("beforebegin", `<a id="niconico-classic_hidariue" href="/hidariue" target="_blank"><img src="https://resource.video.nimg.jp/web/img/base/head/icon/nico/${NICONICO_CLASSIC_HIDARIUE_NUMBER}.gif" alt="" /></a>`);
-	}
-
 	if (document.querySelector(".grid-area_\\[meta\\] .d_flex:has(> .grid-template-areas_\\[_\\\"icon_title\\\"_\\\"\\._data\\\"_\\])") !== null && document.querySelector(".niconico-classic_additional-link") === null) {
 		niconicoClassicAdjustmentVideoMetaInformaiton();
 	}
