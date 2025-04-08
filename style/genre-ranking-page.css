@@ -1,0 +1,3 @@
+@charset "UTF-8";
+
+.w_100\% :has([data-anchor-page="ranking_genre"], [data-decoration-video-id]) .asp_16\:9 { width: 192px; min-width: 0 !important; }
