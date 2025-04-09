@@ -5,6 +5,7 @@
 Chromium系のGoogle Chromeの拡張機能を利用出来るブラウザーであれば、多分動くと思います。又、[Mozilla Firefox版](https://github.com/Bymnet1845/niconico-classic-firefox)も在ります。
 
 ![](./image/readme/preview_1.png)
+![](./image/readme/preview_2.png)
 
 
 ## 主な機能
