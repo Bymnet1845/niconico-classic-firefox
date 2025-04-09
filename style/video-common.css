@@ -42,10 +42,11 @@ body[data-niconico-classic="video-watch"] {
 		
 		.grid-template-areas_\[_\"icon_title\"_\"\._data\"_\] {
 			align-items: baseline; gap: 4px 8px;
-			&:not(:has(a[href*="agreement"])) { grid-template-areas: "icon title data"; grid-template-columns: max-content max-content auto; }
+			&:not(:has(:is(a[href*="agreement"], a[href*="achievement"]))) { grid-template-areas: "icon title data"; grid-template-columns: max-content max-content auto; }
 			.grid-area_icon { align-self: flex-start; }
 			.grid-area_title { line-height: 24px; }
 			a[href*="agreement"] { margin: 0; }
+			.d_flex:has(> .d_flex > a[href*="achievement"]) { gap: 4px; }
 		}
 
 		dl + .d_flex:has(> .grid-template-areas_\[_\"icon_title\"_\"\._data\"_\]) { gap: 16px; }
@@ -58,7 +59,7 @@ body[data-niconico-classic="video-watch"] {
 			a { color: var(--colors-text-on-layer-accent-azure); }
 		}
 
-		> section > .d_flex > div:has(a[href*="/user/"]) {
+		> section > .d_flex > div:has([data-scope="avatar"]) {
 			align-items: center; gap: 16px;
 			
 			> .d_flex {
