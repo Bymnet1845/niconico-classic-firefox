@@ -11,3 +11,8 @@ body.niconico-classic_icon-is-square {
 		border-radius: var(--niconico-classic-square-icon-border-rasius) !important;
 	}
 }
+
+#niconico-classic_hidariue {
+	width: 48px; height: 48px; display: block; margin-left: 12px;
+	img { width: 100%; height: 100%; }
+}
