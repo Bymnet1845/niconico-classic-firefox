@@ -7,7 +7,7 @@ body[data-niconico-classic^="video-ranking"] {
 	}
 
 	&.niconico-classic_video-ranking-thumbnail-size-is-medium {
-		.w_100\% :has([data-anchor-page="ranking_genre"], [data-decoration-video-id]) .asp_16\:9, .w_thumbnail\.l, .max-w_thumbnail\.2xl { width: 192px; min-width: 0 !important; }
+		.w_100\% :is([data-anchor-page="ranking_genre"], [data-decoration-video-id]) .asp_16\:9, .w_thumbnail\.l, .max-w_thumbnail\.2xl { width: 192px; min-width: 0 !important; }
 		.grid-tc_repeat\(5\,1fr\) { grid-template-columns: repeat(5, 216px); }
 		.grid-tc_repeat\(5\,1fr\) > div { display: flex !important; }
 		.grid-tc_\{sizes\.x5\}_1fr_1fr_1fr_1fr_1fr { grid-template-columns: 40px 216px 216px 216px 216px 216px; justify-content: center; }
