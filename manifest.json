@@ -19,6 +19,11 @@
 			"js": ["script/common.js"],
 			"run_at": "document_end"
 		}, {
+			"matches": ["https://www.nicovideo.jp/*"],
+			"css": ["style/video-common.css"],
+			"js": ["script/video-common.js"],
+			"run_at": "document_end"
+		}, {
 			"matches": ["https://www.nicovideo.jp/", "https://www.nicovideo.jp/?*"],
 			"css": ["style/general-top-page.css"]
 		}, {
@@ -32,14 +37,6 @@
 		}, {
 			"matches": ["https://subs.nicovideo.jp/my/subscriptions", "https://subs.nicovideo.jp/my/subscriptions?*"],
 			"css": ["style/general-subscription-page.css"]
-		}, {
-			"matches": ["https://www.nicovideo.jp/ranking/genre/*"],
-			"css": ["style/genre-ranking-page.css"]
-		}, {
-			"matches": ["https://www.nicovideo.jp/watch/*"],
-			"css": ["style/video-watch-page.css"],
-			"js": ["script/video-watch-page.js"],
-			"run_at": "document_end"
 		}, {
 			"matches": ["https://www.nicovideo.jp/series/*"],
 			"css": ["style/video-series-page.css"]
