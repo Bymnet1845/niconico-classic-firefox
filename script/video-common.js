@@ -1,3 +1,10 @@
+/*
+ * The video auto playback canceling feature is based on "niconico-autoplay-canceler", licensed under the MIT license.
+ * Copyright (c) 2024 DNEK
+ * Source code: https://github.com/dnek/nicovideo-autoplay-canceler
+ * Lisence document: https://opensource.org/license/mit
+ */
+
 let niconicoClassicCurrentUri, niconicoClassicPreviousUri, niconicoClassicPageType;
 let niconicoClassicVideoId, niconicoClassicVideoAutoPlayback = true, niconicoClassicVideoAutoPlaybackIsCanceled = false;
 
