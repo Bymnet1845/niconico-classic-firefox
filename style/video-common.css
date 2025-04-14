@@ -20,7 +20,7 @@ body[data-niconico-classic="video-watch"] {
 		padding-top: 24px;
 		
 		> .d_grid {
-			grid-template-areas: "meta meta" "player sidebar" "bottom sidebar" ". sidebar";
+			grid-template-areas: "bottom bottom" "player sidebar" ". sidebar";
 			row-gap: 16px;
 			--niconico-classic-video-player-height: calc(var(--watch-player-height) + var(--watch-actionbar-height) + var(--watch-player-actionbar-gap-height));
 			--watch-player-max-width: 1920px !important;
@@ -28,7 +28,7 @@ body[data-niconico-classic="video-watch"] {
 	}
 
 	/* ヘッダー */
-	.grid-area_\[meta\] {
+	.grid-area_\[bottom\] {
 		/* タイトル */
 		> .jc_space-between { flex-wrap: wrap; row-gap: 16px; }
 		div:has(> h1.fs_xl) { width: calc(100% - 464px); }
@@ -71,9 +71,12 @@ body[data-niconico-classic="video-watch"] {
 		}
 		
 		/* タグ一覧 */
-		> div.flex-wrap_wrap { order: 2; }
+		> div.flex-wrap_wrap { margin-bottom: calc(var(--niconico-classic-video-player-offset-height) + 16px); order: 2; }
 		.niconico-classic_tag-nicopedia-button { width: 24px; height: 24px; border-radius: 50%; overflow: hidden; cursor: pointer; }
 		.niconico-classic_tag-nicopedia-button svg { width: 100%; height: 100%; fill: #FFFFFF; }
+
+		/* プレーヤー下 */
+		> section:has(dl) ~ * { width: var(--watch-player-width); order: 3; }
 	}
 
 	/* プレーヤー */
@@ -91,9 +94,15 @@ body[data-niconico-classic="video-watch"] {
 		}
 	}
 
+	/* サイドバー */
+	.grid-area_\[sidebar\] {
+		margin-top: calc((var(--niconico-classic-video-sidebar-origin-offset-top) - var(--niconico-classic-video-player-offset-top)) * -1);
+	}
+
 	/* 全画面化対策 */
 	&:not(:has(.grid-area_\[player\] > .w_\[100dvw\].h_\[100dvh\])) {
 		.grid-area_\[player\] {
+			width: var(--watch-player-width); top: var(--niconico-classic-video-player-offset-top); left: var(--niconico-classic-video-player-offset-left); position: absolute;
 			.rounded_m:has(video) { background: none; }
 		}
 		
