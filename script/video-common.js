@@ -55,7 +55,7 @@ setInterval(() => {
 	}
 }, 10);
 
-const NICONICO_CLASSIC_NICOVIDEO_MUTATION_OBSERVER = new MutationObserver(() => {
+const NICONICO_CLASSIC_VIDEO_COMMON_MUTATION_OBSERVER = new MutationObserver(() => {
 	if (document.querySelector(`#niconico-classic_hidariue`) === null) niconicoClassicInsertHidariueImage();
 });
 
@@ -111,10 +111,10 @@ function niconicoClassicCancelVideoAutoPlayback() {
 	}
 
 	if (niconicoClassicPageType !== "video-watch" || niconicoClassicVideoAutoPlaybackIsCanceled) return;
-	let niconicoClassicVideoContentElement = document.querySelector(`video[data-name="video-content"]`);
-	if (niconicoClassicVideoContentElement === null || niconicoClassicVideoContentElement.paused || niconicoClassicVideoContentElement.ended) return;
-	niconicoClassicVideoContentElement.pause();
-	if (niconicoClassicVideoContentElement.currentTime < 3) niconicoClassicVideoContentElement.currentTime = 0;
+	const NICONICO_CLASSIC_VIDEO_PLAYER_VIDEO_CONTENT_ELEMENT = document.querySelector(`video[data-name="video-content"]`);
+	if (NICONICO_CLASSIC_VIDEO_PLAYER_VIDEO_CONTENT_ELEMENT === null || NICONICO_CLASSIC_VIDEO_PLAYER_VIDEO_CONTENT_ELEMENT.paused || NICONICO_CLASSIC_VIDEO_PLAYER_VIDEO_CONTENT_ELEMENT.ended) return;
+	NICONICO_CLASSIC_VIDEO_PLAYER_VIDEO_CONTENT_ELEMENT.pause();
+	if (NICONICO_CLASSIC_VIDEO_PLAYER_VIDEO_CONTENT_ELEMENT.currentTime < 3) NICONICO_CLASSIC_VIDEO_PLAYER_VIDEO_CONTENT_ELEMENT.currentTime = 0;
 	niconicoClassicVideoAutoPlaybackIsCanceled = true;
 }
 
@@ -140,4 +140,4 @@ function niconicoClassicInsertVideoDetailsAdditionalLinks() {
 	);
 }
 
-NICONICO_CLASSIC_NICOVIDEO_MUTATION_OBSERVER.observe(document.body, { childList: true });
+NICONICO_CLASSIC_VIDEO_COMMON_MUTATION_OBSERVER.observe(document.body, { childList: true });
