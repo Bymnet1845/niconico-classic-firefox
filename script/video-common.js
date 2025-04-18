@@ -6,7 +6,7 @@
  */
 
 let niconicoClassicCurrentUri, niconicoClassicPreviousUri, niconicoClassicPageType;
-let niconicoClassicVideoRankingDefaultType = "genre";
+let niconicoClassicVideoRankingDefaultType = "custom";
 let niconicoClassicVideoId, niconicoClassicVideoAutoPlayback = true, niconicoClassicVideoAutoPlaybackIsCanceled = false;
 
 chrome.storage.local.get("videoPlayerSize", (content) => { if (content.videoPlayerSize !== undefined && content.videoPlayerSize !== "" && content.videoPlayerSize !== "variable") document.body.classList.add("niconico-classic_video-player-size-is-fixed", "niconico-classic_video-player-width-is-" + content.videoPlayerSize); });
