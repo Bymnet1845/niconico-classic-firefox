@@ -1,5 +1,31 @@
 @charset "UTF-8";
 
+/* 動画共通 */
+.simplebar-wrapper { container: niconicoClassicVideoSimplebar / inline-size; }
+
+.niconico-classic_video-simplebar-link {
+	padding: 12px 16px; border-radius: 4px; display: flex; align-items: center; gap: 4px;
+	&:hover { background: #F2F2F2; }
+	svg { height: 24px !important; fill: #1A1A1A; }
+}
+
+main > nav:has(+ [aria-label="nicovideo-content"]) .niconico-classic_video-simplebar-link {
+	&:hover { background: var(--colors-layer-surface-medium-em) !important; }
+	svg { height: 24px !important; fill: var(--colors-text-on-layer-high-em) !important; }
+}
+
+.niconico-classic_common-header-menu-link {
+	height: 40px; padding: 0 12px !important; background: #FFFFFF; display: flex; align-items: center; gap: 12px; text-decoration: none;
+	&:hover { background: #F5F5F5 !important; }
+	span { font-family: sans-serif; font-size: 12px; font-weight: bold; line-height: 1.2; color: #333333; }
+	svg { width: 9px !important; height: 9px !important; fill: #999999; }
+}
+
+@container niconicoClassicVideoSimplebar (width < 128px) {
+	.niconico-classic_video-simplebar-link { padding-inline: 0; flex-direction: column; }
+	.niconico-classic_video-simplebar-link > span { display: flex; flex-direction: column; font-size: 10px; }
+}
+
 /* 動画ランキングページ */
 body[data-niconico-classic^="video-ranking"] {
 	&.niconico-classic_video-ranking-align-is-center {

@@ -1,6 +1,7 @@
 const OPTIONS = [
 	[ "iconType", "icon-type" ],
 	[ "timelineThumbnailSize", "timeline-thumbnail-size" ],
+	[ "videoRankingDefaultType", "video-ranking-default-type" ],
 	[ "videoRankingAlign", "video-ranking-align" ],
 	[ "videoRankingThumbnailSize", "video-ranking-thumbnail-size" ],
 	[ "videoAutoPlayback", "video-auto-playback"],
@@ -19,6 +20,7 @@ OPTIONS.forEach((property) => {
 
 document.querySelector("select[name=\"icon-type\"]").addEventListener("change", () => {	chrome.storage.local.set({ iconType: document.querySelector("select[name=\"icon-type\"]").value }); });
 document.querySelector("select[name=\"timeline-thumbnail-size\"]").addEventListener("change", () => { chrome.storage.local.set({ timelineThumbnailSize: document.querySelector("select[name=\"timeline-thumbnail-size\"]").value }); });
+document.querySelector("select[name=\"video-ranking-default-type\"]").addEventListener("change", () => { chrome.storage.local.set({ videoRankingDefaultType: document.querySelector("select[name=\"video-ranking-default-type\"]").value }); });
 document.querySelector("select[name=\"video-ranking-align\"]").addEventListener("change", () => { chrome.storage.local.set({ videoRankingAlign: document.querySelector("select[name=\"video-ranking-align\"]").value }); });
 document.querySelector("select[name=\"video-ranking-thumbnail-size\"]").addEventListener("change", () => { chrome.storage.local.set({ videoRankingThumbnailSize: document.querySelector("select[name=\"video-ranking-thumbnail-size\"]").value }); });
 document.querySelector("select[name=\"video-player-size\"]").addEventListener("change", () => { chrome.storage.local.set({ videoPlayerSize: document.querySelector("select[name=\"video-player-size\"]").value }); });
