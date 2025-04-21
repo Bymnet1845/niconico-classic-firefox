@@ -187,9 +187,9 @@ body[data-niconico-classic="video-watch"] {
 	}
 }
 
-/* アイコン形状変更 */
+/* プロフィールアイコンの形状の変更 */
 body.niconico-classic_icon-is-square {
-	.bdr_full[data-scope="avatar"] {
+	.bdr_full[src^="https\://secure-dcdn.cdn.nimg.jp/nicoaccount/usericon/"], .bdr_full[src^="https\://secure-dcdn.cdn.nimg.jp/comch/channel-icon/"] {
 		border-radius: var(--radii-m);
 		&.ml_-x1_5 { margin-left: 0; }
 	}
