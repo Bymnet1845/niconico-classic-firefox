@@ -116,7 +116,7 @@ body[data-niconico-classic="video-watch"] {
 			.niconico-classic_tag-nicopedia-button svg { width: 100%; height: 100%; fill: #FFFFFF; }
 
 			/* プレーヤー下 */
-			> section:has(dl) ~ * { width: var(--watch-player-width); order: 3; }
+			> section:has(header.h_var\(--watch-collapsible-panel-header-height\)) ~ * { width: var(--watch-player-width); order: 3; }
 		}
 
 		/* サイドバー */
