@@ -1,3 +1,6 @@
+@charset "UTF-8";
+@import "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap";
+
 * {
 	margin: 0;
 	padding: 0;
@@ -9,31 +12,39 @@
 	outline: none;
 }
 
-body { width: 432px; font-family: "游ゴシック", "Yu Gothic", "游ゴシック体", YuGothic, "ＭＳ ゴシック", "MS Gothic", Helvetica, Arial, Roboto, sans-serif; font-size: 12px; font-feature-settings: "palt"; line-height: 1.5; color: #252525; }
+body { width: 432px; font-family: "Noto Sans", "Noto Sans JP", sans-serif; font-size: 12px; font-feature-settings: "palt"; line-height: 1.5; color: #252525; }
 ul, ol { padding: 0; list-style: none; }
 a { color: #000099; text-decoration: underline; }
 a:hover { text-decoration: none; }
 button { background: none; cursor: pointer; }
 
-header {
+#logo {
 	padding: 16px; background: #252525;
 	h1 img { height: 32px; margin: auto; display: block; }
 }
 
 #category-list {
-	border-bottom: 1px solid #CCCCCC; display: flex; flex-wrap: wrap; font-size: 16px;
+	border-bottom: 1px solid #CCCCCC; display: flex; flex-wrap: wrap; justify-content: center; font-size: 16px;
 	button { padding: 8px 16px 4px; border-bottom: 4px solid #999999; font-weight: bold; }
 	button.is-current-selection { border-color: #197FE6; }
 }
 
 #panels {
 	height: 256px; background: #EEEEEE; overflow-y: auto;
-	/* .panel { padding: 16px; display: none; }
-	.panel.is-current-selection { display: block; } */
-	
+
 	.panel {
-		margin: 16px;
-		h2 { margin-bottom: 8px; padding-bottom: 2px; border-bottom: 2px solid #252525; font-weight: bold; }
+		padding: 24px; display: none; position: relative;
+		&.is-current-selection { display: block; }
+		h2 { top: 0; left: 0; position: absolute; font-size: 32px; font-weight: bold; line-height: 1; color: #CCCCCC; }
+		> header p { position: relative; z-index: 2; }
+	}
+
+	.section {
+		margin-top: 16px;
+		h3 { margin-bottom: 12px; padding-bottom: 4px; border-bottom: 2px solid #252525; font-size: 16px; font-weight: bold; }
+		p { margin-top: 8px; }
+		ul { padding-left: 2em; list-style: disc outside; }
+		li { margin-block: 4px; }
 	}
 
 	.property {
