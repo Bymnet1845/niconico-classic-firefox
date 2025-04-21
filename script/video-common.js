@@ -9,6 +9,7 @@ let niconicoClassicCurrentUri, niconicoClassicPreviousUri, niconicoClassicPageTy
 let niconicoClassicVideoRankingDefaultType = "custom";
 let niconicoClassicVideoId, niconicoClassicVideoAutoPlayback = true, niconicoClassicVideoAutoPlaybackIsCanceled = false;
 
+chrome.storage.local.get("videoWatchPageLayout", (content) => { if (content.videoWatchPageLayout !== undefined && content.videoWatchPageLayout !== "") document.body.classList.add("niconico-classic_video-watch-page-layout-is-" + content.videoWatchPageLayout); });
 chrome.storage.local.get("videoPlayerSize", (content) => { if (content.videoPlayerSize !== undefined && content.videoPlayerSize !== "" && content.videoPlayerSize !== "variable") document.body.classList.add("niconico-classic_video-player-size-is-fixed", "niconico-classic_video-player-width-is-" + content.videoPlayerSize); });
 chrome.storage.local.get("videoPlayerOverlayIcon", (content) => { if (content.videoPlayerOverlayIcon !== "shown") document.body.classList.add("niconico-classic_video-player-overlay-icon-is-hidden"); });
 chrome.storage.local.get("videoAutoPlayback", (content) => { if (content.videoAutoPlayback !== "true") niconicoClassicVideoAutoPlayback = false; });

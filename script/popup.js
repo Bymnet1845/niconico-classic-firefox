@@ -4,6 +4,7 @@ const OPTIONS = [
 	[ "videoRankingDefaultType", "video-ranking-default-type" ],
 	[ "videoRankingAlign", "video-ranking-align" ],
 	[ "videoRankingThumbnailSize", "video-ranking-thumbnail-size" ],
+	[ "videoWatchPageLayout", "video-watch-page-layout"],
 	[ "videoAutoPlayback", "video-auto-playback"],
 	[ "videoPlayerSize", "video-player-size"],
 	[ "videoPlayerOverlayIcon", "video-player-overlay-icon"]
@@ -23,6 +24,7 @@ document.querySelector("select[name=\"timeline-thumbnail-size\"]").addEventListe
 document.querySelector("select[name=\"video-ranking-default-type\"]").addEventListener("change", () => { chrome.storage.local.set({ videoRankingDefaultType: document.querySelector("select[name=\"video-ranking-default-type\"]").value }); });
 document.querySelector("select[name=\"video-ranking-align\"]").addEventListener("change", () => { chrome.storage.local.set({ videoRankingAlign: document.querySelector("select[name=\"video-ranking-align\"]").value }); });
 document.querySelector("select[name=\"video-ranking-thumbnail-size\"]").addEventListener("change", () => { chrome.storage.local.set({ videoRankingThumbnailSize: document.querySelector("select[name=\"video-ranking-thumbnail-size\"]").value }); });
+document.querySelector("select[name=\"video-watch-page-layout\"]").addEventListener("change", () => { chrome.storage.local.set({ videoWatchPageLayout: document.querySelector("select[name=\"video-watch-page-layout\"]").value }); });
 document.querySelector("select[name=\"video-player-size\"]").addEventListener("change", () => { chrome.storage.local.set({ videoPlayerSize: document.querySelector("select[name=\"video-player-size\"]").value }); });
 document.querySelector("select[name=\"video-player-overlay-icon\"]").addEventListener("change", () => { chrome.storage.local.set({ videoPlayerOverlayIcon: document.querySelector("select[name=\"video-player-overlay-icon\"]").value }); });
 document.querySelector("select[name=\"video-auto-playback\"]").addEventListener("change", () => { chrome.storage.local.set({ videoAutoPlayback: document.querySelector("select[name=\"video-auto-playback\"]").value }); });
