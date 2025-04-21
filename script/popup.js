@@ -29,11 +29,11 @@ document.querySelector("select[name=\"video-player-size\"]").addEventListener("c
 document.querySelector("select[name=\"video-player-overlay-icon\"]").addEventListener("change", () => { chrome.storage.local.set({ videoPlayerOverlayIcon: document.querySelector("select[name=\"video-player-overlay-icon\"]").value }); });
 document.querySelector("select[name=\"video-auto-playback\"]").addEventListener("change", () => { chrome.storage.local.set({ videoAutoPlayback: document.querySelector("select[name=\"video-auto-playback\"]").value }); });
 
-/* document.querySelectorAll("#category-list button").forEach((element) => {
+document.querySelectorAll("#category-list button").forEach((element) => {
 	element.addEventListener("click", () => {
 		document.querySelector("#category-list button.is-current-selection").classList.remove("is-current-selection");
 		element.classList.add("is-current-selection");
 		document.querySelector(".panel.is-current-selection").classList.remove("is-current-selection");
 		document.querySelector(".panel\[data-category=\"" + element.getAttribute("data-category") + "\"\]").classList.add("is-current-selection");
 	});
-}); */
+});
