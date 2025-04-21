@@ -44,7 +44,7 @@ setInterval(() => {
 
 			NICOCNICO_CLASSIC_VIDEO_SIMPLEBAR_RANKING_LINK_ELEMENT.insertAdjacentHTML(
 				"afterend",
-				`<a class="niconico-classic_video-simplebar-link" href="${NICOCNICO_CLASSIC_VIDEO_RANKING_LINK_URL}"><svg viewBox="0 0 24 24"><path d="m7 2-1.3249 1.3265 3.6735 3.6735h-4.8486c-1.385 0-2.5 1.115-2.5 2.5v10c0 1.385 1.115 2.5 2.5 2.5h15c1.385 0 2.5-1.115 2.5-2.5v-10c0-1.385-1.115-2.5-2.5-2.5h-4.8486l3.6735-3.6735-1.3249-1.3265-5 5zm-1.875 7.8125h6.25v2.8125h-1.875v-0.9375h-2.5v5.625h2.5v-0.9375h1.875v2.8125h-6.25v-7.5zm7.5 0h6.25v2.8125h-1.875v-0.9375h-2.5v1.25l4.375 1.875v4.375h-6.25v-2.8125h1.875v0.9375h2.5v-1.25l-4.375-1.875v-2.5z" /><span><span>${niconicoClassicVideoRankingDefaultTypeName}</span><span>ランキング</span></span></svg></a>`
+				`<a class="niconico-classic_video-simplebar-link" href="${NICOCNICO_CLASSIC_VIDEO_RANKING_LINK_URL}"><svg viewBox="0 0 24 24"><path d="m7 2-1.3249 1.3265 3.6735 3.6735h-4.8486c-1.385 0-2.5 1.115-2.5 2.5v10c0 1.385 1.115 2.5 2.5 2.5h15c1.385 0 2.5-1.115 2.5-2.5v-10c0-1.385-1.115-2.5-2.5-2.5h-4.8486l3.6735-3.6735-1.3249-1.3265-5 5zm-1.875 7.8125h6.25v2.8125h-1.875v-0.9375h-2.5v5.625h2.5v-0.9375h1.875v2.8125h-6.25v-7.5zm7.5 0h6.25v2.8125h-1.875v-0.9375h-2.5v1.25l4.375 1.875v4.375h-6.25v-2.8125h1.875v0.9375h2.5v-1.25l-4.375-1.875v-2.5z" /></svg><span><span>${niconicoClassicVideoRankingDefaultTypeName}</span><span>ランキング</span></span></a>`
 			);
 
 			NICOCNICO_CLASSIC_VIDEO_SIMPLEBAR_RANKING_LINK_ELEMENT.remove();
