@@ -9,7 +9,8 @@
 	svg { height: 24px !important; fill: #1A1A1A; }
 }
 
-main > nav:has(+ [aria-label="nicovideo-content"]) .niconico-classic_video-simplebar-link {
+main > nav:has(+ [aria-label="nicovideo-content"]) .niconico-classic_video-simplebar-link,
+body[data-niconico-classic="video-watch"] .niconico-classic_video-simplebar-link {
 	&:hover { background: var(--colors-layer-surface-medium-em) !important; }
 	svg { height: 24px !important; fill: var(--colors-text-on-layer-high-em) !important; }
 }
