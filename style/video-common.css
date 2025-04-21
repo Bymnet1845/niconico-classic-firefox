@@ -68,6 +68,19 @@ body[data-niconico-classic="video-watch"] {
 			span { font-size: var(--font-sizes-s); color: var(--colors-text-on-layer-lower-em); }
 			a { color: var(--colors-text-on-layer-accent-azure); }
 		}
+
+		/* アクションバー */
+		> section > .d_flex > div:has(:is(.bdr_full[src^="https\://secure-dcdn.cdn.nimg.jp/nicoaccount/usericon/"], .bdr_full[src^="https\://secure-dcdn.cdn.nimg.jp/comch/channel-icon/"])) {
+			align-items: center; gap: 16px;
+			
+			> .d_flex, > .d_flex > .d_flex {
+				padding: 0; flex-direction: row; flex-grow: 0; align-items: center; overflow: hidden; white-space: nowrap;
+				.gap_x4 { gap: 16px; }
+				> a { text-overflow: ellipsis; line-height: 40px; }
+				div:has(> a[href^="https\://ch.nicovideo.jp/channel/"]) { display: flex; flex-direction: column; gap: 4px; }
+				.mt_\[-1em\] { margin: 0; }
+			}
+		}
 	}
 
 	/* プレーヤーの調整 */
@@ -107,7 +120,7 @@ body[data-niconico-classic="video-watch"] {
 			/* 投稿者情報 */ 
 			.w_\[var\(--watch-owner-information-width\)\] {
 				width: 440px;
-				[data-scope="avatar"] { width: 56px; height: 56px; }
+				.bdr_full[src^="https\://secure-dcdn.cdn.nimg.jp/nicoaccount/usericon/"], .bdr_full[src^="https\://secure-dcdn.cdn.nimg.jp/comch/channel-icon/"] { width: 56px; height: 56px; }
 			}
 			
 			/* タグ一覧 */
