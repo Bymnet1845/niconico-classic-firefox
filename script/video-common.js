@@ -67,10 +67,11 @@ setInterval(() => {
 			if (!niconicoClassicVideoAutoPlayback) niconicoClassicCancelVideoAutoPlayback();
 			
 			if (document.querySelector(`.grid-area_\\[bottom\\] h1`)) {
-				document.body.style.setProperty("--niconico-classic-video-player-offset-height", document.querySelector(`.grid-area_\\[player\\]`).offsetHeight + "px");
-				document.body.style.setProperty("--niconico-classic-video-player-offset-top", document.querySelector(`.grid-area_\\[bottom\\] > div.flex-wrap_wrap`).offsetTop + document.querySelector(`.grid-area_\\[bottom\\] > div.flex-wrap_wrap`).offsetHeight + 16 + "px");
-				document.body.style.setProperty("--niconico-classic-video-player-offset-left", document.querySelector(`.grid-area_\\[bottom\\] > div.flex-wrap_wrap`).offsetLeft + "px");
-				document.body.style.setProperty("--niconico-classic-video-sidebar-origin-offset-top", document.querySelector(`.grid-area_\\[bottom\\]`).offsetTop + document.querySelector(`.grid-area_\\[bottom\\]`).offsetHeight + 16 + "px");
+				if (!document.querySelector(`.grid-area_\\[player\\] > .w_\\[100dvw\\].h_\\[100dvh\\]`)) {
+					document.body.style.setProperty("--niconico-classic-nicovideo-content-offset-top", document.querySelector(`[aria-label="nicovideo-content"]`).offsetTop + "px");
+					document.body.style.setProperty("--niconico-classic-nicovideo-content-margin-top", document.querySelector(`.grid-area_\\[bottom\\] > div.flex-wrap_wrap`).offsetTop + document.querySelector(`.grid-area_\\[bottom\\] > div.flex-wrap_wrap`).offsetHeight + 40 + "px");
+					document.body.style.setProperty("--niconico-classic-video-player-offset-height", document.querySelector(`.grid-area_\\[player\\]`).offsetHeight + "px");
+				}
 
 				if (niconicoClassicVideoId !== niconicoClassicCurrentUri.match(/[a-z]{2}\d+/)[0]) {
 					niconicoClassicVideoId = niconicoClassicCurrentUri.match(/[a-z]{2}\d+/)[0];
@@ -81,6 +82,8 @@ setInterval(() => {
 				}
 
 				niconicoClassicInsertVideoDetailsAdditionalLinks();
+			} else {
+				document.body.style.setProperty("--niconico-classic-nicovideo-content-margin-top", "24px");
 			}
 
 			break;

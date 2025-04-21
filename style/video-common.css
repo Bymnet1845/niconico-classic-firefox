@@ -101,10 +101,10 @@ body[data-niconico-classic="video-watch"] {
 	/* レイアウト変更 */
 	&:not(.niconico-classic_video-watch-page-layout-is-modern) {
 		[aria-label="nicovideo-content"] {
-			padding-top: 24px;
+			padding-top: var(--niconico-classic-nicovideo-content-margin-top);
 			
 			> .d_grid {
-				grid-template-areas: "bottom bottom" "player sidebar" ". sidebar";
+				grid-template-areas: "player sidebar" "bottom sidebar";
 				row-gap: 16px;
 				--niconico-classic-video-player-height: calc(var(--watch-player-height) + var(--watch-actionbar-height) + var(--watch-player-actionbar-gap-height));
 			}
@@ -112,6 +112,8 @@ body[data-niconico-classic="video-watch"] {
 
 		/* ヘッダー */
 		.grid-area_\[bottom\] {
+			width: calc(var(--watch-player-width) + var(--watch-sidebar-width) + 24px); top: calc(var(--niconico-classic-nicovideo-content-offset-top) + 24px); left: 50%; position: absolute; translate: -50% 0;
+
 			/* タイトル */
 			> .jc_space-between { row-gap: 16px; }
 			div:has(> h1.fs_xl) { width: calc(100% - 464px); }
@@ -134,13 +136,13 @@ body[data-niconico-classic="video-watch"] {
 
 		/* サイドバー */
 		.grid-area_\[sidebar\] {
-			margin-top: calc((var(--niconico-classic-video-sidebar-origin-offset-top) - var(--niconico-classic-video-player-offset-top)) * -1);
+			position: relative; z-index: 2;
 		}
 
 		/* 全画面化対策 */
 		&:not(:has(.grid-area_\[player\] > .w_\[100dvw\].h_\[100dvh\])) {
 			.grid-area_\[player\] {
-				width: var(--watch-player-width); top: var(--niconico-classic-video-player-offset-top); left: var(--niconico-classic-video-player-offset-left); position: absolute;
+				position: relative; z-index: 2;
 				.rounded_m:has(video) { background: none; }
 			}
 			
