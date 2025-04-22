@@ -44,8 +44,8 @@
 
 ## 変更履歴
 
-変更履歴は、[CHANGELOG.md](./CHANGELOG.md)を御覧下さい。
+変更履歴は、[CHANGELOG.md](CHANGELOG.md)を御覧下さい。
 
 ## ライセンス
 
-ライセンスは、[MITライセンス](./LICENSE)です。
+ライセンスは、[MITライセンス](LICENSE)です。
