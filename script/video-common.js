@@ -40,7 +40,7 @@ setInterval(() => {
 			niconicoClassicVideoRankingLinkUrl = "/ranking/" + niconicoClassicVideoRankingDefaultType;
 
 			switch (niconicoClassicVideoRankingDefaultType) {
-				case "genre": niconicoClassicVideoRankingDefaultTypeName = "ジャンル別"; break;
+				case "genre": niconicoClassicVideoRankingDefaultTypeName = "総合"; break;
 				case "custom": niconicoClassicVideoRankingDefaultTypeName = "カスタム"; break;
 			}
 		}
@@ -61,7 +61,7 @@ setInterval(() => {
 
 			NICOCNICO_CLASSIC_COMMON_HEADER_RANKING_LINK_ELEMENT.insertAdjacentHTML(
 				"afterend",
-				`<a class="niconico-classic_common-header-menu-link" href="${niconicoClassicVideoRankingLinkUrl}"><span>動画${niconicoClassicVideoRankingDefaultTypeName}ランキング</span><svg viewBox="0 0 24 24"><path d="M17.357 12a.498.498 0 01-.146.356l-8.29 8.29a.5.5 0 01-.708 0l-1.41-1.41a.5.5 0 010-.707L13.333 12l-6.53-6.53a.5.5 0 010-.707l1.41-1.41a.5.5 0 01.707 0l8.29 8.29a.499.499 0 01.147.357Z" fill-rule="evenodd" clip-rule="evenodd" /></svg></a>`
+				`<a class="niconico-classic_common-header-menu-link" href="${niconicoClassicVideoRankingLinkUrl}"><span>動画ランキング<br />（${niconicoClassicVideoRankingDefaultTypeName}）</span><svg viewBox="0 0 24 24"><path d="M17.357 12a.498.498 0 01-.146.356l-8.29 8.29a.5.5 0 01-.708 0l-1.41-1.41a.5.5 0 010-.707L13.333 12l-6.53-6.53a.5.5 0 010-.707l1.41-1.41a.5.5 0 01.707 0l8.29 8.29a.499.499 0 01.147.357Z" fill-rule="evenodd" clip-rule="evenodd" /></svg></a>`
 			);
 
 			NICOCNICO_CLASSIC_COMMON_HEADER_RANKING_LINK_ELEMENT.remove();
