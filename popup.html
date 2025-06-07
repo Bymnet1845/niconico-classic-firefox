@@ -24,48 +24,22 @@
 	<section class="panel is-current-selection" data-category="news">
 		<header>
 			<h2>新機能</h2>
-			<p>ニコニコクラシックスタイルの新しい機能を御知らせします。</p>
+			<p>ニコニコクラシックスタイルの新しい機能を御知らせします。<br /> もっと詳しい情報は、<a href="https://weblog.haraheri5ro.com/?subject=niconico-classic" target="_blank">峯雲ウェブログ</a>で御覧下さい。</p>
 		</header>
+
+		<section class="section">
+			<h3>リンク先のランキングを固定出来る様に</h3>
+
+			<p>共通ヘッダーや左サイドバーからの動画ランキングへのリンク先を、「For you」「総合」「カスタム」のどれかに固定出来る様になりました。</p>
+			<p>設定の［動画ランキングページ］の［メニューからのリンク先］からカスタマイズ出来ます。デフォルトは［カスタム］です。</p>
+			<p>反映されていれば、ニコニコ上での表示が「For youランキング」「総合ランキング」「カスタムランキング」等となります。</p>
+		</section>
 
 		<section class="section">
 			<h3>動画視聴ページを「プレーヤーが上、動画概要が下」にも出来る様に</h3>
 
 			<p>今迄は、強制的に「動画概要が上、プレーヤーが下」になっていましたが、ニコニコ標準の「プレーヤーが上、動画概要が下」にも出来る様になりました。</p>
 			<p>「プレーヤーが上、動画概要が下」にするには、設定の［動画視聴ページ］の［ページのレイアウト］を、［クラシック］から［モダン］に変更して下さい。</p>
-		</section>
-
-		<section class="section">
-			<h3>リンク先のランキングを「ジャンル別」や「カスタム」にも出来る様に</h3>
-
-			<p>共通ヘッダーや左サイドバーからの動画ランキングへのリンク先を、「For you」から「ジャンル別」や「カスタム」へ変えられる様になりました。</p>
-			<p>設定の［動画ランキングページ］の［メニューからのリンク先］からカスタマイズ出来ます。デフォルトは［カスタム］です。</p>
-			<p>反映されていれば、ニコニコ上での表示が「ジャンル別ランキング」「カスタムランキング」等となります。</p>
-		</section>
-
-		<section class="section">
-			<h3>その他</h3>
-
-			<ul>
-				<li>共通
-				<ul>
-					<li>プロフィールアイコンの形状の変更が一部ページで効かなくなっている不具合を修正。</li>
-					<li>ポップアップウィンドウのデザインを変更。</li>
-				</ul></li>
-
-				<li>マイページ
-				<ul>
-					<li>生放送番組の視聴履歴で、プロフィールアイコンの形状の変更が効く様に。</li>
-				</ul></li>
-
-				<li>動画視聴ページ
-				<ul>
-					<li>動画の自動再生の無効化の二重動作を修正。</li>
-					<li>動画の詳細情報を折りたたみ時にレイアウトが崩れる不具合を修正。</li>
-					<li>動画の詳細情報へのリンク追加が動作しない事が有る不具合を修正。</li>
-					<li>投稿者情報欄のデザインの調整が効かなくなっている不具合を修正。</li>
-					<li>ページのレイアウトの変更の仕組みを変更。</li>
-				</ul></li>
-			</ul>
 		</section>
 	</section>
 
@@ -108,8 +82,9 @@
 				<label for="video-ranking-default-type">メニューからのリンク先</label>
 
 				<select name="video-ranking-default-type">
-				<option value="for-you">For you（ニコニコ標準）</option>
-				<option value="genre" selected>ジャンル別</option>
+				<option value="default">ニコニコ標準</option>
+				<option value="for-you">For you</option>
+				<option value="genre" selected>総合</option>
 				<option value="custom">カスタム</option>
 				</select>
 			</section>
@@ -190,7 +165,7 @@
 </ul>
 
 <p>
-<span>バージョン1.3.3</span>
+<span>バージョン1.3.5</span>
 <small>&copy; 2024–2025 Bymnet1845</small>
 </p>
 </footer>
