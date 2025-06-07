@@ -30,13 +30,19 @@ setInterval(() => {
 		}
 	}
 
-	if (niconicoClassicVideoRankingDefaultType !== "for-you") {
-		const NICOCNICO_CLASSIC_VIDEO_RANKING_LINK_URL = "/ranking/" + niconicoClassicVideoRankingDefaultType;
-		let niconicoClassicVideoRankingDefaultTypeName;
+	if (niconicoClassicVideoRankingDefaultType !== "default") {
+		let niconicoClassicVideoRankingLinkUrl, niconicoClassicVideoRankingDefaultTypeName;
 
-		switch (niconicoClassicVideoRankingDefaultType) {
-			case "genre": niconicoClassicVideoRankingDefaultTypeName = "ジャンル別"; break;
-			case "custom": niconicoClassicVideoRankingDefaultTypeName = "カスタム"; break;
+		if (niconicoClassicVideoRankingDefaultType === "for-you") {
+			niconicoClassicVideoRankingLinkUrl = "/ranking/for_you";
+			niconicoClassicVideoRankingDefaultTypeName = "For you";
+		} else {
+			niconicoClassicVideoRankingLinkUrl = "/ranking/" + niconicoClassicVideoRankingDefaultType;
+
+			switch (niconicoClassicVideoRankingDefaultType) {
+				case "genre": niconicoClassicVideoRankingDefaultTypeName = "総合"; break;
+				case "custom": niconicoClassicVideoRankingDefaultTypeName = "カスタム"; break;
+			}
 		}
 
 		if (document.querySelector(`.simplebar-content a[href^="/ranking"]:not(.niconico-classic_video-simplebar-link)`)) {
@@ -44,7 +50,7 @@ setInterval(() => {
 
 			NICOCNICO_CLASSIC_VIDEO_SIMPLEBAR_RANKING_LINK_ELEMENT.insertAdjacentHTML(
 				"afterend",
-				`<a class="niconico-classic_video-simplebar-link" href="${NICOCNICO_CLASSIC_VIDEO_RANKING_LINK_URL}"><svg viewBox="0 0 24 24"><path d="m7 2-1.3249 1.3265 3.6735 3.6735h-4.8486c-1.385 0-2.5 1.115-2.5 2.5v10c0 1.385 1.115 2.5 2.5 2.5h15c1.385 0 2.5-1.115 2.5-2.5v-10c0-1.385-1.115-2.5-2.5-2.5h-4.8486l3.6735-3.6735-1.3249-1.3265-5 5zm-1.875 7.8125h6.25v2.8125h-1.875v-0.9375h-2.5v5.625h2.5v-0.9375h1.875v2.8125h-6.25v-7.5zm7.5 0h6.25v2.8125h-1.875v-0.9375h-2.5v1.25l4.375 1.875v4.375h-6.25v-2.8125h1.875v0.9375h2.5v-1.25l-4.375-1.875v-2.5z" /></svg><span><span>${niconicoClassicVideoRankingDefaultTypeName}</span><span>ランキング</span></span></a>`
+				`<a class="niconico-classic_video-simplebar-link" href="${niconicoClassicVideoRankingLinkUrl}"><svg viewBox="0 0 24 24"><path d="m7 2-1.3249 1.3265 3.6735 3.6735h-4.8486c-1.385 0-2.5 1.115-2.5 2.5v10c0 1.385 1.115 2.5 2.5 2.5h15c1.385 0 2.5-1.115 2.5-2.5v-10c0-1.385-1.115-2.5-2.5-2.5h-4.8486l3.6735-3.6735-1.3249-1.3265-5 5zm-1.875 7.8125h6.25v2.8125h-1.875v-0.9375h-2.5v5.625h2.5v-0.9375h1.875v2.8125h-6.25v-7.5zm7.5 0h6.25v2.8125h-1.875v-0.9375h-2.5v1.25l4.375 1.875v4.375h-6.25v-2.8125h1.875v0.9375h2.5v-1.25l-4.375-1.875v-2.5z" /></svg><span><span>${niconicoClassicVideoRankingDefaultTypeName}</span><span>ランキング</span></span></a>`
 			);
 
 			NICOCNICO_CLASSIC_VIDEO_SIMPLEBAR_RANKING_LINK_ELEMENT.remove();
@@ -55,7 +61,7 @@ setInterval(() => {
 
 			NICOCNICO_CLASSIC_COMMON_HEADER_RANKING_LINK_ELEMENT.insertAdjacentHTML(
 				"afterend",
-				`<a class="niconico-classic_common-header-menu-link" href="${NICOCNICO_CLASSIC_VIDEO_RANKING_LINK_URL}"><span>動画${niconicoClassicVideoRankingDefaultTypeName}ランキング</span><svg viewBox="0 0 24 24"><path d="M17.357 12a.498.498 0 01-.146.356l-8.29 8.29a.5.5 0 01-.708 0l-1.41-1.41a.5.5 0 010-.707L13.333 12l-6.53-6.53a.5.5 0 010-.707l1.41-1.41a.5.5 0 01.707 0l8.29 8.29a.499.499 0 01.147.357Z" fill-rule="evenodd" clip-rule="evenodd" /></svg></a>`
+				`<a class="niconico-classic_common-header-menu-link" href="${niconicoClassicVideoRankingLinkUrl}"><span>動画ランキング<br />（${niconicoClassicVideoRankingDefaultTypeName}）</span><svg viewBox="0 0 24 24"><path d="M17.357 12a.498.498 0 01-.146.356l-8.29 8.29a.5.5 0 01-.708 0l-1.41-1.41a.5.5 0 010-.707L13.333 12l-6.53-6.53a.5.5 0 010-.707l1.41-1.41a.5.5 0 01.707 0l8.29 8.29a.499.499 0 01.147.357Z" fill-rule="evenodd" clip-rule="evenodd" /></svg></a>`
 			);
 
 			NICOCNICO_CLASSIC_COMMON_HEADER_RANKING_LINK_ELEMENT.remove();
