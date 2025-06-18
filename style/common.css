@@ -16,3 +16,10 @@ body.niconico-classic_icon-is-square {
 	width: 48px; height: 48px; display: block; margin-left: 12px;
 	img { width: 100%; height: 100%; }
 }
+
+#niconico-classic_common-header-link {
+	margin-right: -1px; padding: 6px 8px; position: relative; display: flex; gap: 4px; color: #FFFFFF; font-size: 12px; line-height: 24px;
+	&:hover { background: #555555; }
+	&:after { content: ""; top: 10px; right: 0; height: 16px; border-right: 1px solid #555555; position: absolute; }
+	svg { width: 24px; height: 24px; display: block; fill: #FFFFFF; }
+}
