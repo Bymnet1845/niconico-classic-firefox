@@ -183,6 +183,67 @@ body[data-niconico-classic="video-watch"] {
 	&.niconico-classic_video-player-overlay-icon-is-hidden {
 		.asp_16\:9 .pos_absolute.pointer-events_none.us_none:has(svg):not(:has(button)) { display: none; }
 	}
+
+	/* 簡単マイリスト */
+	#niconico-classic_easy-mylist { padding: 16px; border-radius: 8px; background: var(--colors-layer-surface-high-em); position: relative; }
+	#niconico-classic_easy-mylist button { cursor: pointer; font-weight: bold; color: var(--colors-action-text-on-base); }
+
+	.niconico-classic_easy-mylist-tray-action { 
+		padding-right: 36px !important;
+		background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBjbGFzcz0id19mb250IGhfZm9udCI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNMTYuMyA5LjNhMSAxIDAgMCAxIDEuNCAwYy40LjQuNCAxLjA1IDAgMS40NmwtNSA1LjE0Yy0uMzguNC0xLjAyLjQtMS40IDBsLTUtNS4xNGMtLjQtLjQtLjQtMS4wNiAwLTEuNDZhMSAxIDAgMCAxIDEuNCAwbDQuMyA0LjQyeiIgZmlsbD0iIzFhMWExYSI+PC9wYXRoPjwvc3ZnPg==");
+		background-repeat: no-repeat;
+		background-position: calc(100% - 8px) center;
+		background-size: 24px 24px;
+	}
+
+	&[data-color-scheme="dark"] .niconico-classic_easy-mylist-tray-action { background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBjbGFzcz0id19mb250IGhfZm9udCI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNMTYuMyA5LjNhMSAxIDAgMCAxIDEuNCAwYy40LjQuNCAxLjA1IDAgMS40NmwtNSA1LjE0Yy0uMzguNC0xLjAyLjQtMS40IDBsLTUtNS4xNGMtLjQtLjQtLjQtMS4wNiAwLTEuNDZhMSAxIDAgMCAxIDEuNCAwbDQuMyA0LjQyeiIgZmlsbD0iI2YyZjJmMiI+PC9wYXRoPjwvc3ZnPg=="); }
+
+	@media (prefers-color-scheme: dark) {
+		.niconico-classic_easy-mylist-tray-action { background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBjbGFzcz0id19mb250IGhfZm9udCI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNMTYuMyA5LjNhMSAxIDAgMCAxIDEuNCAwYy40LjQuNCAxLjA1IDAgMS40NmwtNSA1LjE0Yy0uMzguNC0xLjAyLjQtMS40IDBsLTUtNS4xNGMtLjQtLjQtLjQtMS4wNiAwLTEuNDZhMSAxIDAgMCAxIDEuNCAwbDQuMyA0LjQyeiIgZmlsbD0iI2YyZjJmMiI+PC9wYXRoPjwvc3ZnPg=="); }
+	}
+
+	#niconico-classic_easy-mylist-form {
+		height: 40px; border-radius: 20px; background: var(--colors-input-form-background); display: flex;
+
+		select {
+			width: 100%;
+			padding-left: 16px;
+			border-top-left-radius: 20px;
+			border-bottom-left-radius: 20px;
+			flex: 1;
+			appearance: none;
+			color: var(--colors-action-text-on-base);
+		}
+		
+		option { background: var(--colors-layer-surface-high-em); }
+		button { padding-inline: 16px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; background: var(--colors-action-base); }
+		button:hover { background: var(--colors-action-base-hover); }
+		p { flex: 1; text-align: center; line-height: 40px; }
+	}
+
+	#niconico-classic_easy-mylist-menu { margin-top: 8px; display: flex; justify-content: space-between; }
+	#niconico-classic_easy-mylist-menu button { height: 40px; padding-inline: 16px; border-radius: 20px; background-color: var(--colors-tab-base); }
+	#niconico-classic_easy-mylist-menu button:hover { background-color: var(--colors-tab-base-hover); }
+
+	#niconico-classic_easy-mylist-option-form {
+		left: 16px; right: 16px; padding: 16px; border-radius: 16px; background: var(--colors-layer-surface-high-em); display: none; position: absolute; z-index: 2; box-shadow: var(--shadows-base);
+		&.is-open { display: block; }
+		label { margin-bottom: 8px; display: block; font-weight: bold; }
+		textarea { width: 100%; height: 128px; min-width: 100%; min-height: 128px; max-width: 100%; padding: 16px; border: 1px solid var(--colors-border-base); border-radius: 8px; }
+	}
+
+	#niconico-classic_easy-mylist-alert {
+		top: 50%;
+		left: 50%;
+		padding: 8px 16px;
+		border-radius: 8px;
+		background: var(--colors-layer-surface-high-em);
+		box-shadow: var(--shadows-base);
+		position: absolute;
+		z-index: 3;
+		translate: -50% -50%;
+		white-space: nowrap;
+	}
 	
 	/* コメント増量対応 */
 	#allcommentsetting {
