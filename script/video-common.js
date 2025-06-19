@@ -127,10 +127,10 @@ setInterval(() => {
 											credentials: "include"
 										}).then((response) => {
 											switch (response.status) {
-												case 201: alert("追加しました。"); break;
-												case 200: alert("既に登録されています。"); break;
-												case 409: alert("マイリストがいっぱいで登録出来ません。"); break;
-												default: alert("追加出来ませんでした。");
+												case 201: niconicoClassicDisplayEasyMylistAlert("マイリストに追加しました。"); break;
+												case 200: niconicoClassicDisplayEasyMylistAlert("このマイリストには既に登録されています。"); break;
+												case 409: niconicoClassicDisplayEasyMylistAlert("このマイリストがいっぱいで追加出来ません。"); break;
+												default: niconicoClassicDisplayEasyMylistAlert("マイリストに追加出来ませんでした。");
 											}
 										});
 									});
@@ -145,9 +145,9 @@ setInterval(() => {
 											credentials: "include"
 										}).then((response) => {
 											switch (response.status) {
-												case 201: alert("追加しました。"); break;
-												case 409: alert("既に登録されています。"); break;
-												default: alert("追加出来ませんでした。");
+												case 201: niconicoClassicDisplayEasyMylistAlert("あとで見るに追加しました。"); break;
+												case 409: niconicoClassicDisplayEasyMylistAlert("あとで見るには既に登録されています。"); break;
+												default: niconicoClassicDisplayEasyMylistAlert("あとで見るに追加出来ませんでした。");
 											}
 										});
 									});
@@ -274,6 +274,18 @@ function niconicoClassicInsertVideoDetailsAdditionalLinks() {
 			`<div class="niconico-classic_video-details-additional-link pedia"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M6.94 7.82a.44.44 0 0 1-.44-.44v-.44a.44.44 0 0 1 .44-.44h10.12a.44.44 0 0 1 .44.44v.44a.44.44 0 0 1-.44.44h-3.74L12 9.14h4.18a.44.44 0 0 1 .44.44v7.48c0 .24-.2.44-.44.44H7.82a.44.44 0 0 1-.44-.44V9.58a.44.44 0 0 1 .44-.44H9.8l1.32-1.32zm2.86 5.72a.2.2 0 0 0-.22.22v2.2a.2.2 0 0 0 .22.22h4.4a.2.2 0 0 0 .22-.22v-2.2a.2.2 0 0 0-.22-.22zm0-3.08c-.12 0-.22.1-.22.22V12c0 .12.1.22.22.22h4.4c.12 0 .22-.1.22-.22v-1.32c0-.12-.1-.22-.22-.22z" clip-rule="evenodd"></path></svg><span>ニコニコ大百科</span><a href="https://dic.nicovideo.jp/v/${niconicoClassicVideoId}">この動画の動画記事</a></div><div class="niconico-classic_video-details-additional-link"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M18 6h-3.89L12.3 3.99A3 3 0 0 0 10.07 3H6a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3V9a3 3 0 0 0-3-3"></path></svg><a href="https://www.nicovideo.jp/openlist/${niconicoClassicVideoId}">この動画を登録している公開マイリスト</a></div>`
 		);
 	}
+}
+
+function niconicoClassicDisplayEasyMylistAlert(message) {
+	if(document.querySelector(`#niconico-classic_easy-mylist-alert`)) document.querySelector(`#niconico-classic_easy-mylist-alert`).remove();
+	document.querySelector(`#niconico-classic_easy-mylist`).insertAdjacentHTML("beforeend", `<span id="niconico-classic_easy-mylist-alert">${message}</span>`);
+	const NICONICO_CLASSIC_EASY_MYLIST_ALERT_ELEMENT = document.querySelector(`#niconico-classic_easy-mylist-alert`);
+	NICONICO_CLASSIC_EASY_MYLIST_ALERT_ELEMENT.animate([{ opacity: 0, easing: "linear" }, { opacity: 1 }], 250);
+	
+	setTimeout(() => {
+		NICONICO_CLASSIC_EASY_MYLIST_ALERT_ELEMENT.animate([{ opacity: 1, easing: "linear" }, { opacity: 0 }], 250);
+		setTimeout(() => { NICONICO_CLASSIC_EASY_MYLIST_ALERT_ELEMENT.remove(); }, 250);
+	}, 4000);
 }
 
 NICONICO_CLASSIC_VIDEO_COMMON_MUTATION_OBSERVER.observe(document.body, { childList: true });
