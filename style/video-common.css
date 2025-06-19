@@ -186,7 +186,19 @@ body[data-niconico-classic="video-watch"] {
 
 	/* 簡単マイリスト */
 	#niconico-classic_easy-mylist { padding: 16px; border-radius: 8px; background: var(--colors-layer-surface-high-em); position: relative; }
-	#niconico-classic_easy-mylist button { cursor: pointer; font-weight: bold; }
+	#niconico-classic_easy-mylist button { cursor: pointer; font-weight: bold; color: var(--colors-action-text-on-base); }
+
+	.niconico-classic_easy-mylist-tray-action { 
+		padding-right: 36px !important;
+		background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBjbGFzcz0id19mb250IGhfZm9udCI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNMTYuMyA5LjNhMSAxIDAgMCAxIDEuNCAwYy40LjQuNCAxLjA1IDAgMS40NmwtNSA1LjE0Yy0uMzguNC0xLjAyLjQtMS40IDBsLTUtNS4xNGMtLjQtLjQtLjQtMS4wNiAwLTEuNDZhMSAxIDAgMCAxIDEuNCAwbDQuMyA0LjQyeiIgZmlsbD0iIzFhMWExYSI+PC9wYXRoPjwvc3ZnPg==");
+		background-repeat: no-repeat;
+		background-position: calc(100% - 8px) center;
+		background-size: 24px 24px;
+	}
+
+	&[data-color-scheme="dark"] .niconico-classic_easy-mylist-tray-action {
+		background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBjbGFzcz0id19mb250IGhfZm9udCI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNMTYuMyA5LjNhMSAxIDAgMCAxIDEuNCAwYy40LjQuNCAxLjA1IDAgMS40NmwtNSA1LjE0Yy0uMzguNC0xLjAyLjQtMS40IDBsLTUtNS4xNGMtLjQtLjQtLjQtMS4wNiAwLTEuNDZhMSAxIDAgMCAxIDEuNCAwbDQuMyA0LjQyeiIgZmlsbD0iI2YyZjJmMiI+PC9wYXRoPjwvc3ZnPg==");
+	}
 
 	#niconico-classic_easy-mylist-form {
 		height: 40px; border-radius: 20px; background: var(--colors-input-form-background); display: flex;
@@ -194,18 +206,15 @@ body[data-niconico-classic="video-watch"] {
 		select {
 			width: 100%;
 			padding-left: 16px;
-			padding-right: 36px;
 			border-top-left-radius: 20px;
 			border-bottom-left-radius: 20px;
-			background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBjbGFzcz0id19mb250IGhfZm9udCI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNMTYuMyA5LjNhMSAxIDAgMCAxIDEuNCAwYy40LjQuNCAxLjA1IDAgMS40NmwtNSA1LjE0Yy0uMzguNC0xLjAyLjQtMS40IDBsLTUtNS4xNGMtLjQtLjQtLjQtMS4wNiAwLTEuNDZhMSAxIDAgMCAxIDEuNCAwbDQuMyA0LjQyeiIgY2xpcC1ydWxlPSJldmVub2RkIj48L3BhdGg+PC9zdmc+") no-repeat;
-			background-position: calc(100% - 8px) center;
-			background-size: 24px 24px;
 			flex: 1;
 			appearance: none;
+			color: var(--colors-action-text-on-base);
 		}
 		
 		option { background: var(--colors-layer-surface-high-em); }
-		button { padding-inline: 16px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; background: var(--colors-action-base); color: var(--colors-action-text-on-base); }
+		button { padding-inline: 16px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; background: var(--colors-action-base); }
 		button:hover { background: var(--colors-action-base-hover); }
 	}
 
@@ -213,16 +222,8 @@ body[data-niconico-classic="video-watch"] {
 	#niconico-classic_easy-mylist-menu button { height: 40px; padding-inline: 16px; border-radius: 20px; background-color: var(--colors-tab-base); }
 	#niconico-classic_easy-mylist-menu button:hover { background-color: var(--colors-tab-base-hover); }
 
-	#niconico-classic_easy-mylist-option-button {
-		padding-right: 36px !important;
-		background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBjbGFzcz0id19mb250IGhfZm9udCI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNMTYuMyA5LjNhMSAxIDAgMCAxIDEuNCAwYy40LjQuNCAxLjA1IDAgMS40NmwtNSA1LjE0Yy0uMzguNC0xLjAyLjQtMS40IDBsLTUtNS4xNGMtLjQtLjQtLjQtMS4wNiAwLTEuNDZhMSAxIDAgMCAxIDEuNCAwbDQuMyA0LjQyeiIgY2xpcC1ydWxlPSJldmVub2RkIj48L3BhdGg+PC9zdmc+");
-		background-repeat: no-repeat;
-		background-position: calc(100% - 8px) center;
-		background-size: 24px 24px;
-	}
-
 	#niconico-classic_easy-mylist-option-form {
-		top: 112px; left: 16px; right: 16px; padding: 16px; border-radius: 16px; background: var(--colors-layer-surface-high-em); display: none; position: absolute; z-index: 2; box-shadow: 0 0 4px #CCCCCC;
+		left: 16px; right: 16px; padding: 16px; border-radius: 16px; background: var(--colors-layer-surface-high-em); display: none; position: absolute; z-index: 2; box-shadow: var(--shadows-base);
 		&.is-open { display: block; }
 		label { margin-bottom: 8px; display: block; font-weight: bold; }
 		textarea { width: 100%; height: 128px; min-width: 100%; min-height: 128px; max-width: 100%; padding: 16px; border: 1px solid var(--colors-border-base); border-radius: 8px; }
