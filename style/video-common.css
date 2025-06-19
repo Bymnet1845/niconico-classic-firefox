@@ -183,6 +183,17 @@ body[data-niconico-classic="video-watch"] {
 	&.niconico-classic_video-player-overlay-icon-is-hidden {
 		.asp_16\:9 .pos_absolute.pointer-events_none.us_none:has(svg):not(:has(button)) { display: none; }
 	}
+
+	/* 簡単マイリスト */
+	#niconico-classic_easy-mylist { padding: 16px; border-radius: 8px; background: var(--colors-layer-surface-high-em);}
+
+	#niconico-classic_easy-mylist-form {
+		height: 40px; border-radius: 20px; background: var(--colors-input-form-background); display: flex;
+		select { width: calc(100% - 96px); border-top-left-radius: 20px; border-bottom-left-radius: 20px; padding-inline: 8px; }
+		option { background: var(--colors-layer-surface-high-em); }
+		button { width: 96px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; background: var(--colors-action-base); color: var(--colors-action-text-on-base); cursor: pointer; }
+		button:hover { background: var(--colors-action-base-hover); }
+	}
 	
 	/* コメント増量対応 */
 	#allcommentsetting {

@@ -87,6 +87,60 @@ setInterval(() => {
 					niconicoClassicAddScrollEventToVideoOwnerMenuButton();
 				}
 
+				if (document.querySelector(`.grid-area_\\[sidebar\\] > .d_flex`) && !document.querySelector(`#niconico-classic_easy-mylist`)) {
+					document.querySelector(`.grid-area_\\[sidebar\\] > .d_flex`).insertAdjacentHTML("afterbegin", `<section id="niconico-classic_easy-mylist"></section>`);
+					const NICONICO_CLASSIC_EASY_MYLIST_ELEMENT = document.querySelector(`#niconico-classic_easy-mylist`);
+
+					(async function () {
+						await fetch(`https://nvapi.nicovideo.jp/v1/users/me/mylists`, {
+							headers: {"X-Frontend-Id": 6, "X-Frontend-Version": 0}, credentials: "include"
+						}).then(
+							response => response.json()
+						).then((result) => {
+							switch (result.meta.status) {
+								case 200:
+									NICONICO_CLASSIC_EASY_MYLIST_ELEMENT.insertAdjacentHTML(
+										"afterbegin",
+										`<div id="niconico-classic_easy-mylist-form"><select></select><button>に追加</button></div>`
+									);
+
+									const NICONICO_CLASSIC_EASY_MYLIST_SELECT_ELEMENT = document.querySelector(`#niconico-classic_easy-mylist-form select`);
+
+									result.data.mylists.forEach((mylist) => {
+										NICONICO_CLASSIC_EASY_MYLIST_SELECT_ELEMENT.insertAdjacentHTML(
+											"beforeend",
+											`<option value="${mylist.id}">${mylist.isPublic ? "📁" : "🔒️"} ${mylist.name}</option>`
+										);
+									});
+
+									document.querySelector(`#niconico-classic_easy-mylist-form button`).addEventListener("click", async () => {
+										let niconicoClassicEasyMylistId = document.querySelector(`#niconico-classic_easy-mylist-form select`).value;
+										
+										await fetch(`https://nvapi.nicovideo.jp/v1/users/me/mylists/${niconicoClassicEasyMylistId}/items?itemId=${niconicoClassicVideoId}`, {
+											method: "POST",
+											headers: {"Content-Type": "application/x-www-form-urlencoded", "X-Frontend-Id": 6, "X-Frontend-Version": 0, "X-Request-With": "https://www.nicovideo.jp"},
+											credentials: "include"
+										}).then((response) => {
+											switch (response.status) {
+												case 201: alert("追加しました。"); break;
+												case 200: alert("既に登録されています。"); break;
+												case 409: alert("マイリストがいっぱいで登録出来ません。"); break;
+												default: alert("追加出来ませんでした。");
+											}
+										});
+									});
+
+									break;
+								
+								case 401: NICONICO_CLASSIC_EASY_MYLIST_ELEMENT.insertAdjacentHTML("afterbegin", `<p>ログインするとマイリストが使えます。</p>`); break;
+								default: NICONICO_CLASSIC_EASY_MYLIST_ELEMENT.insertAdjacentHTML("afterbegin", `<p>マイリストを取得出来ませんでした。</p>`);
+							}
+						}).catch((error) => {
+							NICONICO_CLASSIC_EASY_MYLIST_ELEMENT.insertAdjacentHTML("afterbegin", `マイリストを取得出来ませんでした。`);
+						});
+					})();
+				} 
+
 				niconicoClassicInsertVideoDetailsAdditionalLinks();
 			} else {
 				document.body.style.setProperty("--niconico-classic-nicovideo-content-margin-top", "24px");
