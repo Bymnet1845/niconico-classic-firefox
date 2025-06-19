@@ -87,8 +87,8 @@ setInterval(() => {
 					niconicoClassicAddScrollEventToVideoOwnerMenuButton();
 				}
 
-				if (document.querySelector(`.grid-area_\\[sidebar\\] > .d_flex`) && !document.querySelector(`#niconico-classic_easy-mylist`)) {
-					document.querySelector(`.grid-area_\\[sidebar\\] > .d_flex`).insertAdjacentHTML("afterbegin", `<section id="niconico-classic_easy-mylist"></section>`);
+				if (document.querySelector(`.grid-area_\\[sidebar\\] > .d_flex > .h_var\\(--watch-player-height\\)`) && !document.querySelector(`#niconico-classic_easy-mylist`)) {
+					document.querySelector(`.grid-area_\\[sidebar\\] > .d_flex > .h_var\\(--watch-player-height\\)`).insertAdjacentHTML("afterend", `<section id="niconico-classic_easy-mylist"></section>`);
 					const NICONICO_CLASSIC_EASY_MYLIST_ELEMENT = document.querySelector(`#niconico-classic_easy-mylist`);
 
 					(async function () {
@@ -153,11 +153,15 @@ setInterval(() => {
 									});
 
 									NICONICO_CLASSIC_EASY_MYLIST_OPTION_BUTTON_ELEMENT.addEventListener("click", async () => {
-										if (NICONICO_CLASSIC_EASY_MYLIST_OPTION_FORM_ELEMENT.classList.contains("is-open")) {
-											NICONICO_CLASSIC_EASY_MYLIST_OPTION_FORM_ELEMENT.classList.remove("is-open");
-											NICONICO_CLASSIC_EASY_MYLIST_DESCRIPTION_TEXTAREA_ELEMENT.value = "";
+										NICONICO_CLASSIC_EASY_MYLIST_OPTION_FORM_ELEMENT.classList.toggle("is-open");
+										NICONICO_CLASSIC_EASY_MYLIST_DESCRIPTION_TEXTAREA_ELEMENT.value = "";
+
+										if (NICONICO_CLASSIC_EASY_MYLIST_OPTION_FORM_ELEMENT.classList.contains("is-open") && window.innerHeight < NICONICO_CLASSIC_EASY_MYLIST_OPTION_FORM_ELEMENT.getBoundingClientRect().bottom) {
+											NICONICO_CLASSIC_EASY_MYLIST_OPTION_FORM_ELEMENT.style.top = "auto";0
+											NICONICO_CLASSIC_EASY_MYLIST_OPTION_FORM_ELEMENT.style.bottom = "64px";
 										} else {
-											NICONICO_CLASSIC_EASY_MYLIST_OPTION_FORM_ELEMENT.classList.add("is-open");
+											NICONICO_CLASSIC_EASY_MYLIST_OPTION_FORM_ELEMENT.style.top = "112px";
+											NICONICO_CLASSIC_EASY_MYLIST_OPTION_FORM_ELEMENT.style.bottom = "auto";
 										}
 									});
 
