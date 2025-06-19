@@ -87,7 +87,7 @@ setInterval(() => {
 					niconicoClassicAddScrollEventToVideoOwnerMenuButton();
 				}
 
-				if (document.querySelector(`.grid-area_\\[sidebar\\] > .d_flex > [data-scope="tabs"]`) && !document.querySelector(`#niconico-classic_easy-mylist`)) niconicoClassicInsertEasyMylist();
+				if (document.querySelector(`.grid-area_\\[sidebar\\] > .d_flex > .d_flex:has(header.h_var\\(--watch-collapsible-panel-header-height\\))`) && !document.querySelector(`#niconico-classic_easy-mylist`)) niconicoClassicInsertEasyMylist();
 				niconicoClassicInsertVideoDetailsAdditionalLinks();
 			} else {
 				document.body.style.setProperty("--niconico-classic-nicovideo-content-margin-top", "24px");
@@ -189,7 +189,7 @@ function niconicoClassicInsertVideoDetailsAdditionalLinks() {
 }
 
 async function niconicoClassicInsertEasyMylist() {
-	document.querySelector(`.grid-area_\\[sidebar\\] > .d_flex > [data-scope="tabs"]`).insertAdjacentHTML("beforebegin", `<section id="niconico-classic_easy-mylist"></section>`);
+	document.querySelector(`.grid-area_\\[sidebar\\] > .d_flex > .d_flex:has(header.h_var\\(--watch-collapsible-panel-header-height\\))`).insertAdjacentHTML("afterend", `<section id="niconico-classic_easy-mylist"></section>`);
 	const NICONICO_CLASSIC_EASY_MYLIST_ELEMENT = document.querySelector(`#niconico-classic_easy-mylist`);
 	
 	await fetch(`https://nvapi.nicovideo.jp/v1/users/me/mylists`, {
