@@ -87,8 +87,8 @@ setInterval(() => {
 					niconicoClassicAddScrollEventToVideoOwnerMenuButton();
 				}
 
-				if (document.querySelector(`.grid-area_\\[sidebar\\] > .d_flex > .h_var\\(--watch-player-height\\)`) && !document.querySelector(`#niconico-classic_easy-mylist`)) {
-					document.querySelector(`.grid-area_\\[sidebar\\] > .d_flex > .h_var\\(--watch-player-height\\)`).insertAdjacentHTML("afterend", `<section id="niconico-classic_easy-mylist"></section>`);
+				if (document.querySelector(`.grid-area_\\[sidebar\\] > .d_flex > [data-scope="tabs"]`) && !document.querySelector(`#niconico-classic_easy-mylist`)) {
+					document.querySelector(`.grid-area_\\[sidebar\\] > .d_flex > [data-scope="tabs"]`).insertAdjacentHTML("beforebegin", `<section id="niconico-classic_easy-mylist"></section>`);
 					const NICONICO_CLASSIC_EASY_MYLIST_ELEMENT = document.querySelector(`#niconico-classic_easy-mylist`);
 
 					(async function () {
