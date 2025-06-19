@@ -201,39 +201,46 @@ async function niconicoClassicInsertEasyMylist() {
 			case 200:
 				NICONICO_CLASSIC_EASY_MYLIST_ELEMENT.insertAdjacentHTML(
 					"afterbegin",
-					`<div id="niconico-classic_easy-mylist-form"><select class="niconico-classic_easy-mylist-tray-action"></select><button>追加</button></div><div id="niconico-classic_easy-mylist-menu"><button id="niconico-classic_easy-deflist-button" type="button">あとで見るに追加</button><button id="niconico-classic_easy-mylist-option-button" class="niconico-classic_easy-mylist-tray-action" type="button">追加オプション</button></div><div id="niconico-classic_easy-mylist-option-form"><label for="niconico-classic_easy-mylist-description">メモ（マイリストコメント）</label><textarea name="niconico-classic_easy-mylist-description"></textarea></div>`
+					`<div id="niconico-classic_easy-mylist-form"></div><div id="niconico-classic_easy-mylist-menu"><button id="niconico-classic_easy-deflist-button" type="button">あとで見るに追加</button><button id="niconico-classic_easy-mylist-option-button" class="niconico-classic_easy-mylist-tray-action" type="button">追加オプション</button></div><div id="niconico-classic_easy-mylist-option-form"><label for="niconico-classic_easy-mylist-description">メモ（マイリストコメント）</label><textarea name="niconico-classic_easy-mylist-description"></textarea></div>`
 				);
 
-				const NICONICO_CLASSIC_EASY_MYLIST_SELECT_ELEMENT = document.querySelector(`#niconico-classic_easy-mylist-form select`);
+				const NICONICO_CLASSIC_EASY_MYLIST_FORM_ELEMENT = document.querySelector(`#niconico-classic_easy-mylist-form`);
 				const NICONICO_CLASSIC_EASY_MYLIST_OPTION_BUTTON_ELEMENT = document.querySelector(`#niconico-classic_easy-mylist-option-button`);
 				const NICONICO_CLASSIC_EASY_MYLIST_OPTION_FORM_ELEMENT = document.querySelector(`#niconico-classic_easy-mylist-option-form`);
 				const NICONICO_CLASSIC_EASY_MYLIST_DESCRIPTION_TEXTAREA_ELEMENT = document.querySelector(`textarea[name="niconico-classic_easy-mylist-description"]`);
 
-				result.data.mylists.forEach((mylist) => {
-					NICONICO_CLASSIC_EASY_MYLIST_SELECT_ELEMENT.insertAdjacentHTML(
-						"beforeend",
-						`<option value="${mylist.id}">${mylist.isPublic ? "📁" : "🔒️"} ${mylist.name}</option>`
-					);
-				});
+				if (result.data.mylists.length === 0) {
+					NICONICO_CLASSIC_EASY_MYLIST_FORM_ELEMENT.insertAdjacentHTML("afterbegin", `<p>マイリストが在りません。</p>`);
+				} else {
+					NICONICO_CLASSIC_EASY_MYLIST_FORM_ELEMENT.insertAdjacentHTML("afterbegin", `<select class="niconico-classic_easy-mylist-tray-action"></select><button>追加</button>`);
+					const NICONICO_CLASSIC_EASY_MYLIST_SELECT_ELEMENT = document.querySelector(`#niconico-classic_easy-mylist-form select`);
 
-				document.querySelector(`#niconico-classic_easy-mylist-form button`).addEventListener("click", async () => {
-					let niconicoClassicEasyMylistId = document.querySelector(`#niconico-classic_easy-mylist-form select`).value;
-					let niconicoClassicEasyMylistApiUrl = `https://nvapi.nicovideo.jp/v1/users/me/mylists/${niconicoClassicEasyMylistId}/items?itemId=${niconicoClassicVideoId}`;
-					if (NICONICO_CLASSIC_EASY_MYLIST_DESCRIPTION_TEXTAREA_ELEMENT.value.length > 0) niconicoClassicEasyMylistApiUrl += "&description=" + encodeURIComponent(NICONICO_CLASSIC_EASY_MYLIST_DESCRIPTION_TEXTAREA_ELEMENT.value);
-					
-					await fetch(niconicoClassicEasyMylistApiUrl, {
-						method: "POST",
-						headers: {"Content-Type": "application/x-www-form-urlencoded", "X-Frontend-Id": 6, "X-Frontend-Version": 0, "X-Request-With": "https://www.nicovideo.jp"},
-						credentials: "include"
-					}).then((response) => {
-						switch (response.status) {
-							case 201: niconicoClassicDisplayEasyMylistAlert("マイリストに追加しました。"); break;
-							case 200: niconicoClassicDisplayEasyMylistAlert("このマイリストには既に登録されています。"); break;
-							case 409: niconicoClassicDisplayEasyMylistAlert("このマイリストがいっぱいで追加出来ません。"); break;
-							default: niconicoClassicDisplayEasyMylistAlert("マイリストに追加出来ませんでした。");
-						}
+					result.data.mylists.forEach((mylist) => {
+						NICONICO_CLASSIC_EASY_MYLIST_SELECT_ELEMENT.insertAdjacentHTML(
+							"beforeend",
+							`<option value="${mylist.id}">${mylist.isPublic ? "📁" : "🔒️"} ${mylist.name}</option>`
+						);
 					});
-				});
+
+					document.querySelector(`#niconico-classic_easy-mylist-form button`).addEventListener("click", async () => {
+						let niconicoClassicEasyMylistId = document.querySelector(`#niconico-classic_easy-mylist-form select`).value;
+						let niconicoClassicEasyMylistApiUrl = `https://nvapi.nicovideo.jp/v1/users/me/mylists/${niconicoClassicEasyMylistId}/items?itemId=${niconicoClassicVideoId}`;
+						if (NICONICO_CLASSIC_EASY_MYLIST_DESCRIPTION_TEXTAREA_ELEMENT.value.length > 0) niconicoClassicEasyMylistApiUrl += "&description=" + encodeURIComponent(NICONICO_CLASSIC_EASY_MYLIST_DESCRIPTION_TEXTAREA_ELEMENT.value);
+						
+						await fetch(niconicoClassicEasyMylistApiUrl, {
+							method: "POST",
+							headers: {"Content-Type": "application/x-www-form-urlencoded", "X-Frontend-Id": 6, "X-Frontend-Version": 0, "X-Request-With": "https://www.nicovideo.jp"},
+							credentials: "include"
+						}).then((response) => {
+							switch (response.status) {
+								case 201: niconicoClassicDisplayEasyMylistAlert("マイリストに追加しました。"); break;
+								case 200: niconicoClassicDisplayEasyMylistAlert("このマイリストには既に登録されています。"); break;
+								case 409: niconicoClassicDisplayEasyMylistAlert("このマイリストがいっぱいで追加出来ません。"); break;
+								default: niconicoClassicDisplayEasyMylistAlert("マイリストに追加出来ませんでした。");
+							}
+						});
+					});
+				}
 
 				document.querySelector(`#niconico-classic_easy-deflist-button`).addEventListener("click", async () => {
 					let niconicoClassicEasyDeflistApiUrl = `https://nvapi.nicovideo.jp/v1/users/me/watch-later?watchId=${niconicoClassicVideoId}`;
