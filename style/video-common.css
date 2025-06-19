@@ -190,15 +190,36 @@ body[data-niconico-classic="video-watch"] {
 
 	#niconico-classic_easy-mylist-form {
 		height: 40px; border-radius: 20px; background: var(--colors-input-form-background); display: flex;
-		select { width: calc(100% - 96px); border-top-left-radius: 20px; border-bottom-left-radius: 20px; padding-inline: 8px; }
+
+		select {
+			width: 100%;
+			padding-left: 16px;
+			padding-right: 36px;
+			border-top-left-radius: 20px;
+			border-bottom-left-radius: 20px;
+			background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBjbGFzcz0id19mb250IGhfZm9udCI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNMTYuMyA5LjNhMSAxIDAgMCAxIDEuNCAwYy40LjQuNCAxLjA1IDAgMS40NmwtNSA1LjE0Yy0uMzguNC0xLjAyLjQtMS40IDBsLTUtNS4xNGMtLjQtLjQtLjQtMS4wNiAwLTEuNDZhMSAxIDAgMCAxIDEuNCAwbDQuMyA0LjQyeiIgY2xpcC1ydWxlPSJldmVub2RkIj48L3BhdGg+PC9zdmc+") no-repeat;
+			background-position: calc(100% - 8px) center;
+			background-size: 24px 24px;
+			flex: 1;
+			appearance: none;
+		}
+		
 		option { background: var(--colors-layer-surface-high-em); }
-		button { width: 96px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; background: var(--colors-action-base); color: var(--colors-action-text-on-base); }
+		button { padding-inline: 16px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; background: var(--colors-action-base); color: var(--colors-action-text-on-base); }
 		button:hover { background: var(--colors-action-base-hover); }
 	}
 
 	#niconico-classic_easy-mylist-menu { margin-top: 8px; display: flex; justify-content: space-between; }
-	#niconico-classic_easy-mylist-menu button { height: 40px; padding-inline: 16px; border-radius: 20px; background: var(--colors-tab-base); }
-	#niconico-classic_easy-mylist-menu button:hover { background: var(--colors-tab-base-hover); }
+	#niconico-classic_easy-mylist-menu button { height: 40px; padding-inline: 16px; border-radius: 20px; background-color: var(--colors-tab-base); }
+	#niconico-classic_easy-mylist-menu button:hover { background-color: var(--colors-tab-base-hover); }
+
+	#niconico-classic_easy-mylist-option-button {
+		padding-right: 36px !important;
+		background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBjbGFzcz0id19mb250IGhfZm9udCI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNMTYuMyA5LjNhMSAxIDAgMCAxIDEuNCAwYy40LjQuNCAxLjA1IDAgMS40NmwtNSA1LjE0Yy0uMzguNC0xLjAyLjQtMS40IDBsLTUtNS4xNGMtLjQtLjQtLjQtMS4wNiAwLTEuNDZhMSAxIDAgMCAxIDEuNCAwbDQuMyA0LjQyeiIgY2xpcC1ydWxlPSJldmVub2RkIj48L3BhdGg+PC9zdmc+");
+		background-repeat: no-repeat;
+		background-position: calc(100% - 8px) center;
+		background-size: 24px 24px;
+	}
 
 	#niconico-classic_easy-mylist-option-form {
 		top: 112px; left: 16px; right: 16px; padding: 16px; border-radius: 16px; background: var(--colors-layer-surface-high-em); display: none; position: absolute; z-index: 2; box-shadow: 0 0 4px #CCCCCC;

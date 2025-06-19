@@ -101,7 +101,7 @@ setInterval(() => {
 								case 200:
 									NICONICO_CLASSIC_EASY_MYLIST_ELEMENT.insertAdjacentHTML(
 										"afterbegin",
-										`<div id="niconico-classic_easy-mylist-form"><select></select><button>に追加</button></div><div id="niconico-classic_easy-mylist-menu"><button id="niconico-classic_easy-deflist-button" type="button">🕓️ あとで見るに追加</button><button id="niconico-classic_easy-mylist-option-button" type="button">追加オプション ▼</button></div><div id="niconico-classic_easy-mylist-option-form"><label for="niconico-classic_easy-mylist-description">メモ（マイリストコメント）</label><textarea name="niconico-classic_easy-mylist-description"></textarea></div>`
+										`<div id="niconico-classic_easy-mylist-form"><select></select><button>追加</button></div><div id="niconico-classic_easy-mylist-menu"><button id="niconico-classic_easy-deflist-button" type="button">🕓️ あとで見るに追加</button><button id="niconico-classic_easy-mylist-option-button" type="button">追加オプション</button></div><div id="niconico-classic_easy-mylist-option-form"><label for="niconico-classic_easy-mylist-description">メモ（マイリストコメント）</label><textarea name="niconico-classic_easy-mylist-description"></textarea></div>`
 									);
 
 									const NICONICO_CLASSIC_EASY_MYLIST_SELECT_ELEMENT = document.querySelector(`#niconico-classic_easy-mylist-form select`);
@@ -155,11 +155,9 @@ setInterval(() => {
 									NICONICO_CLASSIC_EASY_MYLIST_OPTION_BUTTON_ELEMENT.addEventListener("click", async () => {
 										if (NICONICO_CLASSIC_EASY_MYLIST_OPTION_FORM_ELEMENT.classList.contains("is-open")) {
 											NICONICO_CLASSIC_EASY_MYLIST_OPTION_FORM_ELEMENT.classList.remove("is-open");
-											NICONICO_CLASSIC_EASY_MYLIST_OPTION_BUTTON_ELEMENT.textContent = "追加オプション ▼";
 											NICONICO_CLASSIC_EASY_MYLIST_DESCRIPTION_TEXTAREA_ELEMENT.value = "";
 										} else {
 											NICONICO_CLASSIC_EASY_MYLIST_OPTION_FORM_ELEMENT.classList.add("is-open");
-											NICONICO_CLASSIC_EASY_MYLIST_OPTION_BUTTON_ELEMENT.textContent = "追加オプション ▲";
 										}
 									});
 
