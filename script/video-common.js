@@ -101,7 +101,7 @@ setInterval(() => {
 								case 200:
 									NICONICO_CLASSIC_EASY_MYLIST_ELEMENT.insertAdjacentHTML(
 										"afterbegin",
-										`<div id="niconico-classic_easy-mylist-form"><select></select><button>に追加</button></div><div id="niconico-classic_easy-mylist-menu"><button id="niconico-classic_easy-mylist-option-button" type="button">追加オプション ▼</button></div><div id="niconico-classic_easy-mylist-option-form"><label for="niconico-classic_easy-mylist-description">メモ（マイリストコメント）</label><textarea name="niconico-classic_easy-mylist-description"></textarea></div>`
+										`<div id="niconico-classic_easy-mylist-form"><select></select><button>に追加</button></div><div id="niconico-classic_easy-mylist-menu"><button id="niconico-classic_easy-deflist-button" type="button">🕓️ あとで見るに追加</button><button id="niconico-classic_easy-mylist-option-button" type="button">追加オプション ▼</button></div><div id="niconico-classic_easy-mylist-option-form"><label for="niconico-classic_easy-mylist-description">メモ（マイリストコメント）</label><textarea name="niconico-classic_easy-mylist-description"></textarea></div>`
 									);
 
 									const NICONICO_CLASSIC_EASY_MYLIST_SELECT_ELEMENT = document.querySelector(`#niconico-classic_easy-mylist-form select`);
@@ -130,6 +130,23 @@ setInterval(() => {
 												case 201: alert("追加しました。"); break;
 												case 200: alert("既に登録されています。"); break;
 												case 409: alert("マイリストがいっぱいで登録出来ません。"); break;
+												default: alert("追加出来ませんでした。");
+											}
+										});
+									});
+
+									document.querySelector(`#niconico-classic_easy-deflist-button`).addEventListener("click", async () => {
+										let niconicoClassicEasyDeflistApiUrl = `https://nvapi.nicovideo.jp/v1/users/me/watch-later?watchId=${niconicoClassicVideoId}`;
+										if (NICONICO_CLASSIC_EASY_MYLIST_DESCRIPTION_TEXTAREA_ELEMENT.value.length > 0) niconicoClassicEasyDeflistApiUrl += "&memo=" + encodeURIComponent(NICONICO_CLASSIC_EASY_MYLIST_DESCRIPTION_TEXTAREA_ELEMENT.value);
+										
+										await fetch(niconicoClassicEasyDeflistApiUrl, {
+											method: "POST",
+											headers: {"Content-Type": "application/x-www-form-urlencoded", "X-Frontend-Id": 6, "X-Frontend-Version": 0, "X-Request-With": "https://www.nicovideo.jp"},
+											credentials: "include"
+										}).then((response) => {
+											switch (response.status) {
+												case 201: alert("追加しました。"); break;
+												case 409: alert("既に登録されています。"); break;
 												default: alert("追加出来ませんでした。");
 											}
 										});
