@@ -171,7 +171,7 @@ setInterval(() => {
 								default: NICONICO_CLASSIC_EASY_MYLIST_ELEMENT.insertAdjacentHTML("afterbegin", `<p>マイリストを取得出来ませんでした。</p>`);
 							}
 						}).catch((error) => {
-							NICONICO_CLASSIC_EASY_MYLIST_ELEMENT.insertAdjacentHTML("afterbegin", `マイリストを取得出来ませんでした。`);
+							NICONICO_CLASSIC_EASY_MYLIST_ELEMENT.insertAdjacentHTML("afterbegin", `<p>マイリストを取得出来ませんでした。</p>`);
 						});
 					})();
 				} 
