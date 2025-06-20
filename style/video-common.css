@@ -34,9 +34,10 @@ body[data-niconico-classic^="video-ranking"] {
 	}
 
 	&.niconico-classic_video-ranking-thumbnail-size-is-medium {
-		.w_100\% :is([data-anchor-page="ranking_genre"], [data-decoration-video-id]) .asp_16\:9, .w_thumbnail\.l, .max-w_thumbnail\.2xl { width: 192px; min-width: 0 !important; }
+		.w_100\% :is([data-anchor-page="ranking_genre"], [data-decoration-video-id]) .asp_16\:9, .w_thumbnail\.l, .min-w_thumbnail\.2xl, .max-w_thumbnail\.2xl { width: 192px; min-width: 0 !important; }
 		.d_flex:has(> .w_\[calc\(100\%_-_\{sizes\.x5\}\)\]) { justify-content: center; }
 		.w_\[calc\(100\%_-_\{sizes\.x5\}\)\] { width: auto; grid-template-columns: 192px 192px 192px 192px 192px 0px; }
+		.grid-tc_repeat\(5\,1fr\) { grid-template-columns: repeat(5, 192px); }
 	}
 }
 
@@ -139,7 +140,7 @@ body[data-niconico-classic="video-watch"] {
 		/* 全画面化対策 */
 		&:not(:has(.grid-area_\[player\] > .w_\[100dvw\].h_\[100dvh\])) {
 			.grid-area_\[player\] {
-				width: var(--watch-player-width); top: var(--niconico-classic-video-player-offset-top); left: max(calc(50% - ((var(--watch-player-width) + var(--watch-sidebar-width) + 24px) / 2)), 24px); position: absolute;
+				width: var(--watch-player-width); top: var(--niconico-classic-video-player-offset-top); left: max(calc(var(--niconico-classic-nicovideo-content-width) / 2 - ((var(--watch-player-width) + var(--watch-sidebar-width) + 24px) / 2)), 24px); position: absolute;
 				.rounded_m:has(video) { background: none; }
 			}
 			
@@ -185,8 +186,12 @@ body[data-niconico-classic="video-watch"] {
 	}
 
 	/* 簡単マイリスト */
-	#niconico-classic_easy-mylist { padding: 16px; border-radius: 8px; background: var(--colors-layer-surface-high-em); position: relative; }
-	#niconico-classic_easy-mylist button { cursor: pointer; font-weight: bold; color: var(--colors-action-text-on-base); }
+	#niconico-classic_easy-mylist {
+		padding: 16px 16px 48px; border-radius: 8px; background: var(--colors-layer-surface-high-em); position: relative;
+		h2 { bottom: 16px; right: 16px; display: flex; gap: 4px; align-items: center; position: absolute; z-index: 1; font-weight: bold; color: var(--colors-text-on-layer-high-em); line-height: 24px; }
+		h2 svg { width: 24px; height: 24px; fill: var(--colors-text-on-layer-high-em); }
+		button { cursor: pointer; font-weight: bold; color: var(--colors-action-text-on-base); }
+	}
 
 	.niconico-classic_easy-mylist-tray-action { 
 		padding-right: 36px !important;
@@ -203,7 +208,7 @@ body[data-niconico-classic="video-watch"] {
 	}
 
 	#niconico-classic_easy-mylist-form {
-		height: 40px; border-radius: 20px; background: var(--colors-input-form-background); display: flex;
+		height: 32px; border-radius: 20px; background: var(--colors-input-form-background); display: flex;
 
 		select {
 			width: 100%;
@@ -222,18 +227,20 @@ body[data-niconico-classic="video-watch"] {
 	}
 
 	#niconico-classic_easy-mylist-menu { margin-top: 8px; display: flex; justify-content: space-between; }
-	#niconico-classic_easy-mylist-menu button { height: 40px; padding-inline: 16px; border-radius: 20px; background-color: var(--colors-tab-base); }
+	#niconico-classic_easy-mylist-menu button { height: 32px; padding-inline: 16px; border-radius: 20px; background-color: var(--colors-tab-base); }
 	#niconico-classic_easy-mylist-menu button:hover { background-color: var(--colors-tab-base-hover); }
 
 	#niconico-classic_easy-mylist-option-form {
-		left: 16px; right: 16px; padding: 16px; border-radius: 16px; background: var(--colors-layer-surface-high-em); display: none; position: absolute; z-index: 2; box-shadow: var(--shadows-base);
+		left: 16px; right: 16px; border-radius: 16px; background: var(--colors-layer-surface-high-em); display: none; position: absolute; z-index: 2; box-shadow: var(--shadows-base);
 		&.is-open { display: block; }
+		h3 { padding: 16px; line-height: 16px; font-weight: bold; border-bottom: 2px solid var(--colors-border-high-em); }
+		> div { padding: 16px; }
 		label { margin-bottom: 8px; display: block; font-weight: bold; }
-		textarea { width: 100%; height: 128px; min-width: 100%; min-height: 128px; max-width: 100%; padding: 16px; border: 1px solid var(--colors-border-base); border-radius: 8px; }
+		textarea { width: 100%; height: 128px; min-width: 100%; min-height: 128px; max-width: 100%; padding: 16px; border: 1px solid var(--colors-border-base); border-radius: 8px; display: block; }
 	}
 
 	#niconico-classic_easy-mylist-alert {
-		top: 50%;
+		top: calc((100% - 32px) / 2);
 		left: 50%;
 		padding: 8px 16px;
 		border-radius: 8px;
