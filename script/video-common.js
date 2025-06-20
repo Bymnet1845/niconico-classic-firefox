@@ -74,6 +74,7 @@ setInterval(() => {
 			
 			if (document.querySelector(`.grid-area_\\[bottom\\] h1`)) {
 				if (!document.querySelector(`.grid-area_\\[player\\] > .w_\\[100dvw\\].h_\\[100dvh\\]`)) {
+					document.body.style.setProperty("--niconico-classic-nicovideo-content-width", document.querySelector(`[aria-label="nicovideo-content"]`).offsetWidth + "px");
 					document.body.style.setProperty("--niconico-classic-video-player-offset-height", document.querySelector(`.grid-area_\\[player\\]`).offsetHeight + "px");
 					document.body.style.setProperty("--niconico-classic-video-player-offset-top", document.querySelector(`.grid-area_\\[bottom\\] > div.flex-wrap_wrap`).offsetTop + document.querySelector(`.grid-area_\\[bottom\\] > div.flex-wrap_wrap`).offsetHeight + 16 + "px");
 					document.body.style.setProperty("--niconico-classic-video-sidebar-initial-offset-top", document.querySelector(`.grid-area_\\[bottom\\]`).offsetTop + document.querySelector(`.grid-area_\\[bottom\\]`).offsetHeight + 16 + "px");
@@ -90,6 +91,7 @@ setInterval(() => {
 				if (document.querySelector(`.grid-area_\\[sidebar\\] > .d_flex > .d_flex:has(header.h_var\\(--watch-collapsible-panel-header-height\\))`) && !document.querySelector(`#niconico-classic_easy-mylist`)) niconicoClassicInsertEasyMylist();
 				niconicoClassicInsertVideoDetailsAdditionalLinks();
 			} else {
+				document.body.style.setProperty("--niconico-classic-nicovideo-content-width", "100%");
 				document.body.style.setProperty("--niconico-classic-nicovideo-content-margin-top", "24px");
 			}
 
