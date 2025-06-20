@@ -189,7 +189,11 @@ function niconicoClassicInsertVideoDetailsAdditionalLinks() {
 }
 
 async function niconicoClassicInsertEasyMylist() {
-	document.querySelector(`.grid-area_\\[sidebar\\] > .d_flex > .d_flex:has(header.h_var\\(--watch-collapsible-panel-header-height\\))`).insertAdjacentHTML("afterend", `<section id="niconico-classic_easy-mylist"></section>`);
+	document.querySelector(`.grid-area_\\[sidebar\\] > .d_flex > .d_flex:has(header.h_var\\(--watch-collapsible-panel-header-height\\))`).insertAdjacentHTML(
+		"afterend",
+		`<section id="niconico-classic_easy-mylist"><h2><svg viewBox="0 0 24 24"><path d="m7 2-1.3249 1.3265 3.6735 3.6735h-4.8486c-1.385 0-2.5 1.115-2.5 2.5v10c0 1.385 1.115 2.5 2.5 2.5h15c1.385 0 2.5-1.115 2.5-2.5v-10c0-1.385-1.115-2.5-2.5-2.5h-4.8486l3.6735-3.6735-1.3249-1.3265-5 5zm-1.875 7.8125h6.25v2.8125h-1.875v-0.9375h-2.5v5.625h2.5v-0.9375h1.875v2.8125h-6.25v-7.5zm7.5 0h6.25v2.8125h-1.875v-0.9375h-2.5v1.25l4.375 1.875v4.375h-6.25v-2.8125h1.875v0.9375h2.5v-1.25l-4.375-1.875v-2.5z"></path></svg>ニコニコクラシックスタイル 簡単マイリスト</h2></section>`
+	);
+	
 	const NICONICO_CLASSIC_EASY_MYLIST_ELEMENT = document.querySelector(`#niconico-classic_easy-mylist`);
 	
 	await fetch(`https://nvapi.nicovideo.jp/v1/users/me/mylists`, {
@@ -200,8 +204,8 @@ async function niconicoClassicInsertEasyMylist() {
 		switch (result.meta.status) {
 			case 200:
 				NICONICO_CLASSIC_EASY_MYLIST_ELEMENT.insertAdjacentHTML(
-					"afterbegin",
-					`<div id="niconico-classic_easy-mylist-form"></div><div id="niconico-classic_easy-mylist-menu"><button id="niconico-classic_easy-deflist-button" type="button">あとで見るに追加</button><button id="niconico-classic_easy-mylist-option-button" class="niconico-classic_easy-mylist-tray-action" type="button">追加オプション</button></div><div id="niconico-classic_easy-mylist-option-form"><label for="niconico-classic_easy-mylist-description">メモ（マイリストコメント）</label><textarea name="niconico-classic_easy-mylist-description"></textarea></div>`
+					"beforeend",
+					`<div id="niconico-classic_easy-mylist-form"></div><div id="niconico-classic_easy-mylist-menu"><button id="niconico-classic_easy-deflist-button" type="button">あとで見るに追加</button><button id="niconico-classic_easy-mylist-option-button" class="niconico-classic_easy-mylist-tray-action" type="button">追加オプション</button></div><section id="niconico-classic_easy-mylist-option-form"><h3>簡単マイリストの追加オプション</h3><div><label for="niconico-classic_easy-mylist-description">メモ（マイリストコメント）</label><textarea name="niconico-classic_easy-mylist-description"></textarea></div></section>`
 				);
 
 				const NICONICO_CLASSIC_EASY_MYLIST_FORM_ELEMENT = document.querySelector(`#niconico-classic_easy-mylist-form`);
@@ -264,10 +268,10 @@ async function niconicoClassicInsertEasyMylist() {
 					NICONICO_CLASSIC_EASY_MYLIST_DESCRIPTION_TEXTAREA_ELEMENT.value = "";
 
 					if (NICONICO_CLASSIC_EASY_MYLIST_OPTION_FORM_ELEMENT.classList.contains("is-open") && window.innerHeight < NICONICO_CLASSIC_EASY_MYLIST_OPTION_FORM_ELEMENT.getBoundingClientRect().bottom) {
-						NICONICO_CLASSIC_EASY_MYLIST_OPTION_FORM_ELEMENT.style.top = "auto";0
-						NICONICO_CLASSIC_EASY_MYLIST_OPTION_FORM_ELEMENT.style.bottom = "64px";
+						NICONICO_CLASSIC_EASY_MYLIST_OPTION_FORM_ELEMENT.style.top = "auto";
+						NICONICO_CLASSIC_EASY_MYLIST_OPTION_FORM_ELEMENT.style.bottom = "128px";
 					} else {
-						NICONICO_CLASSIC_EASY_MYLIST_OPTION_FORM_ELEMENT.style.top = "112px";
+						NICONICO_CLASSIC_EASY_MYLIST_OPTION_FORM_ELEMENT.style.top = "96px";
 						NICONICO_CLASSIC_EASY_MYLIST_OPTION_FORM_ELEMENT.style.bottom = "auto";
 					}
 				});
@@ -289,7 +293,7 @@ function niconicoClassicDisplayEasyMylistAlert(message) {
 	NICONICO_CLASSIC_EASY_MYLIST_ALERT_ELEMENT.animate([{ opacity: 0, easing: "linear" }, { opacity: 1 }], 250);
 	
 	setTimeout(() => {
-		NICONICO_CLASSIC_EASY_MYLIST_ALERT_ELEMENT.animate([{ opacity: 1, easing: "linear" }, { opacity: 0 }], 250);
+		NICONICO_CLASSIC_EASY_MYLIST_ALERT_ELEMENT.animate([{ opacity: 1, easing: "linear" }, { opacity: 0 }, { opacity: 0 }], 500);
 		setTimeout(() => { NICONICO_CLASSIC_EASY_MYLIST_ALERT_ELEMENT.remove(); }, 250);
 	}, 4000);
 }
