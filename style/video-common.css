@@ -223,7 +223,7 @@ body[data-niconico-classic="video-watch"] {
 		option { background: var(--colors-layer-surface-high-em); }
 		button { padding-inline: 16px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; background: var(--colors-action-base); }
 		button:hover { background: var(--colors-action-base-hover); }
-		p { flex: 1; text-align: center; line-height: 40px; }
+		p { flex: 1; text-align: center; line-height: 32px; }
 	}
 
 	#niconico-classic_easy-mylist-menu { margin-top: 8px; display: flex; justify-content: space-between; }
