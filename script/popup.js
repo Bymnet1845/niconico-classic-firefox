@@ -7,7 +7,8 @@ const OPTIONS = [
 	[ "videoWatchPageLayout", "video-watch-page-layout"],
 	[ "videoAutoPlayback", "video-auto-playback"],
 	[ "videoPlayerSize", "video-player-size"],
-	[ "videoPlayerOverlayIcon", "video-player-overlay-icon"]
+	[ "videoPlayerOverlayIcon", "video-player-overlay-icon"],
+	[ "easyMylist", "easy-mylist"]
 ];
 
 OPTIONS.forEach((property) => {
@@ -28,6 +29,7 @@ document.querySelector("select[name=\"video-watch-page-layout\"]").addEventListe
 document.querySelector("select[name=\"video-player-size\"]").addEventListener("change", () => { chrome.storage.local.set({ videoPlayerSize: document.querySelector("select[name=\"video-player-size\"]").value }); });
 document.querySelector("select[name=\"video-player-overlay-icon\"]").addEventListener("change", () => { chrome.storage.local.set({ videoPlayerOverlayIcon: document.querySelector("select[name=\"video-player-overlay-icon\"]").value }); });
 document.querySelector("select[name=\"video-auto-playback\"]").addEventListener("change", () => { chrome.storage.local.set({ videoAutoPlayback: document.querySelector("select[name=\"video-auto-playback\"]").value }); });
+document.querySelector("select[name=\"easy-mylist\"]").addEventListener("change", () => { chrome.storage.local.set({ easyMylist: document.querySelector("select[name=\"easy-mylist\"]").value }); });
 
 document.querySelectorAll("#category-list button").forEach((element) => {
 	element.addEventListener("click", () => {
