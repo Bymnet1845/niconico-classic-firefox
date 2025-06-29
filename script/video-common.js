@@ -8,6 +8,7 @@
 let niconicoClassicCurrentUri, niconicoClassicPreviousUri, niconicoClassicPageType;
 let niconicoClassicVideoRankingDefaultType = "custom";
 let niconicoClassicVideoId, niconicoClassicVideoAutoPlayback = true, niconicoClassicVideoAutoPlaybackIsCanceled = false;
+let niconicoClassicEasyMylistEnabled = true;
 
 chrome.storage.local.get("videoWatchPageLayout", (content) => { if (content.videoWatchPageLayout !== undefined && content.videoWatchPageLayout !== "") document.body.classList.add("niconico-classic_video-watch-page-layout-is-" + content.videoWatchPageLayout); });
 chrome.storage.local.get("videoPlayerSize", (content) => { if (content.videoPlayerSize !== undefined && content.videoPlayerSize !== "" && content.videoPlayerSize !== "variable") document.body.classList.add("niconico-classic_video-player-size-is-fixed", "niconico-classic_video-player-width-is-" + content.videoPlayerSize); });
@@ -16,6 +17,7 @@ chrome.storage.local.get("videoAutoPlayback", (content) => { if (content.videoAu
 chrome.storage.local.get("videoRankingAlign", (content) => { if (content.videoRankingAlign !== "left") document.body.classList.add("niconico-classic_video-ranking-align-is-center"); });
 chrome.storage.local.get("videoRankingThumbnailSize", (content) => { if (content.videoRankingThumbnailSize !== "large") document.body.classList.add("niconico-classic_video-ranking-thumbnail-size-is-medium"); });
 chrome.storage.local.get("videoRankingDefaultType", (content) => { if (content.videoRankingDefaultType !== undefined && content.videoRankingDefaultType !== "") niconicoClassicVideoRankingDefaultType = content.videoRankingDefaultType; });
+chrome.storage.local.get("easyMylist", (content) => { if (content.easyMylist === "false") niconicoClassicEasyMylistEnabled = false; });
 
 setInterval(() => {
 	niconicoClassicCurrentUri = window.location.pathname;
@@ -88,7 +90,7 @@ setInterval(() => {
 					niconicoClassicAddScrollEventToVideoOwnerMenuButton();
 				}
 
-				if (document.querySelector(`.grid-area_\\[sidebar\\] > .d_flex > .d_flex:has(header.h_var\\(--watch-collapsible-panel-header-height\\))`) && !document.querySelector(`#niconico-classic_easy-mylist`)) niconicoClassicInsertEasyMylist();
+				if (niconicoClassicEasyMylistEnabled && document.querySelector(`.grid-area_\\[sidebar\\] > .d_flex > .d_flex:has(header.h_var\\(--watch-collapsible-panel-header-height\\))`) && !document.querySelector(`#niconico-classic_easy-mylist`)) niconicoClassicInsertEasyMylist();
 				niconicoClassicInsertVideoDetailsAdditionalLinks();
 			} else {
 				document.body.style.setProperty("--niconico-classic-nicovideo-content-width", "100%");
