@@ -120,6 +120,16 @@ function niconicoClasicCheckPageType(uri) {
 		} else {
 			return "video-ranking_for-you";
 		}
+	} else if (uri.match(/^\/search\//)) {
+		return "video-search_video_keyword";
+	} else if (uri.match(/^\/tag\//)) {
+		return "video-search_video_tag";
+	} else if (uri.match(/^\/series_search\//)) {
+		return "video-search_series";
+	} else if (uri.match(/^\/mylist_search\//)) {
+		return "video-search_mylist";
+	} else if (uri.match(/^\/user_search\//)) {
+		return "video-search_user";
 	} else {
 		return "default";
 	}
