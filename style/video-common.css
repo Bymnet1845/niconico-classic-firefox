@@ -31,6 +31,7 @@ body[data-niconico-classic="video-watch"] .niconico-classic_video-simplebar-link
 body[data-niconico-classic^="video-search"] {
 	[aria-label="nicovideo-content"] { container: niconico-classic_video-search-page-content / inline-size; }
 	&.niconico-classic_video-page-align-is-center [aria-label="nicovideo-content"] > div { margin-inline: auto; }
+	.grid-area_main .lc_2 { height: auto; display: block; --webkit-line-clamp: none; }
 
 	&.niconico-classic_video-search-classic-style-is-enabled {
 		.grid-area_main > .cq-t_inline-size > .d_flex.flex-d_column {
