@@ -18,6 +18,7 @@ chrome.storage.local.get("videoRankingAlign", (content) => { if (content.videoRa
 chrome.storage.local.get("videoRankingThumbnailSize", (content) => { if (content.videoRankingThumbnailSize !== "large") document.body.classList.add("niconico-classic_video-thumbnail-size-is-medium"); });
 chrome.storage.local.get("videoRankingDefaultType", (content) => { if (content.videoRankingDefaultType !== undefined && content.videoRankingDefaultType !== "") niconicoClassicVideoRankingDefaultType = content.videoRankingDefaultType; });
 chrome.storage.local.get("easyMylist", (content) => { if (content.easyMylist === "false") niconicoClassicEasyMylistEnabled = false; });
+chrome.storage.local.get("videoSearchClassicStyle", (content) => { if (content.videoSearchClassicStyle !== "disabled") document.body.classList.add("niconico-classic_video-search-classic-style-is-enabled"); });
 
 setInterval(() => {
 	niconicoClassicCurrentUri = window.location.pathname;
