@@ -29,7 +29,7 @@ body[data-niconico-classic="video-watch"] .niconico-classic_video-simplebar-link
 
 /* 動画検索ページ */
 body[data-niconico-classic^="video-search"] {
-	[aria-label="nicovideo-content"] { container: niconico-classic_video-serach-page-content / inline-size; }
+	[aria-label="nicovideo-content"] { container: niconico-classic_video-search-page-content / inline-size; }
 
 	&.niconico-classic_video-page-align-is-center {
 		[aria-label="nicovideo-content"] > div { margin-inline: auto; }
@@ -40,12 +40,12 @@ body[data-niconico-classic^="video-search"] {
 		[aria-label="nicovideo-content"] > div { width: 1336px; min-width: 1336px; max-width: 1752px; }
 		.cq-t_inline-size > .d_grid.grid-tc_repeat\(5\,_1fr\) { grid-template-columns: repeat(4, 192px); }
 
-		@container niconico-classic_video-serach-page-content (width >= 1544px) {
+		@container niconico-classic_video-search-page-content (width >= 1544px) {
 			[aria-label="nicovideo-content"] > div { width: 1544px; }
 			.cq-t_inline-size > .d_grid.grid-tc_repeat\(5\,_1fr\) { grid-template-columns: repeat(5, 192px); }
 		}
 
-		@container niconico-classic_video-serach-page-content (width >= 1752px) {
+		@container niconico-classic_video-search-page-content (width >= 1752px) {
 			[aria-label="nicovideo-content"] > div { width: 1752px; }
 			.cq-t_inline-size > .d_grid.grid-tc_repeat\(5\,_1fr\) { grid-template-columns: repeat(6, 192px); }
 		}
