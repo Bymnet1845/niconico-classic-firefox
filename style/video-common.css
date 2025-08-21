@@ -29,11 +29,11 @@ body[data-niconico-classic="video-watch"] .niconico-classic_video-simplebar-link
 
 /* 動画ランキングページ */
 body[data-niconico-classic^="video-ranking"] {
-	&.niconico-classic_video-ranking-align-is-center {
+	&.niconico-classic_video-page-align-is-center {
 		[aria-label="nicovideo-content"] > section { margin: auto; }
 	}
 
-	&.niconico-classic_video-ranking-thumbnail-size-is-medium {
+	&.niconico-classic_video-thumbnail-size-is-medium {
 		.w_100\% :is([data-anchor-page="ranking_genre"], [data-decoration-video-id]) .asp_16\:9, .w_thumbnail\.l, .min-w_thumbnail\.2xl, .max-w_thumbnail\.2xl { width: 192px; min-width: 0 !important; }
 		.d_flex:has(> .w_\[calc\(100\%_-_\{sizes\.x5\}\)\]) { justify-content: center; }
 		.w_\[calc\(100\%_-_\{sizes\.x5\}\)\] { width: auto; grid-template-columns: 192px 192px 192px 192px 192px 0px; }
