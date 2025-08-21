@@ -29,10 +29,30 @@ body[data-niconico-classic="video-watch"] .niconico-classic_video-simplebar-link
 
 /* 動画検索ページ */
 body[data-niconico-classic^="video-search"] {
+	[aria-label="nicovideo-content"] { container: niconico-classic_video-serach-page-content / inline-size; }
+
 	&.niconico-classic_video-page-align-is-center {
 		[aria-label="nicovideo-content"] > div { margin-inline: auto; }
 	}
+
+	&.niconico-classic_video-thumbnail-size-is-medium {
+		.w_thumbnail\.2xl, .max-w_thumbnail\.2xl { width: 192px; min-width: 192px; max-width: 192px; }
+		[aria-label="nicovideo-content"] > div { width: 1336px; min-width: 1336px; max-width: 1752px; }
+		.grid-tc_repeat\(5\,_1fr\) { grid-template-columns: repeat(4, 192px); }
+
+		@container niconico-classic_video-serach-page-content (width >= 1544px) {
+			[aria-label="nicovideo-content"] > div { width: 1544px; }
+			.grid-tc_repeat\(5\,_1fr\) { grid-template-columns: repeat(5, 192px); }
+		}
+
+		@container niconico-classic_video-serach-page-content (width >= 1752px) {
+			[aria-label="nicovideo-content"] > div { width: 1752px; }
+			.grid-tc_repeat\(5\,_1fr\) { grid-template-columns: repeat(6, 192px); }
+		}
+	}
 }
+
+body:is([data-niconico-classic="video-search_series"], [data-niconico-classic="video-search_mylist"]).niconico-classic_video-thumbnail-size-is-medium .w_thumbnail\.2xl { height: 108px; }
 
 /* 動画ランキングページ */
 body[data-niconico-classic^="video-ranking"] {
