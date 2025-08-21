@@ -27,6 +27,13 @@ body[data-niconico-classic="video-watch"] .niconico-classic_video-simplebar-link
 	.niconico-classic_video-simplebar-link > span { display: flex; flex-direction: column; font-size: 10px; text-align: center; }
 }
 
+/* 動画検索ページ */
+body[data-niconico-classic^="video-search"] {
+	&.niconico-classic_video-page-align-is-center {
+		[aria-label="nicovideo-content"] > div { margin-inline: auto; }
+	}
+}
+
 /* 動画ランキングページ */
 body[data-niconico-classic^="video-ranking"] {
 	&.niconico-classic_video-page-align-is-center {
