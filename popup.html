@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8" />
-<title>ニコニコクラシックスタイル</title>
+<title>カスタマイズ設定 - ニコニコクラシックスタイル</title>
 <meta name="description" content="ニコニコの使い勝手を「帰ってきたニコニコ」になる前みたいな感じにしたりするブラウザー拡張機能。" />
 <meta name="author" content="Bymnet1845" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,162 +15,155 @@
 <h1><img src="image/logo.svg" alt="ニコニコクラシックスタイル（γ）" /></h1>
 </header>
 
-<ul id="category-list">
-<li><button type="button" class="is-current-selection" data-category="news">新機能</button></li>
-<li><button type="button" data-category="settings">設定</button></li>
-</ul>
+<main>
+<header>
+<h1>カスタマイズ設定</h1>
+</header>
 
-<main id="panels">
-	<section class="panel is-current-selection" data-category="news">
-		<header>
-			<h2>新機能</h2>
-			<p>ニコニコクラシックスタイルの新しい機能を御知らせします。<br /> もっと詳しい情報は、<a href="https://weblog.haraheri5ro.com/?subject=niconico-classic" target="_blank">峯雲ウェブログ</a>で御覧下さい。</p>
-		</header>
+<section class="section">
+	<h2>ニコニコ共通</h2>
 
-		<section class="section">
-			<h3>「簡単マイリスト」機能が登場！</h3>
+	<section class="property">
+		<label for="icon-type">プロフィール・アイコンの形状</label>
 
-			<p>動画視聴ページで、動画をマイリストに追加し易くなりました。</p>
-			<p>今迄は、プレーヤー下のメニュー・ボタンを押して、［マイリストに追加］を選んで、マイリストを選んで……と大分面倒臭くなってしまっていました。</p>
-			<p>ところが、コメント・リストの下に新しく出来た「簡単マイリスト」からやれば、マイリストを即選んで即追加する事が出来ます。</p>
-		</section>
+		<select name="icon-type">
+		<option value="circle">丸（ニコニコ標準）</option>
+		<option value="square" selected>四角（少し角丸）</option>
+		</select>
+	</section>
+</section>
+
+<section class="section">
+	<h2>マイページ／ユーザーページ</h2>
+
+	<section class="property">
+		<label for="timeline-thumbnail-size">タイムラインのサムネイル画像の大きさ</label>
+
+		<select name="timeline-thumbnail-size">
+		<option value="large">大（ニコニコ標準）</option>
+		<option value="medium" selected>中</option>
+		</select>
+	</section>
+</section>
+
+<section class="section">
+	<h2>ニコニコ動画共通</h2>
+
+	<section class="property">
+		<label for="video-ranking-align">コンテンツの水平方向の配置</label>
+
+		<select name="video-ranking-align">
+		<option value="left">左寄せ（ニコニコ標準）</option>
+		<option value="center" selected>中央寄せ</option>
+		</select>
 	</section>
 
-	<section class="panel" data-category="settings">
-		<header>
-			<h2>設定</h2>
-			<p>ニコニコクラシックスタイルを貴方好みにカスタマイズ出来ます。</p>
-		</header>
+	<section class="property">
+		<label for="video-ranking-thumbnail-size">サムネイル画像の大きさ</label>
 
-		<section class="section">
-			<h3>共通</h3>
-
-			<section class="property">
-				<label for="icon-type">プロフィールアイコンの形状</label>
-
-				<select name="icon-type">
-				<option value="circle">丸（ニコニコ標準）</option>
-				<option value="square" selected>四角（少し角丸）</option>
-				</select>
-			</section>
-		</section>
-
-		<section class="section">
-			<h3>マイページ／ユーザーページ</h3>
-
-			<section class="property">
-				<label for="timeline-thumbnail-size">新着タイムラインのサムネイルの大きさ</label>
-
-				<select name="timeline-thumbnail-size">
-				<option value="large">大（ニコニコ標準）</option>
-				<option value="medium" selected>中</option>
-				</select>
-			</section>
-		</section>
-
-		<section class="section">
-			<h3>動画ランキングページ</h3>
-
-			<section class="property">
-				<label for="video-ranking-default-type">メニューからのリンク先</label>
-
-				<select name="video-ranking-default-type">
-				<option value="default">ニコニコ標準</option>
-				<option value="for-you">For you</option>
-				<option value="genre">総合</option>
-				<option value="custom" selected>カスタム</option>
-				</select>
-			</section>
-
-			<section class="property">
-				<label for="video-ranking-align">ランキングの配置</label>
-
-				<select name="video-ranking-align">
-				<option value="left">左寄せ（ニコニコ標準）</option>
-				<option value="center" selected>中央寄せ</option>
-				</select>
-			</section>
-
-			<section class="property">
-				<label for="video-ranking-thumbnail-size">サムネイルの大きさ</label>
-
-				<select name="video-ranking-thumbnail-size">
-				<option value="large">大（ニコニコ標準）</option>
-				<option value="medium" selected>中</option>
-				</select>
-			</section>
-		</section>
-
-		<section class="section">
-			<h3>動画視聴ページ</h3>
-
-			<section class="property">
-				<label for="video-watch-page-layout">ページのレイアウト</label>
-
-				<select name="video-watch-page-layout">
-				<option value="modern">モダン（ニコニコ標準）</option>
-				<option value="classic" selected>クラシック</option>
-				</select>
-			</section>
-
-			<section class="property">
-				<label for="video-auto-playback">自動再生</label>
-
-				<select name="video-auto-playback">
-				<option value="true">有効（ニコニコ標準）</option>
-				<option value="false" selected>無効</option>
-				</select>
-			</section>
-
-			<section class="property">
-				<label for="easy-mylist">簡単マイリスト</label>
-
-				<select name="easy-mylist">
-				<option value="true" selected>有効</option>
-				<option value="false">無効</option>
-				</select>
-			</section>
-			
-			<section class="property">
-				<label for="video-player-size">映像の大きさ</label>
-
-				<select name="video-player-size">
-				<option value="variable" selected>可変（ニコニコ標準）</option>
-				<option value="flexible">固定可変</option>
-				<option value="728px">728x410</option>
-				<option value="854px">854x480</option>
-				<option value="1280px">1280x720</option>
-				<option value="1600px">1600x900</option>
-				<option value="1920px">1920x1080</option>
-				</select>
-			</section>
-
-			<section class="property">
-				<label for="video-player-overlay-icon">プレーヤー操作時のオーバーレイアイコン</label>
-
-				<select name="video-player-overlay-icon">
-				<option value="shown">表示（ニコニコ標準）</option>
-				<option value="hidden" selected>非表示</option>
-				</select>
-			</section>
-		</section>
+		<select name="video-ranking-thumbnail-size">
+		<option value="large">大（ニコニコ標準）</option>
+		<option value="medium" selected>中</option>
+		</select>
 	</section>
+</section>
+
+<section class="section">
+	<h2>動画検索ページ</h2>
+
+	<section class="property">
+		<label for="video-search-classic-style">クラシック・スタイル</label>
+
+		<select name="video-search-classic-style">
+		<option value="enabled" selected>有効</option>
+		<option value="disabled">無効（ニコニコ標準）</option>
+		</select>
+
+		<p>検索のリスト表示を、旧検索の2列表示の様な表示形式にします。</p>
+	</section>
+</section>
+
+<section class="section">
+	<h2>動画ランキングページ</h2>
+
+	<section class="property">
+		<label for="video-ranking-default-type">デフォルト区分</label>
+
+		<select name="video-ranking-default-type">
+		<option value="default">ニコニコ標準</option>
+		<option value="for-you">For you</option>
+		<option value="genre">総合</option>
+		<option value="custom" selected>カスタム</option>
+		</select>
+
+		<p>共通ヘッダーや左メニューからアクセスする際、始めに表示する区分を指定します。［ニコニコ標準］では、最後にアクセスした区分になります。</p>
+	</section>
+</section>
+
+<section class="section">
+	<h2>動画視聴ページ</h2>
+
+	<section class="property">
+		<label for="video-watch-page-layout">クラシック・スタイル</label>
+
+		<select name="video-watch-page-layout">
+		<option value="modern">無効（ニコニコ標準）</option>
+		<option value="classic" selected>有効</option>
+		</select>
+
+		<p>ページのレイアウトを、「動画情報が上、プレーヤーが下」にします。</p>
+	</section>
+
+	<section class="property">
+		<label for="video-auto-playback">自動再生</label>
+
+		<select name="video-auto-playback">
+		<option value="true">有効（ニコニコ標準）</option>
+		<option value="false" selected>無効</option>
+		</select>
+
+		<p>連続再生の際は、［無効］にして下さい。</p>
+	</section>
+
+	<section class="property">
+		<label for="easy-mylist">簡単マイリスト</label>
+
+		<select name="easy-mylist">
+		<option value="true" selected>有効</option>
+		<option value="false">無効</option>
+		</select>
+
+		<p>コメント・リストの下に、簡単にマイリストへの追加が出来るフォームを設置します。</p>
+	</section>
+	
+	<section class="property">
+		<label for="video-player-size">映像の大きさ</label>
+
+		<select name="video-player-size">
+		<option value="variable" selected>可変（ニコニコ標準）</option>
+		<option value="flexible">固定可変</option>
+		<option value="728px">728x410</option>
+		<option value="854px">854x480</option>
+		<option value="1280px">1280x720</option>
+		<option value="1600px">1600x900</option>
+		<option value="1920px">1920x1080</option>
+		</select>
+	</section>
+
+	<section class="property">
+		<label for="video-player-overlay-icon">オーバーレイ・アイコン</label>
+
+		<select name="video-player-overlay-icon">
+		<option value="shown">表示（ニコニコ標準）</option>
+		<option value="hidden" selected>非表示</option>
+		</select>
+
+		<p>プレーヤーの操作時に、映像にオーバーレイ表示されるアイコンを、表示するか非表示にするか指定します。</p>
+	</section>
+</section>
 </main>
 
 <p id="attention">ページを再読み込みすると、変更した設定が反映されます。</p>
-
-<footer>
-<ul>
-<li><a href="https://weblog.haraheri5ro.com/?subject=niconico-classic" target="_blank">開発者からの御知らせ</a></li>
-<li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdEOwTC1dRmUNpD1GHRuIfscbpgUxbhYoOCbuj3432NONKg0w/viewform" target="_blank">問い合わせ（要望／不具合報告）</a></li>
-<li><a href="https://github.com/Bymnet1845/niconico-classic" target="_blank">GitHub</a></li>
-</ul>
-
-<p>
-<span>バージョン1.3.8</span>
-<small>&copy; 2024–2025 Bymnet1845</small>
-</p>
-</footer>
 
 <script src="script/popup.js"></script>
 </body>

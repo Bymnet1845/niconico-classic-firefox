@@ -93,6 +93,13 @@
 		}
 	],
 
+	"web_accessible_resources": [
+		{
+			"resources": [ "image/common-header-menu/logo.svg" ],
+			"matches": [ "https://*.nicovideo.jp/*" ]
+		}
+	],
+
 	"action" :{
 		"default_title": "ニコニコクラシックスタイル",
 		"default_popup": "popup.html"
