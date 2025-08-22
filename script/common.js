@@ -27,7 +27,7 @@ setInterval(() => {
 
 		document.querySelector(`#niconico-classic_common-header-button`).addEventListener("mouseover", () => {
 			if (document.querySelector(`#niconico-classic_common-header-dot`)) document.querySelector(`#niconico-classic_common-header-dot`).remove();
-			document.cookie = "niconico-classic_common-header-menu-time-stump=" + NICONICO_CLASSIC_COMMON_HEADER_MENU_TIME_STUMP + "; domain=nicovideo.jp; max-age=31536000";
+			document.cookie = "niconico-classic_common-header-menu-time-stump=" + NICONICO_CLASSIC_COMMON_HEADER_MENU_TIME_STUMP + "; domain=nicovideo.jp; path=/; max-age=31536000";
 		});
 
 		document.querySelectorAll("#niconico-classic_common-header-tray .section-list li").forEach((element) => {
