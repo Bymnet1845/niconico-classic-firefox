@@ -20,13 +20,13 @@ body.niconico-classic_icon-is-square {
 }
 
 #niconico-classic_common-header-menu {
-	margin-right: -1px; position: relative;
+	position: relative;
 	&:hover #niconico-classic_common-header-button { background: #555555; }
 	&:hover #niconico-classic_common-header-tray { display: block; }
 }
 
 #niconico-classic_common-header-button {
-	padding: 6px 12px; position: relative; display: flex; gap: 4px; cursor: pointer; color: #FFFFFF; font-size: 12px; line-height: 24px; text-decoration: none;
+	margin-right: -1px; padding: 6px 12px; position: relative; display: flex; gap: 4px; cursor: pointer; color: #FFFFFF; font-size: 12px; line-height: 24px; text-decoration: none;
 	&:after { content: ""; top: 10px; right: 0; height: 16px; border-right: 1px solid #555555; position: absolute; }
 	svg { width: 24px; height: 24px; display: block; fill: #FFFFFF; }
 }
@@ -34,7 +34,8 @@ body.niconico-classic_icon-is-square {
 #niconico-classic_common-header-dot { width: 8px; height: 8px; top: 6px; left: 28px; border-radius: 50%; background: #EE4949; position: absolute; }
 
 #niconico-classic_common-header-tray {
-	width: 384px; top: 36px; right: 0; border-radius: 0 0 4px 4px; background: #FFFFFF; display: none; position: absolute; box-shadow: 0 2px 8px #00000033; font-size: 12px; line-height: 16px;
+	width: 384px; top: 36px; right: 0; border-radius: 0 0 4px 4px; background: #FFFFFF; display: none; position: absolute; box-shadow: 0 2px 8px #00000033; font-size: 12px; line-height: 16px; color: #333333;
+	ul { list-style: none; }
 	a { font-weight: bold; color: #468FE2; text-decoration: underline; }
 	a:hover { text-decoration: none; }
 	small { font-size: 100%; }
@@ -50,11 +51,11 @@ body.niconico-classic_icon-is-square {
 		section.is-current-selection { display: block; }
 		p { margin-block: 4px; }
 		details { margin-block: 12px; border-radius: 8px; background: #EEEEEE; }
-		summary { padding: 8px 12px; border: 2px solid #999999; border-radius: 8px; background: #EEEEEE; cursor: pointer; font-weight: bold; }
+		summary { padding: 8px 12px; border: 2px solid #999999; border-radius: 8px; background: #EEEEEE; display: list-item; cursor: pointer; font-weight: bold; }
 		details > div { padding: 12px 16px; }
 	}
 
-	footer { padding: 16px; border-top: 1px solid #DDDDDD; }
+	footer { min-width: 0; padding: 16px; border-top: 1px solid #DDDDDD; background: none; }
 	footer ul { margin-bottom: 8px; display: flex; justify-content: center; gap: 8px; }
 	footer p { text-align: center; }
 }
