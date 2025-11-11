@@ -146,9 +146,9 @@ body[data-niconico-classic="video-watch"] {
 	/* レイアウト変更 */
 	&:not(.niconico-classic_video-watch-page-layout-is-modern) {
 		[aria-label="nicovideo-content"] {
- 			padding-top: 24px; z-index: 0;
+ 			padding-top: 8px; z-index: 0;
 			
-			> .d_grid {
+			.d_grid.grid-template-areas_\[_\"player_sidebar\"_\"bottom_sidebar\"_\"bottom_sidebar\"_\] {
 				grid-template-areas: "bottom bottom" "player sidebar" ". sidebar";
 				row-gap: 16px;
 				--niconico-classic-video-player-height: calc(var(--watch-player-height) + var(--watch-actionbar-height) + var(--watch-player-actionbar-gap-height));
