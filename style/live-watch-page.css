@@ -9,3 +9,7 @@ body.niconico-classic_icon-is-square {
 		border-radius: var(--niconico-classic-square-icon-border-rasius) !important;
 	}
 }
+
+/* へもツール対応 */
+.ext-setting-btn { height: 32px; }
+body.niconico-classic_icon-is-square .user_icon_by_extention { border-radius: var(--niconico-classic-square-icon-border-rasius) !important; }
