@@ -222,7 +222,7 @@ body[data-niconico-classic="video-watch"] {
 			/* +540px / +240px */
 		}
 
-		[aria-label=nicovideo-content] > .d_grid { --watch-player-max-width: var(--niconico-classic-video-player-width) !important; --watch-player-min-width: var(--niconico-classic-video-player-width) !important; }
+		[aria-label=nicovideo-content] .d_grid.grid-template-areas_\[_\"player_sidebar\"_\"bottom_sidebar\"_\"bottom_sidebar\"_\] { --watch-player-max-width: var(--niconico-classic-video-player-width) !important; --watch-player-min-width: var(--niconico-classic-video-player-width) !important; }
 	}
 
 	/* オーバーレイアイコン非表示化 */
